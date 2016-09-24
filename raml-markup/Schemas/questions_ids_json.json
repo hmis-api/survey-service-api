@@ -1,0 +1,100 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "questions": {
+      "type": "object",
+      "properties": {
+        "pagination": {
+          "type": "object",
+          "properties": {
+            "from": {
+              "type": "integer"
+            },
+            "returned": {
+              "type": "integer"
+            },
+            "total": {
+              "type": "integer"
+            },
+            "maximum": {
+              "type": "integer"
+            },
+            "sort": {
+              "type": "object",
+              "properties": {}
+            }
+          },
+          "required": [
+            "from",
+            "returned",
+            "total",
+            "maximum",
+            "sort"
+          ]
+        },
+        "questions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "questionId": {
+                "type": "string"
+              },
+              "questionDescription": {
+                "type": "string"
+              },
+              "displayText": {
+                "type": "string"
+              },
+              "questionDataType": {
+                "type": "string"
+              },
+              "questionType": {
+                "type": "string"
+              },
+              "correctValueForAssessment": {
+                "type": "string"
+              },
+              "copyQuestionId": {
+                "type": "boolean"
+              },
+              "hudQuestion": {
+                "type": "boolean"
+              },
+              "locked": {
+                "type": "boolean"
+              },
+              "questionWeight": {
+                "type": "integer"
+              },
+            "pickListGroupId":{
+                "type":"string"
+              } 
+
+            },
+            "required": [
+              "questionId",
+              "questionDescription",
+              "displayText",
+              "questionDataType",
+              "questionType",
+              "correctValueForAssessment",
+              "copyQuestionId",
+              "hudQuestion",
+              "locked",
+              "questionWeight"
+            ]
+          }
+        }
+      },
+      "required": [
+        "pagination",
+        "questions"
+      ]
+    }
+  },
+  "required": [
+    "questions"
+  ]
+}

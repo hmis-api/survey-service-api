@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "sectionScore": {
+      "type": "object",
+      "properties": {
+        "sectionScoreId": {
+          "type": "string"
+        },
+        "sectionId": {
+          "type": "string"
+        },
+        "surveyId": {
+          "type": "string"
+        },
+        "clientId": {
+          "type": "string"
+        },
+        "sectionScore": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "sectionScoreId",
+        "sectionId",
+        "surveyId",
+        "clientId",
+        "sectionScore"
+      ]
+    }
+  },
+  "required": [
+    "sectionScore"
+  ]
+}

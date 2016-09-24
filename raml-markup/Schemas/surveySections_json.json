@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "surveySection": {
+      "type": "object",
+      "properties": {
+        "sectionText": {
+          "type": "string"
+        },
+        "sectionDetail": {
+          "type": "string"
+        },
+        "sectionWeight": {
+          "type": "integer"
+        },
+        "order": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "sectionText",
+        "sectionDetail",
+        "sectionWeight",
+        "order"
+      ]
+    }
+  },
+  "required": [
+    "surveySection"
+  ]
+}

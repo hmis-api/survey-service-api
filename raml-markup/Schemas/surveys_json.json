@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "survey": {
+      "type": "object",
+      "properties": {
+        "surveyTitle": {
+          "type": "string"
+        },
+        "surveyOwner": {
+          "type": "string"
+        },
+        "tagValue": {
+          "type": "string"
+        },
+        "locked": {
+          "type": "boolean"
+        },
+        "copySurveyId": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "surveyTitle",
+        "surveyOwner",
+        "tagValue",
+        "locked",
+        "copySurveyId"
+      ]
+    }
+  },
+  "required": [
+    "survey"
+  ]
+}

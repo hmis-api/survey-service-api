@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "responses": {
+      "type": "object",
+      "properties": {
+        "pagination": {
+          "type": "object",
+          "properties": {
+            "from": {
+              "type": "integer"
+            },
+            "returned": {
+              "type": "integer"
+            },
+            "total": {
+              "type": "integer"
+            },
+            "maximum": {
+              "type": "integer"
+            },
+            "sort": {
+              "type": "object",
+              "properties": {}
+            }
+          },
+          "required": [
+            "from",
+            "returned",
+            "total",
+            "maximum",
+            "sort"
+          ]
+        },
+        "responses": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "responseId": {
+                "type": "string"
+              },
+              "responseText": {
+                "type": "string"
+              },
+              "questionScore": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "responseId",
+              "responseText",
+              "questionScore"
+            ]
+          }
+        }
+      },
+      "required": [
+        "pagination",
+        "responses"
+      ]
+    }
+  },
+  "required": [
+    "responses"
+  ]
+}

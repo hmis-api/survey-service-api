@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "pickListGroups": {
+      "type": "object",
+      "properties": {
+        "pagination": {
+          "type": "object",
+          "properties": {
+            "from": {
+              "type": "integer"
+            },
+            "returned": {
+              "type": "integer"
+            },
+            "total": {
+              "type": "integer"
+            },
+            "maximum": {
+              "type": "integer"
+            },
+            "sort": {
+              "type": "object",
+              "properties": {}
+            }
+          },
+          "required": [
+            "from",
+            "returned",
+            "total",
+            "maximum",
+            "sort"
+          ]
+        },
+        "pickListGroups": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "pickListGroupId": {
+                "type": "string"
+              },
+              "pickListGroupName": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "pickListGroupId",
+              "pickListGroupName"
+            ]
+          }
+        }
+      },
+      "required": [
+        "pagination",
+        "pickListGroups"
+      ]
+    }
+  },
+  "required": [
+    "pickListGroups"
+  ]
+}

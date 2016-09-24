@@ -1,0 +1,76 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "surveySections": {
+      "type": "object",
+      "properties": {
+        "pagination": {
+          "type": "object",
+          "properties": {
+            "from": {
+              "type": "integer"
+            },
+            "returned": {
+              "type": "integer"
+            },
+            "total": {
+              "type": "integer"
+            },
+            "maximum": {
+              "type": "integer"
+            },
+            "sort": {
+              "type": "object",
+              "properties": {}
+            }
+          },
+          "required": [
+            "from",
+            "returned",
+            "total",
+            "maximum",
+            "sort"
+          ]
+        },
+        "surveySections": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "surveySectionId": {
+                "type": "string"
+              },
+              "sectionText": {
+                "type": "string"
+              },
+              "sectionDetail": {
+                "type": "string"
+              },
+              "sectionWeight": {
+                "type": "integer"
+              },
+              "order": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "surveySectionId",
+              "sectionText",
+              "sectionDetail",
+              "sectionWeight",
+              "order"
+            ]
+          }
+        }
+      },
+      "required": [
+        "pagination",
+        "surveySections"
+      ]
+    }
+  },
+  "required": [
+    "surveySections"
+  ]
+}

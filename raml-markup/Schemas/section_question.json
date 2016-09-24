@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "sectionQuestionMappings": {
+      "type": "object",
+      "properties": {
+        "sectionQuestionMappings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "question": {
+                "type": "object",
+                "properties": {
+                  "questionId": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "questionId"
+                ]
+              },
+              "required": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "question",
+              "required"
+            ]
+          }
+        }
+      },
+      "required": [
+        "sectionQuestionMappings"
+      ]
+    }
+  },
+  "required": [
+    "sectionQuestionMappings"
+  ]
+}

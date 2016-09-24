@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "pickListValues": {
+      "type": "object",
+      "properties": {
+        "pickListValues": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "pickListValueCode": {
+                "type": "string"
+              },
+              "valueText": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "pickListValueCode",
+              "valueText"
+            ]
+          }
+        }
+      },
+      "required": [
+        "pickListValues"
+      ]
+    }
+  },
+  "required": [
+    "pickListValues"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+   "pickListValues":{
+      "pickListValues":[
+         {
+            "pickListValueCode":"TestCode",
+            "valueText":"Test"
+         },
+         {
+            "pickListValueCode":"TestCode",
+            "valueText":"Test"
+         },
+         {
+            "pickListValueCode":"TestCode",
+            "valueText":"Test"
+         }
+      ]
+   }
+}

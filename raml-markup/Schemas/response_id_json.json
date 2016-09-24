@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "response": {
+      "type": "object",
+      "properties": {
+        "responseId": {
+          "type": "string"
+        },
+        "responseText": {
+          "type": "string"
+        },
+        "questionScore": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "responseId",
+        "responseText",
+        "questionScore"
+      ]
+    }
+  },
+  "required": [
+    "response"
+  ]
+}
