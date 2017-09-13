@@ -46,6 +46,9 @@
               },
               "questionScore": {
                 "type": "integer"
+              },
+              "effectiveDate" :{
+                  "type":"string"
               }
             },
             "required": [

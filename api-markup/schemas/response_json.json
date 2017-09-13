@@ -19,8 +19,11 @@
               "appId": {
                 "type":"string"
               },
-              "sectionid": {
+              "sectionId": {
                 "type":"string"
+              },
+              "effectiveDate" :{
+                  "type":"string"
               }
             },
             "required": [
