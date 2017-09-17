@@ -1,4 +1,4 @@
-#%RAML 0.8
+#%RAML 1.0
 title:  Survey Service
 version: 1.0.0
 baseUri: https://www.hmislynk.com/survey-api/rest
@@ -562,6 +562,7 @@ resourceTypes:
                                   "refused":true,
                                   "submissionId":"ccdbf083-acb5-4931-8a01-69b2f42e706d",
                                   "client":{
+    								 "id":"e9063469-bea6-4960-9051-942baf1dc4ed",
                                      "firstName":"Ryan",
                                      "middleName":"",
                                      "lastName":"Peterson",
@@ -641,6 +642,9 @@ resourceTypes:
                                            "client":{
                                               "type":"object",
                                               "properties":{
+											   "id":{
+												  "type":"string"
+											   },											 
                                                  "firstName":{
                                                     "type":"string"
                                                  },
@@ -730,6 +734,7 @@ resourceTypes:
                             "effectiveDate":"10-02-2017 03:12:00.000",
                             "submissionId":"e9a4a447-833f-4c29-a3b6-f966a0a753aa",
                             "client":{
+							         "id":"e9a4a447-833f-4c29-a3b6-f966a0a753aa",
                                      "firstName":"Ryan",
                                      "middleName":"",
                                      "lastName":"Peterson",
@@ -760,6 +765,9 @@ resourceTypes:
                               "client":{
                                     "type":"object",
                                     "properties":{
+									   "id":{
+										  "type":"string"
+									   },
                                        "firstName":{
                                           "type":"string"
                                        },
