@@ -1,4 +1,4 @@
-#%RAML 1.0
+#%RAML 0.8
 title:  Survey Service
 version: 1.0.0
 baseUri: https://www.hmislynk.com/survey-api/rest
@@ -562,7 +562,7 @@ resourceTypes:
                                   "refused":true,
                                   "submissionId":"ccdbf083-acb5-4931-8a01-69b2f42e706d",
                                   "client":{
-    								 "id":"e9063469-bea6-4960-9051-942baf1dc4ed",
+                                     "id":"e9063469-bea6-4960-9051-942baf1dc4ed",
                                      "firstName":"Ryan",
                                      "middleName":"",
                                      "lastName":"Peterson",
@@ -598,7 +598,6 @@ resourceTypes:
                                         "sort":{
                                            "type":"object",
                                            "properties":{
-
                                            }
                                         }
                                      },
@@ -642,9 +641,9 @@ resourceTypes:
                                            "client":{
                                               "type":"object",
                                               "properties":{
-											   "id":{
-												  "type":"string"
-											   },											 
+                                                 "id":{
+                                                    "type":"string"
+                                                 },
                                                  "firstName":{
                                                     "type":"string"
                                                  },
@@ -667,7 +666,7 @@ resourceTypes:
                                         ]
                                      }
                                   }
-                               },
+                               },Anypoint
                                "required":[
                                   "pagination",
                                   "responses"
@@ -717,8 +716,7 @@ resourceTypes:
                         "required": [
                           "errors"
                         ]
-                      }
-  
+                      } 
 /v2/clients/{clientid}/surveys/{surveyid}/responses/{responseid}:
   get:
     responses:
@@ -733,8 +731,12 @@ resourceTypes:
                             "questionScore":123456,
                             "effectiveDate":"10-02-2017 03:12:00.000",
                             "submissionId":"e9a4a447-833f-4c29-a3b6-f966a0a753aa",
+                            "sectionId":"b57f0656-5292-44fb-85a6-8c3f08b742cb",
+                            "questionId":"a1c80894-3606-4cfa-88df-99882b2b1880",
+                            "clientId":"e9063469-bea6-4960-9051-942baf1dc4ed",
+                            "surveyId":"c12c25d7-4544-4329-a19f-8914544c4964",                     
                             "client":{
-							         "id":"e9a4a447-833f-4c29-a3b6-f966a0a753aa",
+                                     "id":"e9a4a447-833f-4c29-a3b6-f966a0a753aa",
                                      "firstName":"Ryan",
                                      "middleName":"",
                                      "lastName":"Peterson",
@@ -765,9 +767,9 @@ resourceTypes:
                               "client":{
                                     "type":"object",
                                     "properties":{
-									   "id":{
-										  "type":"string"
-									   },
+                                    "id":{
+                                    "type":"string"
+                                      },
                                        "firstName":{
                                           "type":"string"
                                        },
