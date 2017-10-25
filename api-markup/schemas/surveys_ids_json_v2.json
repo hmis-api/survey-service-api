@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "properties": {
-    "survies": {
+    "surveys": {
       "type": "object",
       "properties": {
         "pagination": {
@@ -33,7 +33,7 @@
             "sort"
           ]
         },
-        "survies": {
+        "surveys": {
           "type": "array",
           "items": {
             "type": "object",
@@ -74,11 +74,11 @@
       },
       "required": [
         "pagination",
-        "survies"
+        "surveys"
       ]
     }
   },
   "required": [
-    "survies"
+    "surveys"
   ]
 }
