@@ -31,6 +31,10 @@ schemas:
   - surveys_ids_json: !include schemas/surveys_ids_json.json
   - surveys_json: !include schemas/surveys_json.json
   - id_surveys_json: !include schemas/id_surveys_json.json
+  - surveys_id_json_v2: !include schemas/surveys_id_json_v2.json
+  - surveys_ids_json_v2: !include schemas/surveys_ids_json_v2.json
+  - surveys_json_v2: !include schemas/surveys_json_v2.json
+  - id_surveys_json_v2: !include schemas/id_surveys_json_v2.json
   - surveySections_id_json: !include schemas/surveySections_id_json.json
   - surveySection_ids_json: !include schemas/surveySection_ids_json.json
   - id_surveySection_json: !include schemas/id_surveySection_json.json
@@ -835,4 +839,29 @@ resourceTypes:
                         "required": [
                           "errors"
                         ]
-                      }                          
+                      }           
+/v2/surveys:
+  description: |
+          Allowed values for tag value are SINGLE_ADULT,FAMILY,YOUTH,HUD
+  type: {
+    collection: {
+        id_schema_json: id_surveys_json_v2,
+        schema_json:  surveys_json_v2,
+        schema_ids_json: surveys_ids_json_v2,
+        schema_ids_json_example : !include examples/surveys_ids_json_example_v2.json,
+        schema_json_example: !include examples/surveys_json_example_v2.json,
+        id_schema_json_example: !include examples/id_surveys_json_example_v2.json
+    }
+  }
+  /{surveyid}:
+    uriParameters:
+      surveyid:
+        displayName: Surveys Identifier
+        type: string
+        example: ADBC1111211111114111111111D1111V
+    type:
+      member:
+        schema_json:  surveys_json_v2
+        schema_id_json: surveys_id_json_v2
+        schema_id_json_example : !include examples/surveys_id_json_example_v2.json
+        schema_json_example: !include examples/surveys_json_example_v2.json

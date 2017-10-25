@@ -1,0 +1,84 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "survies": {
+      "type": "object",
+      "properties": {
+        "pagination": {
+          "type": "object",
+          "properties": {
+            "from": {
+              "type": "integer"
+            },
+            "returned": {
+              "type": "integer"
+            },
+            "total": {
+              "type": "integer"
+            },
+            "maximum": {
+              "type": "integer"
+            },
+            "sort": {
+              "type": "object",
+              "properties": {}
+            }
+          },
+          "required": [
+            "from",
+            "returned",
+            "total",
+            "maximum",
+            "sort"
+          ]
+        },
+        "survies": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "surveyId": {
+                "type": "string"
+              },
+              "surveyTitle": {
+                "type": "string"
+              },
+              "surveyOwner": {
+                "type": "string"
+              },
+              "tagValue": {
+                "type": "string"
+              },
+              "locked": {
+                "type": "boolean"
+              },
+              "copySurveyId": {
+                "type": "boolean"
+              },
+			  "surveyDefinition" :{
+				"type" : "string"
+			  }
+            },
+            "required": [
+              "surveyId",
+              "surveyTitle",
+              "surveyOwner",
+              "tagValue",
+              "locked",
+              "copySurveyId",
+			  "surveyDefinition"
+            ]
+          }
+        }
+      },
+      "required": [
+        "pagination",
+        "survies"
+      ]
+    }
+  },
+  "required": [
+    "survies"
+  ]
+}

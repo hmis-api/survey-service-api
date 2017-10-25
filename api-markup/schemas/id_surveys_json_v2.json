@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "survey": {
+      "type": "object",
+      "properties": {
+        "surveyId": {
+          "type": "string"
+        },
+        "locked": {
+          "type": "boolean"
+        },
+        "copySurveyId": {
+          "type": "boolean"
+        },
+		"surveyDefinition" :{
+			"type" : "string"
+		}
+      },
+      "required": [
+        "surveyId",
+        "locked",
+        "copySurveyId",
+		"surveyDefinition"
+      ]
+    }
+  },
+  "required": [
+    "survey"
+  ]
+}
