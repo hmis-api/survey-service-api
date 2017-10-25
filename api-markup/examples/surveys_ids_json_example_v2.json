@@ -1,5 +1,5 @@
 {
-   "survies":{
+   "surveys":{
       "pagination":{
          "from":0,
          "returned":1,
@@ -9,7 +9,7 @@
 
          }
       },
-      "survies":[
+      "surveys":[
          {
             "surveyId":"bff91ee3-4e88-4953-8f67-e6c549fc2d01",
             "surveyTitle":"dsvnjkvjnds",
