@@ -1,0 +1,15 @@
+{
+   "question":{
+      "questionId":"7c949e03-6bd0-402f-b35c-7a0f23e48863",
+      "questionDescription":"asvsvsav",
+      "displayText":"wefewf",
+      "questionDataType":"nhhhee",
+      "questionType":"sddvdv",
+      "correctValueForAssessment":"ergreg",
+      "copyQuestionId":true,
+      "hudQuestion":false,
+      "locked":false,
+      "questionWeight":1345,
+      "pickListValues": "  { \"1\" : \"Full address reported\" } ,  { \"2\" : \"Incomplete or estimated address reported\" }"
+   }
+}

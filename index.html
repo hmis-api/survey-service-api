@@ -166,7 +166,268 @@
       .resource-modal li > ul {
         margin-bottom: 1em;
       }
-    </style></head><body data-spy="scroll" data-target="#sidebar"><div class="container"><div class="row"><div class="col-md-9" role="main"><div class="page-header"><h1>Survey Service API documentation <small>version 2.0.0</small></h1><p>https://www.hmislynk.com/survey-api/rest/v2</p></div><div class="panel panel-default"><div class="panel-heading"><h3 id="surveys" class="panel-title">/surveys</h3></div><div class="panel-body"><div class="top-resource-description"><p>Allowed values for tag value are SINGLE_ADULT,FAMILY,YOUTH,HUD</p></div><div class="panel-group"><div class="panel panel-white resource-modal"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_surveys"><span class="parent"></span>/surveys</a> <span class="methods"><a href="#surveys_get"><span class="badge badge_get">get <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span></a> <a href="#surveys_post"><span class="badge badge_post">post <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span></a></span></h4></div><div id="panel_surveys" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#surveys_get'" class="list-group-item"><span class="badge badge_get">get <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span><div class="method_description"><p>Searches for survey. Returns a list of survey ids, based on the query parameters sent. The query parameters are cumulative, so each additional query parameter narrows the search down further.</p></div><div class="clearfix"></div></div><div onclick="window.location.href = '#surveys_post'" class="list-group-item"><span class="badge badge_post">post <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span><div class="method_description"><p>Add a survey</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="surveys_get"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span> <span class="parent"></span>/surveys</h4></div><div class="modal-body"><div class="alert alert-info"><p>Searches for survey. Returns a list of survey ids, based on the query parameters sent. The query parameters are cumulative, so each additional query parameter narrows the search down further.</p></div><div class="alert alert-warning"><span class="glyphicon glyphicon-lock" title="Authentication required"></span> Secured by <b>oauth_2_0</b><p>The HMIS API supports OAuth 2.0 for authenticating all API requests.</p></div><ul class="nav nav-tabs"><li class="active"><a href="#surveys_get_response" data-toggle="tab">Response</a></li><li><a href="#surveys_get_securedby" data-toggle="tab">Security</a></li></ul><div class="tab-content"><div class="tab-pane active" id="surveys_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><p>OK – Everything is working.</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+    </style></head><body data-spy="scroll" data-target="#sidebar"><div class="container"><div class="row"><div class="col-md-9" role="main"><div class="page-header"><h1>Survey Service API documentation <small>version 2.0.0</small></h1><p>https://www.hmislynk.com/survey-api/rest/v2</p></div><div class="panel panel-default"><div class="panel-heading"><h3 id="questiongroups__questiongroupid__questions" class="panel-title">/questiongroups/{questiongroupid}/questions</h3></div><div class="panel-body"><div class="panel-group"><div class="panel panel-white resource-modal"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_questiongroups__questiongroupid__questions"><span class="parent"></span>/questiongroups/{questiongroupid}/questions</a> <span class="methods"><a href="#questiongroups__questiongroupid__questions_get"><span class="badge badge_get">get <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span></a> <a href="#questiongroups__questiongroupid__questions_post"><span class="badge badge_post">post <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span></a></span></h4></div><div id="panel_questiongroups__questiongroupid__questions" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#questiongroups__questiongroupid__questions_get'" class="list-group-item"><span class="badge badge_get">get <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span><div class="method_description"><p>Searches for &lt;<resourcepathname|!singularize>&gt;. Returns a list of &lt;<resourcepathname|!singularize>&gt; ids, based on the query parameters sent. The query parameters are cumulative, so each additional query parameter narrows the search down further.</resourcepathname|!singularize></resourcepathname|!singularize></p></div><div class="clearfix"></div></div><div onclick="window.location.href = '#questiongroups__questiongroupid__questions_post'" class="list-group-item"><span class="badge badge_post">post <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span><div class="method_description"><p>The following operators can be used for "correctValueForAssessment" field. 1) Relational operators – equal (==, eq), not equal (!=, ne), less than (&lt;, lt), less than or equal (&lt;= , le), greater than (&gt;, gt), and greater than or equal (&gt;=, ge). 2) Logical operators – and, or, and not (!). Question Data Type indicates the data type of the question and currently the following data types are allowed Allowed values for questionDataType : NUMBER , STRING , BOOLEAN Question Type indicates the type of UI control that is to be presented to the end us. Allowed values for questionType: TEXT, CHECKBOX, DROPDOWN , RADIOBUTTON For questions of type RADIOBUTTON , CHECKBOX and DROPDOWN pickListGroupId is required (example: "pickListGroupId": "37766271-7cb8-4c0b-9210-07dc7f82b871")</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="questiongroups__questiongroupid__questions_get"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span> <span class="parent"></span>/questiongroups/{questiongroupid}/questions</h4></div><div class="modal-body"><div class="alert alert-info"><p>Searches for &lt;<resourcepathname|!singularize>&gt;. Returns a list of &lt;<resourcepathname|!singularize>&gt; ids, based on the query parameters sent. The query parameters are cumulative, so each additional query parameter narrows the search down further.</resourcepathname|!singularize></resourcepathname|!singularize></p></div><div class="alert alert-warning"><span class="glyphicon glyphicon-lock" title="Authentication required"></span> Secured by <b>oauth_2_0</b><p>The HMIS API supports OAuth 2.0 for authenticating all API requests.</p></div><ul class="nav nav-tabs"><li class="active"><a href="#questiongroups__questiongroupid__questions_get_request" data-toggle="tab">Request</a></li><li><a href="#questiongroups__questiongroupid__questions_get_response" data-toggle="tab">Response</a></li><li><a href="#questiongroups__questiongroupid__questions_get_securedby" data-toggle="tab">Security</a></li></ul><div class="tab-content"><div class="tab-pane active" id="questiongroups__questiongroupid__questions_get_request"><h3>URI Parameters</h3><ul><li><strong>questiongroupid</strong>: <em>required (string)</em></li></ul></div><div class="tab-pane" id="questiongroups__questiongroupid__questions_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><p>OK – Everything is working.</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+   "questions":{
+      "pagination":{
+         "from":0,
+         "returned":16,
+         "total":16,
+         "maximum":30,
+         "sort":{
+
+         }
+      },
+      "questions":[
+         {
+            "questionId":"4bd3d3e1-a70a-4e66-89d9-43fd23f5f3c8",
+            "questionDescription":"asvsvsav",
+            "displayText":"wefewf",
+            "questionDataType":"nhhhee",
+            "questionType":"sddvdv",
+            "correctValueForAssessment":"ergreg",
+            "copyQuestionId":true,
+            "hudQuestion":false,
+            "locked":false,
+            "questionWeight":1345,
+            "pickListValues": "  { \"1\" : \"Full address reported\" } ,  { \"2\" : \"Incomplete or estimated address reported\" }"
+         },
+         {
+            "questionId":"aeaed6cd-dbe3-4b40-951a-85d7abf410d2",
+            "questionDescription":"asvsvsav",
+            "displayText":"wefewf",
+            "questionDataType":"nhhhee",
+            "questionType":"sddvdv",
+            "correctValueForAssessment":"ergreg",
+            "copyQuestionId":true,
+            "hudQuestion":false,
+            "locked":false,
+            "questionWeight":1345
+         },
+         {
+            "questionId":"eb0266df-8a62-47da-af35-08fca477aa97",
+            "questionDescription":"asvsvsav",
+            "displayText":"wefewf",
+            "questionDataType":"nhhhee",
+            "questionType":"sddvdv",
+            "correctValueForAssessment":"ergreg",
+            "copyQuestionId":true,
+            "hudQuestion":false,
+            "locked":false,
+            "questionWeight":1345
+         },
+         {
+            "questionId":"97342127-06b5-4455-b757-63961a523121",
+            "questionDescription":"asvsvsav",
+            "displayText":"wefewf",
+            "questionDataType":"nhhhee",
+            "questionType":"sddvdv",
+            "correctValueForAssessment":"ergreg",
+            "copyQuestionId":true,
+            "hudQuestion":false,
+            "locked":false,
+            "questionWeight":1345
+         },
+         {
+            "questionId":"ab7a4b52-8818-415a-b0ce-3ee29c58e226",
+            "questionDescription":"asvsvsav",
+            "displayText":"wefewf",
+            "questionDataType":"nhhhee",
+            "questionType":"sddvdv",
+            "correctValueForAssessment":"ergreg",
+            "copyQuestionId":true,
+            "hudQuestion":false,
+            "locked":false,
+            "questionWeight":1345
+         },
+         {
+            "questionId":"62988239-88ae-41ce-be55-65fc1732ef88",
+            "questionDescription":"asvsvsav",
+            "displayText":"wefewf",
+            "questionDataType":"nhhhee",
+            "questionType":"sddvdv",
+            "correctValueForAssessment":"ergreg",
+            "copyQuestionId":true,
+            "hudQuestion":false,
+            "locked":false,
+            "questionWeight":1345
+         },
+         {
+            "questionId":"ffb54b34-a6dc-4fc3-9631-145b705daeaf",
+            "questionDescription":"asvsvsav",
+            "displayText":"wefewf",
+            "questionDataType":"nhhhee",
+            "questionType":"sddvdv",
+            "correctValueForAssessment":"ergreg",
+            "copyQuestionId":true,
+            "hudQuestion":false,
+            "locked":false,
+            "questionWeight":1345
+         },
+         {
+            "questionId":"2b3c1941-be73-4fc6-b99f-5dd4382804aa",
+            "questionDescription":"asvsvsav",
+            "displayText":"wefewf",
+            "questionDataType":"nhhhee",
+            "questionType":"sddvdv",
+            "correctValueForAssessment":"ergreg",
+            "copyQuestionId":true,
+            "hudQuestion":false,
+            "locked":false,
+            "questionWeight":1345
+         },
+         {
+            "questionId":"e5d0ac93-6070-4bf0-ae0c-3e21e3c6cd54",
+            "questionDescription":"asvsvsav",
+            "displayText":"wefewf",
+            "questionDataType":"nhhhee",
+            "questionType":"sddvdv",
+            "correctValueForAssessment":"ergreg",
+            "copyQuestionId":true,
+            "hudQuestion":false,
+            "locked":false,
+            "questionWeight":1345
+         },
+         {
+            "questionId":"6432fb8b-ad4a-47b7-8927-b18eaa91f54c",
+            "questionDescription":"asvsvsav",
+            "displayText":"wefewf",
+            "questionDataType":"nhhhee",
+            "questionType":"sddvdv",
+            "correctValueForAssessment":"ergreg",
+            "copyQuestionId":true,
+            "hudQuestion":false,
+            "locked":false,
+            "questionWeight":1345
+         },
+         {
+            "questionId":"f58d1b36-2208-4bee-a616-649291cf148e",
+            "questionDescription":"asvsvsav",
+            "displayText":"wefewf",
+            "questionDataType":"nhhhee",
+            "questionType":"sddvdv",
+            "correctValueForAssessment":"ergreg",
+            "copyQuestionId":true,
+            "hudQuestion":false,
+            "locked":false,
+            "questionWeight":1345
+         },
+         {
+            "questionId":"cd65e411-194a-421b-a73e-f33b7f928085",
+            "questionDescription":"asvsvsav",
+            "displayText":"wefewf",
+            "questionDataType":"nhhhee",
+            "questionType":"sddvdv",
+            "correctValueForAssessment":"ergreg",
+            "copyQuestionId":true,
+            "hudQuestion":false,
+            "locked":false,
+            "questionWeight":1345
+         },
+         {
+            "questionId":"2b62b56e-f8ad-40b5-beb8-a554e706544e",
+            "questionDescription":"asvsvsav",
+            "displayText":"wefewf",
+            "questionDataType":"nhhhee",
+            "questionType":"sddvdv",
+            "correctValueForAssessment":"ergreg",
+            "copyQuestionId":true,
+            "hudQuestion":false,
+            "locked":false,
+            "questionWeight":1345
+         },
+         {
+            "questionId":"50169178-a7fb-4d28-b935-cea1399e2df2",
+            "questionDescription":"asvsvsav",
+            "displayText":"wefewf",
+            "questionDataType":"nhhhee",
+            "questionType":"sddvdv",
+            "correctValueForAssessment":"ergreg",
+            "copyQuestionId":true,
+            "hudQuestion":false,
+            "locked":false,
+            "questionWeight":1345
+         },
+         {
+            "questionId":"029bd4a9-4035-4d7c-b661-bed328e8010f",
+            "questionDescription":"asvsvsav",
+            "displayText":"wefewf",
+            "questionDataType":"nhhhee",
+            "questionType":"sddvdv",
+            "correctValueForAssessment":"ergreg",
+            "copyQuestionId":true,
+            "hudQuestion":false,
+            "locked":false,
+            "questionWeight":1345
+         },
+         {
+            "questionId":"f3e7f22d-c136-4128-8d88-9de3f1be9540",
+            "questionDescription":"asvsvsav",
+            "displayText":"wefewf",
+            "questionDataType":"nhhhee",
+            "questionType":"sddvdv",
+            "correctValueForAssessment":"ergreg",
+            "copyQuestionId":true,
+            "hudQuestion":false,
+            "locked":false,
+            "questionWeight":1345
+         }
+      ]
+   }
+}
+</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><p>Bad Request – The request was invalid or cannot be served.</p><h2>HTTP status code <a href="http://httpstatus.es/403" target="_blank">403</a></h2><p>Forbidden – The server understood the request, but is refusing it or the access is not allowed.</p><h2>HTTP status code <a href="http://httpstatus.es/404" target="_blank">404</a></h2><p>Not found – There is no resource behind the URI.</p><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><p>500 – Internal Server Error</p></div><div class="tab-pane" id="questiongroups__questiongroupid__questions_get_securedby"><h1>Secured by oauth_2_0</h1><h3>Headers</h3><ul><li><strong>Authorization</strong>: <em>required (string)</em><p>Used to send a valid OAuth 2 access token. Do not use an "access_token" query string parameter.</p></li></ul><h2>HTTP status code <a href="http://httpstatus.es/401" target="_blank">401</a></h2><p>Bad or expired token. This can happen if the user or the HMIS revoked or expired an access token. To fix, you should re- authenticate the user.</p><h2>HTTP status code <a href="http://httpstatus.es/403" target="_blank">403</a></h2><p>Bad OAuth request (wrong consumer key, bad nonce, expired timestamp...). Unfortunately, re-authenticating the user won&#39;t help here.</p></div></div></div></div></div></div><div class="modal fade" tabindex="0" id="questiongroups__questiongroupid__questions_post"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_post">post <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span> <span class="parent"></span>/questiongroups/{questiongroupid}/questions</h4></div><div class="modal-body"><div class="alert alert-info"><p>The following operators can be used for "correctValueForAssessment" field. 1) Relational operators – equal (==, eq), not equal (!=, ne), less than (&lt;, lt), less than or equal (&lt;= , le), greater than (&gt;, gt), and greater than or equal (&gt;=, ge). 2) Logical operators – and, or, and not (!). Question Data Type indicates the data type of the question and currently the following data types are allowed Allowed values for questionDataType : NUMBER , STRING , BOOLEAN Question Type indicates the type of UI control that is to be presented to the end us. Allowed values for questionType: TEXT, CHECKBOX, DROPDOWN , RADIOBUTTON For questions of type RADIOBUTTON , CHECKBOX and DROPDOWN pickListGroupId is required (example: "pickListGroupId": "37766271-7cb8-4c0b-9210-07dc7f82b871")</p></div><div class="alert alert-warning"><span class="glyphicon glyphicon-lock" title="Authentication required"></span> Secured by <b>oauth_2_0</b><p>The HMIS API supports OAuth 2.0 for authenticating all API requests.</p></div><ul class="nav nav-tabs"><li class="active"><a href="#questiongroups__questiongroupid__questions_post_request" data-toggle="tab">Request</a></li><li><a href="#questiongroups__questiongroupid__questions_post_response" data-toggle="tab">Response</a></li><li><a href="#questiongroups__questiongroupid__questions_post_securedby" data-toggle="tab">Security</a></li></ul><div class="tab-content"><div class="tab-pane active" id="questiongroups__questiongroupid__questions_post_request"><h3>URI Parameters</h3><ul><li><strong>questiongroupid</strong>: <em>required (string)</em></li></ul><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+   "question":{
+      "questionDescription":"asvsvsav",
+      "displayText":"wefewf",
+      "questionDataType":"NUMBER",
+      "questionType":"CHECKBOX",
+      "correctValueForAssessment":"ergreg",
+      "copyQuestionId":true,
+      "hudQuestion":false,
+      "locked":false,
+      "questionWeight":1345,
+      "pickListValues": "  { \"1\" : \"Full address reported\" } ,  { \"2\" : \"Incomplete or estimated address reported\" }"
+   }
+}
+</code></pre></div></div><div class="tab-pane" id="questiongroups__questiongroupid__questions_post_response"><h2>HTTP status code <a href="http://httpstatus.es/201" target="_blank">201</a></h2><p>OK - New resource has been created.</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+   "question":{
+      "questionId":"f3e7f22d-c136-4128-8d88-9de3f1be9540",
+      "copyQuestionId":false,
+      "hudQuestion":false,
+      "locked":false,
+      "questionWeight":0,
+      "pickListValues": "  { \"1\" : \"Full address reported\" } ,  { \"2\" : \"Incomplete or estimated address reported\" }"
+   }
+}
+</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><p>Bad Request – The request was invalid or cannot be served.</p><h2>HTTP status code <a href="http://httpstatus.es/401" target="_blank">401</a></h2><p>Unauthorized – The request requires user authentication.</p><h2>HTTP status code <a href="http://httpstatus.es/403" target="_blank">403</a></h2><p>Forbidden – The server understood the request, but is refusing it or access is not allowed.</p><h2>HTTP status code <a href="http://httpstatus.es/404" target="_blank">404</a></h2><p>Not found – There is no resource behind the URI.</p><h2>HTTP status code <a href="http://httpstatus.es/422" target="_blank">422</a></h2><p>Unprocessable Entity - Request body is incorrect.</p><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><p>500 – Internal Server Error.</p></div><div class="tab-pane" id="questiongroups__questiongroupid__questions_post_securedby"><h1>Secured by oauth_2_0</h1><h3>Headers</h3><ul><li><strong>Authorization</strong>: <em>required (string)</em><p>Used to send a valid OAuth 2 access token. Do not use an "access_token" query string parameter.</p></li></ul><h2>HTTP status code <a href="http://httpstatus.es/401" target="_blank">401</a></h2><p>Bad or expired token. This can happen if the user or the HMIS revoked or expired an access token. To fix, you should re- authenticate the user.</p><h2>HTTP status code <a href="http://httpstatus.es/403" target="_blank">403</a></h2><p>Bad OAuth request (wrong consumer key, bad nonce, expired timestamp...). Unfortunately, re-authenticating the user won&#39;t help here.</p></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h3 id="questiongroups__questiongroupid__questions__questionid_" class="panel-title">/questiongroups/{questiongroupid}/questions/{questionid}</h3></div><div class="panel-body"><div class="panel-group"><div class="panel panel-white resource-modal"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_questiongroups__questiongroupid__questions__questionid_"><span class="parent"></span>/questiongroups/{questiongroupid}/questions/{questionid}</a> <span class="methods"><a href="#questiongroups__questiongroupid__questions__questionid__get"><span class="badge badge_get">get <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span></a> <a href="#questiongroups__questiongroupid__questions__questionid__put"><span class="badge badge_put">put <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span></a> <a href="#questiongroups__questiongroupid__questions__questionid__delete"><span class="badge badge_delete">delete <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span></a></span></h4></div><div id="panel_questiongroups__questiongroupid__questions__questionid_" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#questiongroups__questiongroupid__questions__questionid__get'" class="list-group-item"><span class="badge badge_get">get <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span><div class="method_description"><p>Gets a question using a URI resource parameter/ID.</p></div><div class="clearfix"></div></div><div onclick="window.location.href = '#questiongroups__questiongroupid__questions__questionid__put'" class="list-group-item"><span class="badge badge_put">put <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span><div class="method_description"><p>Updates a specific question specified by the URI resource parameter/ID.</p></div><div class="clearfix"></div></div><div onclick="window.location.href = '#questiongroups__questiongroupid__questions__questionid__delete'" class="list-group-item"><span class="badge badge_delete">delete <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span><div class="method_description"><p>Deletes a specific question specified by the URI resource parameter/ID.</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="questiongroups__questiongroupid__questions__questionid__get"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span> <span class="parent"></span>/questiongroups/{questiongroupid}/questions/{questionid}</h4></div><div class="modal-body"><div class="alert alert-info"><p>Gets a question using a URI resource parameter/ID.</p></div><div class="alert alert-warning"><span class="glyphicon glyphicon-lock" title="Authentication required"></span> Secured by <b>oauth_2_0</b><p>The HMIS API supports OAuth 2.0 for authenticating all API requests.</p></div><ul class="nav nav-tabs"><li class="active"><a href="#questiongroups__questiongroupid__questions__questionid__get_request" data-toggle="tab">Request</a></li><li><a href="#questiongroups__questiongroupid__questions__questionid__get_response" data-toggle="tab">Response</a></li><li><a href="#questiongroups__questiongroupid__questions__questionid__get_securedby" data-toggle="tab">Security</a></li></ul><div class="tab-content"><div class="tab-pane active" id="questiongroups__questiongroupid__questions__questionid__get_request"><h3>URI Parameters</h3><ul><li><strong>questiongroupid</strong>: <em>required (string)</em></li><li><strong>questionid</strong>: <em>required (string)</em><p><strong>Example</strong>:</p><div class="examples"><pre><code>ADBC1111211111114111111111D1111V</code></pre></div></li></ul></div><div class="tab-pane" id="questiongroups__questiongroupid__questions__questionid__get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><p>OK – Everything is working.</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+   "question":{
+      "questionId":"7c949e03-6bd0-402f-b35c-7a0f23e48863",
+      "questionDescription":"asvsvsav",
+      "displayText":"wefewf",
+      "questionDataType":"nhhhee",
+      "questionType":"sddvdv",
+      "correctValueForAssessment":"ergreg",
+      "copyQuestionId":true,
+      "hudQuestion":false,
+      "locked":false,
+      "questionWeight":1345,
+      "pickListValues": "  { \"1\" : \"Full address reported\" } ,  { \"2\" : \"Incomplete or estimated address reported\" }"
+   }
+}
+</code></pre></div><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><p>Bad Request – The request was invalid or cannot be served.</p><h2>HTTP status code <a href="http://httpstatus.es/401" target="_blank">401</a></h2><p>Unauthorized – The request requires an user authentication.</p><h2>HTTP status code <a href="http://httpstatus.es/403" target="_blank">403</a></h2><p>Forbidden – The server understood the request, but is refusing it or the access is not allowed.</p><h2>HTTP status code <a href="http://httpstatus.es/404" target="_blank">404</a></h2><p>Not found – There is no resource behind the URI.</p><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><p>Internal Server Error</p></div><div class="tab-pane" id="questiongroups__questiongroupid__questions__questionid__get_securedby"><h1>Secured by oauth_2_0</h1><h3>Headers</h3><ul><li><strong>Authorization</strong>: <em>required (string)</em><p>Used to send a valid OAuth 2 access token. Do not use an "access_token" query string parameter.</p></li></ul><h2>HTTP status code <a href="http://httpstatus.es/401" target="_blank">401</a></h2><p>Bad or expired token. This can happen if the user or the HMIS revoked or expired an access token. To fix, you should re- authenticate the user.</p><h2>HTTP status code <a href="http://httpstatus.es/403" target="_blank">403</a></h2><p>Bad OAuth request (wrong consumer key, bad nonce, expired timestamp...). Unfortunately, re-authenticating the user won&#39;t help here.</p></div></div></div></div></div></div><div class="modal fade" tabindex="0" id="questiongroups__questiongroupid__questions__questionid__put"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_put">put <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span> <span class="parent"></span>/questiongroups/{questiongroupid}/questions/{questionid}</h4></div><div class="modal-body"><div class="alert alert-info"><p>Updates a specific question specified by the URI resource parameter/ID.</p></div><div class="alert alert-warning"><span class="glyphicon glyphicon-lock" title="Authentication required"></span> Secured by <b>oauth_2_0</b><p>The HMIS API supports OAuth 2.0 for authenticating all API requests.</p></div><ul class="nav nav-tabs"><li class="active"><a href="#questiongroups__questiongroupid__questions__questionid__put_request" data-toggle="tab">Request</a></li><li><a href="#questiongroups__questiongroupid__questions__questionid__put_response" data-toggle="tab">Response</a></li><li><a href="#questiongroups__questiongroupid__questions__questionid__put_securedby" data-toggle="tab">Security</a></li></ul><div class="tab-content"><div class="tab-pane active" id="questiongroups__questiongroupid__questions__questionid__put_request"><h3>URI Parameters</h3><ul><li><strong>questiongroupid</strong>: <em>required (string)</em></li><li><strong>questionid</strong>: <em>required (string)</em><p><strong>Example</strong>:</p><div class="examples"><pre><code>ADBC1111211111114111111111D1111V</code></pre></div></li></ul><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
+   "question":{
+      "questionDescription":"asvsvsav",
+      "displayText":"wefewf",
+      "questionDataType":"NUMBER",
+      "questionType":"CHECKBOX",
+      "correctValueForAssessment":"ergreg",
+      "copyQuestionId":true,
+      "hudQuestion":false,
+      "locked":false,
+      "questionWeight":1345,
+      "pickListValues": "  { \"1\" : \"Full address reported\" } ,  { \"2\" : \"Incomplete or estimated address reported\" }"
+   }
+}
+</code></pre></div></div><div class="tab-pane" id="questiongroups__questiongroupid__questions__questionid__put_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><p>OK – Everything is working.</p><h2>HTTP status code <a href="http://httpstatus.es/304" target="_blank">304</a></h2><p>Not Modified – The client can use cached data.</p><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><p>Bad Request – The request was invalid or cannot be served.</p><h2>HTTP status code <a href="http://httpstatus.es/401" target="_blank">401</a></h2><p>Unauthorized – The request requires a user.</p><h2>HTTP status code <a href="http://httpstatus.es/403" target="_blank">403</a></h2><p>Forbidden – The server understood the request, but is refusing it or the access is not allowed.</p><h2>HTTP status code <a href="http://httpstatus.es/404" target="_blank">404</a></h2><p>Not found – There is no resource behind the URI.</p><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><p>Internal Server Error.</p></div><div class="tab-pane" id="questiongroups__questiongroupid__questions__questionid__put_securedby"><h1>Secured by oauth_2_0</h1><h3>Headers</h3><ul><li><strong>Authorization</strong>: <em>required (string)</em><p>Used to send a valid OAuth 2 access token. Do not use an "access_token" query string parameter.</p></li></ul><h2>HTTP status code <a href="http://httpstatus.es/401" target="_blank">401</a></h2><p>Bad or expired token. This can happen if the user or the HMIS revoked or expired an access token. To fix, you should re- authenticate the user.</p><h2>HTTP status code <a href="http://httpstatus.es/403" target="_blank">403</a></h2><p>Bad OAuth request (wrong consumer key, bad nonce, expired timestamp...). Unfortunately, re-authenticating the user won&#39;t help here.</p></div></div></div></div></div></div><div class="modal fade" tabindex="0" id="questiongroups__questiongroupid__questions__questionid__delete"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_delete">delete <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span> <span class="parent"></span>/questiongroups/{questiongroupid}/questions/{questionid}</h4></div><div class="modal-body"><div class="alert alert-info"><p>Deletes a specific question specified by the URI resource parameter/ID.</p></div><div class="alert alert-warning"><span class="glyphicon glyphicon-lock" title="Authentication required"></span> Secured by <b>oauth_2_0</b><p>The HMIS API supports OAuth 2.0 for authenticating all API requests.</p></div><ul class="nav nav-tabs"><li class="active"><a href="#questiongroups__questiongroupid__questions__questionid__delete_request" data-toggle="tab">Request</a></li><li><a href="#questiongroups__questiongroupid__questions__questionid__delete_response" data-toggle="tab">Response</a></li><li><a href="#questiongroups__questiongroupid__questions__questionid__delete_securedby" data-toggle="tab">Security</a></li></ul><div class="tab-content"><div class="tab-pane active" id="questiongroups__questiongroupid__questions__questionid__delete_request"><h3>URI Parameters</h3><ul><li><strong>questiongroupid</strong>: <em>required (string)</em></li><li><strong>questionid</strong>: <em>required (string)</em><p><strong>Example</strong>:</p><div class="examples"><pre><code>ADBC1111211111114111111111D1111V</code></pre></div></li></ul></div><div class="tab-pane" id="questiongroups__questiongroupid__questions__questionid__delete_response"><h2>HTTP status code <a href="http://httpstatus.es/204" target="_blank">204</a></h2><p>OK – The resource was successfully deleted.</p><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><p>Bad Request – The request was invalid or cannot be served.</p><h2>HTTP status code <a href="http://httpstatus.es/401" target="_blank">401</a></h2><p>Unauthorized – The request requires user authentication.</p><h2>HTTP status code <a href="http://httpstatus.es/403" target="_blank">403</a></h2><p>Forbidden – The server understood the request, but is refusing it or the access is not allowed.</p><h2>HTTP status code <a href="http://httpstatus.es/404" target="_blank">404</a></h2><p>Not found – There is no resource behind the URI.</p><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><p>Internal Server Error</p></div><div class="tab-pane" id="questiongroups__questiongroupid__questions__questionid__delete_securedby"><h1>Secured by oauth_2_0</h1><h3>Headers</h3><ul><li><strong>Authorization</strong>: <em>required (string)</em><p>Used to send a valid OAuth 2 access token. Do not use an "access_token" query string parameter.</p></li></ul><h2>HTTP status code <a href="http://httpstatus.es/401" target="_blank">401</a></h2><p>Bad or expired token. This can happen if the user or the HMIS revoked or expired an access token. To fix, you should re- authenticate the user.</p><h2>HTTP status code <a href="http://httpstatus.es/403" target="_blank">403</a></h2><p>Bad OAuth request (wrong consumer key, bad nonce, expired timestamp...). Unfortunately, re-authenticating the user won&#39;t help here.</p></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h3 id="surveys" class="panel-title">/surveys</h3></div><div class="panel-body"><div class="top-resource-description"><p>Allowed values for tag value are SINGLE_ADULT,FAMILY,YOUTH,HUD</p></div><div class="panel-group"><div class="panel panel-white resource-modal"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_surveys"><span class="parent"></span>/surveys</a> <span class="methods"><a href="#surveys_get"><span class="badge badge_get">get <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span></a> <a href="#surveys_post"><span class="badge badge_post">post <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span></a></span></h4></div><div id="panel_surveys" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#surveys_get'" class="list-group-item"><span class="badge badge_get">get <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span><div class="method_description"><p>Searches for survey. Returns a list of survey ids, based on the query parameters sent. The query parameters are cumulative, so each additional query parameter narrows the search down further.</p></div><div class="clearfix"></div></div><div onclick="window.location.href = '#surveys_post'" class="list-group-item"><span class="badge badge_post">post <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span><div class="method_description"><p>Add a survey</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="surveys_get"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span> <span class="parent"></span>/surveys</h4></div><div class="modal-body"><div class="alert alert-info"><p>Searches for survey. Returns a list of survey ids, based on the query parameters sent. The query parameters are cumulative, so each additional query parameter narrows the search down further.</p></div><div class="alert alert-warning"><span class="glyphicon glyphicon-lock" title="Authentication required"></span> Secured by <b>oauth_2_0</b><p>The HMIS API supports OAuth 2.0 for authenticating all API requests.</p></div><ul class="nav nav-tabs"><li class="active"><a href="#surveys_get_response" data-toggle="tab">Response</a></li><li><a href="#surveys_get_securedby" data-toggle="tab">Security</a></li></ul><div class="tab-content"><div class="tab-pane active" id="surveys_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><p>OK – Everything is working.</p><h3>Body</h3><p><strong>Media type</strong>: application/json</p><p><strong>Example</strong>:</p><div class="examples"><pre><code>{
    "surveys":{
       "pagination":{
          "from":0,
@@ -224,4 +485,4 @@
       "copySurveyId":false,
       "surveyDefinition":" { \" title \" : \" Survey Definition \" } "
    }
-}</code></pre></div></div><div class="tab-pane" id="surveys__surveyid__put_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><p>OK – Everything is working.</p><h2>HTTP status code <a href="http://httpstatus.es/304" target="_blank">304</a></h2><p>Not Modified – The client can use cached data.</p><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><p>Bad Request – The request was invalid or cannot be served.</p><h2>HTTP status code <a href="http://httpstatus.es/401" target="_blank">401</a></h2><p>Unauthorized – The request requires a user.</p><h2>HTTP status code <a href="http://httpstatus.es/403" target="_blank">403</a></h2><p>Forbidden – The server understood the request, but is refusing it or the access is not allowed.</p><h2>HTTP status code <a href="http://httpstatus.es/404" target="_blank">404</a></h2><p>Not found – There is no resource behind the URI.</p><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><p>Internal Server Error.</p></div><div class="tab-pane" id="surveys__surveyid__put_securedby"><h1>Secured by oauth_2_0</h1><h3>Headers</h3><ul><li><strong>Authorization</strong>: <em>required (string)</em><p>Used to send a valid OAuth 2 access token. Do not use an "access_token" query string parameter.</p></li></ul><h2>HTTP status code <a href="http://httpstatus.es/401" target="_blank">401</a></h2><p>Bad or expired token. This can happen if the user or the HMIS revoked or expired an access token. To fix, you should re- authenticate the user.</p><h2>HTTP status code <a href="http://httpstatus.es/403" target="_blank">403</a></h2><p>Bad OAuth request (wrong consumer key, bad nonce, expired timestamp...). Unfortunately, re-authenticating the user won&#39;t help here.</p></div></div></div></div></div></div><div class="modal fade" tabindex="0" id="surveys__surveyid__delete"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_delete">delete <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span> <span class="parent">/surveys</span>/{surveyid}</h4></div><div class="modal-body"><div class="alert alert-info"><p>Deletes a specific survey specified by the URI resource parameter/ID.</p></div><div class="alert alert-warning"><span class="glyphicon glyphicon-lock" title="Authentication required"></span> Secured by <b>oauth_2_0</b><p>The HMIS API supports OAuth 2.0 for authenticating all API requests.</p></div><ul class="nav nav-tabs"><li class="active"><a href="#surveys__surveyid__delete_request" data-toggle="tab">Request</a></li><li><a href="#surveys__surveyid__delete_response" data-toggle="tab">Response</a></li><li><a href="#surveys__surveyid__delete_securedby" data-toggle="tab">Security</a></li></ul><div class="tab-content"><div class="tab-pane active" id="surveys__surveyid__delete_request"><h3>URI Parameters</h3><ul><li><strong>surveyid</strong>: <em>required (string)</em><p><strong>Example</strong>:</p><div class="examples"><pre><code>ADBC1111211111114111111111D1111V</code></pre></div></li></ul></div><div class="tab-pane" id="surveys__surveyid__delete_response"><h2>HTTP status code <a href="http://httpstatus.es/204" target="_blank">204</a></h2><p>OK – The resource was successfully deleted.</p><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><p>Bad Request – The request was invalid or cannot be served.</p><h2>HTTP status code <a href="http://httpstatus.es/401" target="_blank">401</a></h2><p>Unauthorized – The request requires user authentication.</p><h2>HTTP status code <a href="http://httpstatus.es/403" target="_blank">403</a></h2><p>Forbidden – The server understood the request, but is refusing it or the access is not allowed.</p><h2>HTTP status code <a href="http://httpstatus.es/404" target="_blank">404</a></h2><p>Not found – There is no resource behind the URI.</p><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><p>Internal Server Error.</p></div><div class="tab-pane" id="surveys__surveyid__delete_securedby"><h1>Secured by oauth_2_0</h1><h3>Headers</h3><ul><li><strong>Authorization</strong>: <em>required (string)</em><p>Used to send a valid OAuth 2 access token. Do not use an "access_token" query string parameter.</p></li></ul><h2>HTTP status code <a href="http://httpstatus.es/401" target="_blank">401</a></h2><p>Bad or expired token. This can happen if the user or the HMIS revoked or expired an access token. To fix, you should re- authenticate the user.</p><h2>HTTP status code <a href="http://httpstatus.es/403" target="_blank">403</a></h2><p>Bad OAuth request (wrong consumer key, bad nonce, expired timestamp...). Unfortunately, re-authenticating the user won&#39;t help here.</p></div></div></div></div></div></div></div></div></div></div></div><div class="col-md-3"><div id="sidebar" class="hidden-print affix" role="complementary"><ul class="nav nav-pills nav-stacked"><li><a href="#surveys">/surveys</a></li></ul></div></div></div></div></body></html>
+}</code></pre></div></div><div class="tab-pane" id="surveys__surveyid__put_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><p>OK – Everything is working.</p><h2>HTTP status code <a href="http://httpstatus.es/304" target="_blank">304</a></h2><p>Not Modified – The client can use cached data.</p><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><p>Bad Request – The request was invalid or cannot be served.</p><h2>HTTP status code <a href="http://httpstatus.es/401" target="_blank">401</a></h2><p>Unauthorized – The request requires a user.</p><h2>HTTP status code <a href="http://httpstatus.es/403" target="_blank">403</a></h2><p>Forbidden – The server understood the request, but is refusing it or the access is not allowed.</p><h2>HTTP status code <a href="http://httpstatus.es/404" target="_blank">404</a></h2><p>Not found – There is no resource behind the URI.</p><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><p>Internal Server Error.</p></div><div class="tab-pane" id="surveys__surveyid__put_securedby"><h1>Secured by oauth_2_0</h1><h3>Headers</h3><ul><li><strong>Authorization</strong>: <em>required (string)</em><p>Used to send a valid OAuth 2 access token. Do not use an "access_token" query string parameter.</p></li></ul><h2>HTTP status code <a href="http://httpstatus.es/401" target="_blank">401</a></h2><p>Bad or expired token. This can happen if the user or the HMIS revoked or expired an access token. To fix, you should re- authenticate the user.</p><h2>HTTP status code <a href="http://httpstatus.es/403" target="_blank">403</a></h2><p>Bad OAuth request (wrong consumer key, bad nonce, expired timestamp...). Unfortunately, re-authenticating the user won&#39;t help here.</p></div></div></div></div></div></div><div class="modal fade" tabindex="0" id="surveys__surveyid__delete"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_delete">delete <span class="glyphicon glyphicon-lock" title="Authentication required"></span></span> <span class="parent">/surveys</span>/{surveyid}</h4></div><div class="modal-body"><div class="alert alert-info"><p>Deletes a specific survey specified by the URI resource parameter/ID.</p></div><div class="alert alert-warning"><span class="glyphicon glyphicon-lock" title="Authentication required"></span> Secured by <b>oauth_2_0</b><p>The HMIS API supports OAuth 2.0 for authenticating all API requests.</p></div><ul class="nav nav-tabs"><li class="active"><a href="#surveys__surveyid__delete_request" data-toggle="tab">Request</a></li><li><a href="#surveys__surveyid__delete_response" data-toggle="tab">Response</a></li><li><a href="#surveys__surveyid__delete_securedby" data-toggle="tab">Security</a></li></ul><div class="tab-content"><div class="tab-pane active" id="surveys__surveyid__delete_request"><h3>URI Parameters</h3><ul><li><strong>surveyid</strong>: <em>required (string)</em><p><strong>Example</strong>:</p><div class="examples"><pre><code>ADBC1111211111114111111111D1111V</code></pre></div></li></ul></div><div class="tab-pane" id="surveys__surveyid__delete_response"><h2>HTTP status code <a href="http://httpstatus.es/204" target="_blank">204</a></h2><p>OK – The resource was successfully deleted.</p><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><p>Bad Request – The request was invalid or cannot be served.</p><h2>HTTP status code <a href="http://httpstatus.es/401" target="_blank">401</a></h2><p>Unauthorized – The request requires user authentication.</p><h2>HTTP status code <a href="http://httpstatus.es/403" target="_blank">403</a></h2><p>Forbidden – The server understood the request, but is refusing it or the access is not allowed.</p><h2>HTTP status code <a href="http://httpstatus.es/404" target="_blank">404</a></h2><p>Not found – There is no resource behind the URI.</p><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><p>Internal Server Error</p></div><div class="tab-pane" id="surveys__surveyid__delete_securedby"><h1>Secured by oauth_2_0</h1><h3>Headers</h3><ul><li><strong>Authorization</strong>: <em>required (string)</em><p>Used to send a valid OAuth 2 access token. Do not use an "access_token" query string parameter.</p></li></ul><h2>HTTP status code <a href="http://httpstatus.es/401" target="_blank">401</a></h2><p>Bad or expired token. This can happen if the user or the HMIS revoked or expired an access token. To fix, you should re- authenticate the user.</p><h2>HTTP status code <a href="http://httpstatus.es/403" target="_blank">403</a></h2><p>Bad OAuth request (wrong consumer key, bad nonce, expired timestamp...). Unfortunately, re-authenticating the user won&#39;t help here.</p></div></div></div></div></div></div></div></div></div></div></div><div class="col-md-3"><div id="sidebar" class="hidden-print affix" role="complementary"><ul class="nav nav-pills nav-stacked"><li><a href="#questiongroups__questiongroupid__questions">/questiongroups/{questiongroupid}/questions</a></li><li><a href="#questiongroups__questiongroupid__questions__questionid_">/questiongroups/{questiongroupid}/questions/{questionid}</a></li><li><a href="#surveys">/surveys</a></li></ul></div></div></div></div></body></html>

@@ -1,0 +1,14 @@
+{
+   "question":{
+      "questionDescription":"asvsvsav",
+      "displayText":"wefewf",
+      "questionDataType":"NUMBER",
+      "questionType":"CHECKBOX",
+      "correctValueForAssessment":"ergreg",
+      "copyQuestionId":true,
+      "hudQuestion":false,
+      "locked":false,
+      "questionWeight":1345,
+      "pickListValues": "  { \"1\" : \"Full address reported\" } ,  { \"2\" : \"Incomplete or estimated address reported\" }"
+   }
+}

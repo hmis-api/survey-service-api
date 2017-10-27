@@ -4,6 +4,7 @@
       "copyQuestionId":false,
       "hudQuestion":false,
       "locked":false,
-      "questionWeight":0
+      "questionWeight":0,
+      "pickListValues": "  { \"1\" : \"Full address reported\" } ,  { \"2\" : \"Incomplete or estimated address reported\" }"
    }
 }
