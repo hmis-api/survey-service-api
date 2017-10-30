@@ -166,20 +166,22 @@ resourceTypes:
       500:
         description: 500 – Internal Server Error
  post:
-    description: |
-         The following operators can be used for "correctValueForAssessment" field.
+   description:  |
+        The following operators can be used for "correctValueForAssessment" field.
           1) Relational operators – equal (==, eq), not equal (!=, ne), less than (<, lt), less than or equal (<= , le), greater than (>, gt), and greater than or equal (>=, ge).
           2) Logical operators – and, or, and not (!).
           Question Data Type indicates the data type of the question and currently the following data types are allowed
           Allowed values for questionDataType : NUMBER , STRING , BOOLEAN
           Question Type indicates the type of UI control that is to be presented to the end us.
           Allowed values for questionType: TEXT, CHECKBOX, DROPDOWN , RADIOBUTTON
-          For questions of type RADIOBUTTON , CHECKBOX and DROPDOWN pickListGroupId is required  (example: "pickListGroupId": "37766271-7cb8-4c0b-9210-07dc7f82b871")
-    body:
+          For questions of type RADIOBUTTON , CHECKBOX and DROPDOWN pickListValues is required - Note that pickListValues should be a stringfied json.
+          Please refer the following for more details on stringying JSON
+          https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
+   body:
       application/json:
         schema: questions_json_v2
         example: !include examples/questions_json_example_v2.json
-    responses:
+   responses:
       201:
         description: OK - New resource has been created.
         body:
@@ -213,7 +215,12 @@ resourceTypes:
 
 /surveys:
   description: |
-          Allowed values for tag value are SINGLE_ADULT,FAMILY,YOUTH,HUD
+       Allowed values for tag value are SINGLE_ADULT,FAMILY,YOUTH,HUD.
+       "surveyDefintion" field should be a stringfied json.
+        Please refer the following for more details on stringying JSON
+          https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
+        Currently "locked" and "copySurveyId" field values are not used for any business validations
+
   type: {
     collection: {
         id_schema_json: id_surveys_json_v2,
