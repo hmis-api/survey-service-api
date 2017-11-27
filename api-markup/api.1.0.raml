@@ -1,7 +1,7 @@
 #%RAML 1.0
 title:  Survey Service
-version: 2.0.1
-baseUri: https://www.hmislynk.com/survey-api/rest/v2
+version: 3.0.0
+baseUri: https://www.hmislynk.com/survey-api/rest/v3
 mediaType: application/json
 protocols:
   - HTTPS
@@ -21,29 +21,25 @@ types:
   questionGroup_ids_json: !include schemas/questionGroup_ids_json.json
   questionGroups_json: !include schemas/questionGroups_json.json
   id_questionGroups_json: !include schemas/id_questionGroups_json.json
-  questions_id_json_v2: !include schemas/questions_id_json_v2.json
-  questions_ids_json_v2: !include schemas/questions_ids_json_v2.json
-  questions_json_v2: !include schemas/questions_json_v2.json
+  questions_id_json: !include schemas/questions_id_json.json
+  questions_ids_json: !include schemas/questions_ids_json.json
+  questions_json: !include schemas/questions_json.json
   surveySections_json: !include schemas/surveySections_json.json
-  id_questions_json_v2: !include schemas/id_questions_json_v2.json
-  response_id_json: !include schemas/response_id_json.json
-  response_ids_json: !include schemas/response_ids_json.json
-  response_json: !include schemas/response_json.json
+  id_questions_json: !include schemas/id_questions_json.json
+  response_id_json: !include schemas/response_id_json_v3.json
+  response_ids_json: !include schemas/response_ids_json_v3.json
+  response_json: !include schemas/response_json_v3.json
   id_response_json: !include schemas/id_response_json.json
   surveys_id_json: !include schemas/surveys_id_json.json
   surveys_ids_json: !include schemas/surveys_ids_json.json
   surveys_json: !include schemas/surveys_json.json
   id_surveys_json: !include schemas/id_surveys_json.json
-  surveys_id_json_v2: !include schemas/surveys_id_json_v2.json
-  surveys_ids_json_v2: !include schemas/surveys_ids_json_v2.json
-  surveys_json_v2: !include schemas/surveys_json_v2.json
-  id_surveys_json_v2: !include schemas/id_surveys_json_v2.json
   surveySections_id_json: !include schemas/surveySections_id_json.json
   surveySection_ids_json: !include schemas/surveySection_ids_json.json
   id_surveySection_json: !include schemas/id_surveySection_json.json
-  score_ids_json: !include schemas/score_ids_json.json
+  score_ids_json: !include schemas/score_ids_json_v3.json
   section_question: !include schemas/section_question.json
-  section_score : !include schemas/section_score.json
+  section_score : !include schemas/section_score_v3.json
 
 resourceTypes:
   collection:
@@ -146,100 +142,156 @@ resourceTypes:
         404:
           description: Not found – There is no resource behind the URI.
         500:
-          description: Internal Server Error
-/questiongroups/{questiongroupid}/questions:
- get:
-    description: Searches for <<resourcePathName|!singularize>>.  Returns a list of <<resourcePathName|!singularize>> ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.
-    responses:
-      200:
-        description: OK – Everything is working.
-        body:
-          application/json:
-            schema: questions_ids_json_v2
-            example: !include examples/questions_ids_json_example_v2.json
-      400:
-        description: Bad Request – The request was invalid or cannot be served.
-      403:
-        description: Forbidden – The server understood the request, but is refusing it or the access is not allowed.
-      404:
-        description: Not found – There is no resource behind the URI.
-      500:
-        description: 500 – Internal Server Error
- post:
-   description:  |
-        The following operators can be used for "correctValueForAssessment" field.
-          1) Relational operators – equal (==, eq), not equal (!=, ne), less than (<, lt), less than or equal (<= , le), greater than (>, gt), and greater than or equal (>=, ge).
-          2) Logical operators – and, or, and not (!).
-          Question Data Type indicates the data type of the question and currently the following data types are allowed
-          Allowed values for questionDataType : NUMBER , STRING , BOOLEAN
-          Question Type indicates the type of UI control that is to be presented to the end us.
-          Allowed values for questionType: TEXT, CHECKBOX, DROPDOWN , RADIOBUTTON
-          For questions of type RADIOBUTTON , CHECKBOX and DROPDOWN pickListValues is required - Note that pickListValues should be a stringfied json.
-          Please refer the following for more details on stringying JSON
-          https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
-   body:
-      application/json:
-        schema: questions_json_v2
-        example: !include examples/questions_json_example_v2.json
-   responses:
-      201:
-        description: OK - New resource has been created.
-        body:
-          application/json:
-            schema: id_questions_json_v2
-            example: !include examples/id_questions_json_example_v2.json
-      400:
-        description: Bad Request – The request was invalid or cannot be served.
-      401:
-        description: Unauthorized – The request requires user authentication.
-      403:
-        description: Forbidden – The server understood the request, but is refusing it or access is not allowed.
-      404:
-        description: Not found – There is no resource behind the URI.
-      422:
-        description: Unprocessable Entity - Request body is incorrect.
-      500:
-        description: 500 – Internal Server Error.
-/questiongroups/{questiongroupid}/questions/{questionid}:
-        uriParameters:
-          questionid:
-            displayName: Questions Identifier
-            type: string
-            example: ADBC1111211111114111111111D1111V
-        type:
-          member:
-            schema_json:  questions_json_v2
-            schema_id_json: questions_id_json_v2
-            schema_id_json_example : !include examples/questions_id_json_example_v2.json
-            schema_json_example: !include examples/questions_json_example_v2.json
+          description: Internal Server Error.
+/clients:
+  /{dedupclientid}:
+    /surveys:
+      /{surveyid}:
+        /responses:
+          type: {
+              collection: {
+                  id_schema_json: id_response_json,
+                  schema_json:  response_json,
+                  schema_ids_json: response_ids_json,
+                  schema_ids_json_example : !include examples/response_ids_json_example_v3.json,
+                  schema_json_example: !include examples/response_json_example_v3.json,
+                  id_schema_json_example: !include examples/id_response_json_example_v3.json
+              }
+          }
+          /{responseid}:
+            uriParameters:
+              responseid:
+                displayName: Response Identifier
+                type: string
+                example: ADBC1111211111114111111111D1111V
+            type:
+              member:
+                schema_json:  response_id_json
+                schema_id_json: response_id_json
+                schema_id_json_example : !include examples/response_id_json_example_v3.json
+                schema_json_example: !include examples/response_id_json_example_v3.json
+        /sections:
+          /{sectionid}:
+            /scores:
+              post:
+                description: To insert sctore for a section
+                body:
+                  example: |
+                              {
+                                 "sectionScore":{
+                                   "sectionScore":30
+                                 }
+                              }
+                  schema: |
+                             {
+                              "$schema": "http://json-schema.org/draft-04/schema#",
+                              "type": "object",
+                              "properties": {
+                                "sectionScore": {
+                                  "type": "object",
+                                  "properties": {
+                                    "sectionScore": {
+                                      "type": "integer"
+                                    }
+                                  },
+                                  "required": [
+                                    "sectionScore"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "sectionScore"
+                              ]
+                              }
+                responses:
+                    200:
+                      body:
+                        example: !include examples/section_score_example_v3.json
+                        schema : section_score
 
-/surveys:
-  description: |
-       Allowed values for tag value are SINGLE_ADULT,FAMILY,YOUTH,HUD.
-       "surveyDefintion" field should be a stringfied json.
-        Please refer the following for more details on stringying JSON
-          https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
-        Currently "locked" and "copySurveyId" field values are not used for any business validations
+              get:
+                description: Read a section score.
+                responses:
+                  200:
+                    body:
+                      example: !include examples/section_score_example_v3.json
+                      schema : section_score
+              put:
+                description: Recalcute the score specified section
+              delete:
+                description: Delete score of a specfied section
+        /scores:
+          get:
+            description: Read a section score.
+            responses:
+              200:
+                body:
+                  example: !include examples/score_ids_json_example_v3.json
+                  schema : score_ids_json
+          put:
+            description: Recalcute the score specified section
+          delete:
+            description: Delete score of a specfied section
+        /submissions:
+          /{submissionid}:
+          put:
+            description: |
+                             To update responses data of submission
+            body:
+             application/json:
+               example:
+                      !include examples/response_json_example_v3.json
+            responses:
+              200:
+                body:
+              404:
+                body:
+                 application/json:
+                  example: |
+                            {
+                              "errors": [
+                                {
+                                  "code": "SUBMISSION_DETAILS_NOT_FOUND",
+                                  "message": "Submission Details not found : e9a4a447-833f-4c29-a3b6-f966a0a753aa"
+                                }
+                              ]
+                            }
 
-  type: {
-    collection: {
-        id_schema_json: id_surveys_json_v2,
-        schema_json:  surveys_json_v2,
-        schema_ids_json: surveys_ids_json_v2,
-        schema_ids_json_example : !include examples/surveys_ids_json_example_v2.json,
-        schema_json_example: !include examples/surveys_json_example_v2.json,
-        id_schema_json_example: !include examples/id_surveys_json_example_v2.json
-    }
-  }
-  /{surveyid}:
-    uriParameters:
-      surveyid:
-        displayName: Surveys Identifier
-        type: string
-        example: ADBC1111211111114111111111D1111V
-    type:
-      member:
-        schema_json:  surveys_json_v2
-        schema_id_json: surveys_id_json_v2
-        schema_id_json_example : !include examples/surveys_id_json_example_v2.json
-        schema_json_example: !include examples/surveys_json_example_v2.json
+          get:
+            description:  |
+                    To get responses of a submission.
+            responses:
+              200:
+                body:
+                  application/json:
+                    example: !include examples/response_ids_json_example_v3.json
+              404:
+                body:
+                  application/json:
+                    example: |
+                                  {
+                                    "errors":[
+                                    {
+                                       "code":"SUBMISSION_DETAILS_NOT_FOUND",
+                                       "message":"Submission Details not found : e9a4a447-833f-4c29-a3b6-f966a0a753aa"
+                                    }
+                                    ]
+                                  }
+          delete:
+            description:  |
+                    To get responses of a submission.
+            responses:
+              200:
+                body:
+              404:
+                body:
+                  application/json:
+                    example: |
+                                  {
+                                    "errors":[
+                                    {
+                                       "code":"SUBMISSION_DETAILS_NOT_FOUND",
+                                       "message":"Submission Details not found : e9a4a447-833f-4c29-a3b6-f966a0a753aa"
+                                    }
+                                    ]
+                                  }

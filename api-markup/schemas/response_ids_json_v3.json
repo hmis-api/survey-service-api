@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "properties": {
-    "survies": {
+    "responses": {
       "type": "object",
       "properties": {
         "pagination": {
@@ -33,48 +33,39 @@
             "sort"
           ]
         },
-        "survies": {
+        "responses": {
           "type": "array",
           "items": {
             "type": "object",
             "properties": {
-              "surveyId": {
+              "responseId": {
                 "type": "string"
               },
-              "surveyTitle": {
+              "responseText": {
                 "type": "string"
               },
-              "surveyOwner": {
-                "type": "string"
+              "questionScore": {
+                "type": "integer"
               },
-              "tagValue": {
-                "type": "string"
-              },
-              "locked": {
-                "type": "boolean"
-              },
-              "copySurveyId": {
-                "type": "boolean"
+              "effectiveDate" :{
+                  "type":"string"
               }
             },
             "required": [
-              "surveyId",
-              "surveyTitle",
-              "surveyOwner",
-              "tagValue",
-              "locked",
-              "copySurveyId"
+              "responseId",
+              "responseText",
+              "questionScore"
             ]
           }
         }
       },
       "required": [
         "pagination",
-        "survies"
+        "responses"
       ]
     }
   },
   "required": [
-    "survies"
+    "responses"
   ]
 }

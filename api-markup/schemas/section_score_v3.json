@@ -2,35 +2,35 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "properties": {
-    "survey": {
+    "sectionScore": {
       "type": "object",
       "properties": {
-        "surveyTitle": {
+        "sectionScoreId": {
           "type": "string"
         },
-        "surveyOwner": {
+        "sectionId": {
           "type": "string"
         },
-        "tagValue": {
+        "surveyId": {
           "type": "string"
         },
-        "locked": {
-          "type": "boolean"
+        "clientId": {
+          "type": "string"
         },
-        "copySurveyId": {
-          "type": "boolean"
+        "sectionScore": {
+          "type": "integer"
         }
       },
       "required": [
-        "surveyTitle",
-        "surveyOwner",
-        "tagValue",
-        "locked",
-        "copySurveyId"
+        "sectionScoreId",
+        "sectionId",
+        "surveyId",
+        "clientId",
+        "sectionScore"
       ]
     }
   },
   "required": [
-    "survey"
+    "sectionScore"
   ]
 }

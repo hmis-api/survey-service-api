@@ -1,0 +1,23 @@
+{
+   "sectionScores":{
+      "pagination":{
+         "from":0,
+         "returned":1,
+         "total":1,
+         "maximum":30,
+         "sort":{
+
+         }
+      },
+      "sectionScores":[
+         {
+            "sectionScoreId":"d7f79550-fb2b-4af8-b011-24a6d5e99aa4",
+            "sectionId":"5f45c297-1eac-44d2-8571-349f7ae28677",
+            "surveyId":"faa07de1-1421-4a63-b606-3bd4cba91699",
+            "clientId":"08bd3d50-cb87-41ac-8b64-b3dc3853c411",
+            "clientDedupId":"82bf30b0-9a18-11e7-9920-02fe61f7863e",
+            "sectionScore":10
+         }
+      ]
+   }
+}
