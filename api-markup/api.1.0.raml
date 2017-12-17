@@ -1,7 +1,7 @@
 #%RAML 1.0
 title:  Survey Service
 version: 3.0.0
-baseUri: https://www.hmislynk.com/survey-api/rest/v3
+baseUri: https://www.hmislynk.com/survey-api/rest
 mediaType: application/json
 protocols:
   - HTTPS
@@ -40,6 +40,14 @@ types:
   score_ids_json: !include schemas/score_ids_json_v3.json
   section_question: !include schemas/section_question.json
   section_score : !include schemas/section_score_v3.json
+  surveys_id_json_v2: !include schemas/surveys_id_json_v2.json
+  surveys_ids_json_v2: !include schemas/surveys_ids_json_v2.json
+  surveys_json_v2: !include schemas/surveys_json_v2.json
+  id_surveys_json_v2: !include schemas/id_surveys_json_v2.json
+  questions_id_json_v2: !include schemas/questions_id_json_v2.json
+  questions_ids_json_v2: !include schemas/questions_ids_json_v2.json
+  questions_json_v2: !include schemas/questions_json_v2.json
+  id_questions_json_v2: !include schemas/id_questions_json_v2.json
 
 resourceTypes:
   collection:
@@ -143,7 +151,249 @@ resourceTypes:
           description: Not found – There is no resource behind the URI.
         500:
           description: Internal Server Error.
-/clients:
+/picklistgroups:
+  type: {
+    collection: {
+        id_schema_json: id_pickListGroup_json,
+        schema_json:  pickListGroup_json,
+        schema_ids_json: pickListGroup_ids_json,
+        schema_ids_json_example : !include examples/pickListGroup_ids_json_example.json,
+        schema_json_example: !include examples/pickListGroup_json_example.json,
+        id_schema_json_example: !include examples/id_pickListGroup_json_example.json
+    }
+  }
+  /{picklistgroupid}:
+    uriParameters:
+      picklistgroupid:
+        displayName: PickListGroup Identifier
+        type: string
+        example: ADBC1111211111114111111111D1111V
+    type:
+      member:
+        schema_json:  pickListGroup_json
+        schema_id_json: pickListGroup_id_json
+        schema_id_json_example : !include examples/pickListGroup_id_json_example.json
+        schema_json_example: !include examples/pickListGroup_json_example.json
+/picklistgroup/{picklistgroupid}/picklistvalues:
+  type: {
+    collection: {
+        id_schema_json: id_pickListValues_json,
+        schema_json:  pickListValues_json,
+        schema_ids_json: pickListValues_ids_json,
+        schema_ids_json_example : !include examples/pickListValues_ids_json_example.json,
+        schema_json_example: !include examples/pickListValues_json_example.json,
+        id_schema_json_example: !include examples/id_pickListValues_json_example.json
+    }
+  }
+/picklistgroup/{picklistgroupid}/picklistvalues/{picklistvalueid}:
+    uriParameters:
+      picklistvalueid:
+        displayName: PickListValues Identifier
+        type: string
+        example: ADBC1111211111114111111111D1111V
+    type:
+      member:
+        schema_json: pickListValues_json
+        schema_id_json: pickListValues_id_json
+        schema_id_json_example: !include examples/pickListValues_id_json_example.json
+        schema_json_example: !include examples/pickListValues_json_example.json
+/questiongroups:
+  type: {
+    collection: {
+        id_schema_json: id_questionGroups_json,
+        schema_json:  questionGroups_json,
+        schema_ids_json: questionGroup_ids_json,
+        schema_ids_json_example : !include examples/questionGroup_ids_json_example.json,
+        schema_json_example: !include examples/questionGroups_json_example.json,
+        id_schema_json_example: !include examples/id_questionGroups_json_example.json
+    }
+  }
+  /{questiongroupid}:
+    uriParameters:
+      questiongroupid:
+        displayName: QuestionGroups Identifier
+        type: string
+        example: ADBC1111211111114111111111D1111V
+    type:
+      member:
+        schema_json:  questionGroups_json
+        schema_id_json: questionGroups_id_json
+        schema_id_json_example : !include examples/questionGroups_id_json_example.json
+        schema_json_example: !include examples/questionGroups_json_example.json
+/v2/questiongroups/{questiongroupid}/questions:
+   get:
+      description: Searches for <<resourcePathName|!singularize>>.  Returns a list of <<resourcePathName|!singularize>> ids, based on the query parameters sent.  The query parameters are cumulative, so each additional query parameter narrows the search down further.
+      responses:
+        200:
+          description: OK – Everything is working.
+          body:
+            application/json:
+              schema: questions_ids_json_v2
+              example: !include examples/questions_ids_json_example_v2.json
+        400:
+          description: Bad Request – The request was invalid or cannot be served.
+        403:
+          description: Forbidden – The server understood the request, but is refusing it or the access is not allowed.
+        404:
+          description: Not found – There is no resource behind the URI.
+        500:
+          description: 500 – Internal Server Error
+   post:
+     description:  |
+          The following operators can be used for "correctValueForAssessment" field.
+            1) Relational operators – equal (==, eq), not equal (!=, ne), less than (<, lt), less than or equal (<= , le), greater than (>, gt), and greater than or equal (>=, ge).
+            2) Logical operators – and, or, and not (!).
+            Question Data Type indicates the data type of the question and currently the following data types are allowed
+            Allowed values for questionDataType : NUMBER , STRING , BOOLEAN
+            Question Type indicates the type of UI control that is to be presented to the end us.
+            Allowed values for questionType: TEXT, CHECKBOX, DROPDOWN , RADIOBUTTON
+            For questions of type RADIOBUTTON , CHECKBOX and DROPDOWN pickListValues is required - Note that pickListValues should be a stringfied json.
+            Please refer the following for more details on stringying JSON
+            https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
+     body:
+        application/json:
+          schema: questions_json_v2
+          example: !include examples/questions_json_example_v2.json
+     responses:
+        201:
+          description: OK - New resource has been created.
+          body:
+            application/json:
+              schema: id_questions_json_v2
+              example: !include examples/id_questions_json_example_v2.json
+        400:
+          description: Bad Request – The request was invalid or cannot be served.
+        401:
+          description: Unauthorized – The request requires user authentication.
+        403:
+          description: Forbidden – The server understood the request, but is refusing it or access is not allowed.
+        404:
+          description: Not found – There is no resource behind the URI.
+        422:
+          description: Unprocessable Entity - Request body is incorrect.
+        500:
+          description: 500 – Internal Server Error.
+/v2/questiongroups/{questiongroupid}/questions/{questionid}:
+          uriParameters:
+            questionid:
+              displayName: Questions Identifier
+              type: string
+              example: ADBC1111211111114111111111D1111V
+          type:
+            member:
+              schema_json:  questions_json_v2
+              schema_id_json: questions_id_json_v2
+              schema_id_json_example : !include examples/questions_id_json_example_v2.json
+              schema_json_example: !include examples/questions_json_example_v2.json
+/v2/surveys:
+  description: |
+       Allowed values for tag value are SINGLE_ADULT,FAMILY,YOUTH,HUD.
+       "surveyDefintion" field should be a stringfied json.
+        Please refer the following for more details on stringying JSON
+          https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
+        Currently "locked" and "copySurveyId" field values are not used for any business validations
+  type: {
+    collection: {
+        id_schema_json: id_surveys_json_v2,
+        schema_json:  surveys_json_v2,
+        schema_ids_json: surveys_ids_json_v2,
+        schema_ids_json_example : !include examples/surveys_ids_json_example_v2.json,
+        schema_json_example: !include examples/surveys_json_example_v2.json,
+        id_schema_json_example: !include examples/id_surveys_json_example_v2.json
+    }
+  }
+  /{surveyid}:
+    uriParameters:
+      surveyid:
+        displayName: Surveys Identifier
+        type: string
+        example: ADBC1111211111114111111111D1111V
+    type:
+      member:
+        schema_json:  surveys_json_v2
+        schema_id_json: surveys_id_json_v2
+        schema_id_json_example : !include examples/surveys_id_json_example_v2.json
+        schema_json_example: !include examples/surveys_json_example_v2.json
+/surveys/{surveyid}/surveysections:
+      type: {
+        collection: {
+            id_schema_json: id_surveySection_json,
+            schema_json:  surveySections_json,
+            schema_ids_json: surveySection_ids_json,
+            schema_ids_json_example : !include examples/surveySection_ids_json_example.json,
+            schema_json_example: !include examples/surveySections_json_example.json,
+            id_schema_json_example: !include examples/id_surveySection_json_example.json
+        }
+      }
+      /{sectionid}:
+        uriParameters:
+          sectionid:
+            displayName: SurveySections Identifier
+            type: string
+            example: ADBC1111211111114111111111D1111V
+        type:
+          member:
+            schema_json:  surveySections_json
+            schema_id_json: surveySections_id_json
+            schema_id_json_example : !include examples/surveySections_id_json_example.json
+            schema_json_example: !include examples/surveySections_json_example.json
+        /questions:
+          post:
+            description:  |
+                    Add question to a survey section.
+            body:
+              example: !include examples/section_question.json
+              schema: section_question
+            responses:
+              200:
+               description: Question added to survey
+              400:
+                description: Bad Request – The request was invalid or cannot be served.
+              401:
+                description: Unauthorized – The request requires user authentication.
+              403:
+                description: Forbidden – The server understood the request, but is refusing it or access is not allowed.
+              404:
+                description: Not found – There is no resource behind the URI.
+              422:
+                description: Unprocessable Entity - Request body is incorrect.
+              500:
+                description: 500 – Internal Server Error.
+          get:
+            description: |
+                  Read all the question of selected survey section.
+            responses:
+              200:
+                description: OK – Everything is working.
+                body:
+                  application/json:
+                    schema: questions_ids_json
+                    example: !include examples/questions_ids_json_example.json
+              400:
+                description: Bad Request – The request was invalid or cannot be served.
+              403:
+                description: Forbidden – The server understood the request, but is refusing it or the access is not allowed.
+              404:
+                description: Not found – There is no resource behind the URI.
+              500:
+                description: 500 – Internal Server Error
+          /{questionid}:
+            delete:
+              description: Deletes a specific question from specified by section.
+              responses:
+                204:
+                  description: OK – The resource was successfully deleted.
+                400:
+                  description: Bad Request – The request was invalid or cannot be served.
+                401:
+                  description: Unauthorized – The request requires user authentication.
+                403:
+                  description: Forbidden – The server understood the request, but is refusing it or the access is not allowed.
+                404:
+                  description: Not found – There is no resource behind the URI.
+                500:
+                  description: Internal Server Error.
+/v3/clients:
   /{dedupclientid}:
     /surveys:
       /{surveyid}:
