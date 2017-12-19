@@ -10,6 +10,10 @@
       "hudQuestion":false,
       "locked":false,
       "questionWeight":1345,
+      "definition": "stringfied JSON",
+    "visibility": true,
+    "category":"question category",
+    "subcategory":"question sub category",
       "pickListValues": "  { \"1\" : \"Full address reported\" } ,  { \"2\" : \"Incomplete or estimated address reported\" }"
    }
 }

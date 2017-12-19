@@ -21,7 +21,11 @@
             "hudQuestion":false,
             "locked":false,
             "questionWeight":1345,
-            "pickListValues": "  { \"1\" : \"Full address reported\" } ,  { \"2\" : \"Incomplete or estimated address reported\" }"
+            "pickListValues": "  { \"1\" : \"Full address reported\" } ,  { \"2\" : \"Incomplete or estimated address reported\" }",
+            "definition": "stringfied JSON",
+          "visibility": true,
+          "category":"question category",
+          "subcategory":"question sub category"
          },
          {
             "questionId":"aeaed6cd-dbe3-4b40-951a-85d7abf410d2",
@@ -45,7 +49,12 @@
             "copyQuestionId":true,
             "hudQuestion":false,
             "locked":false,
-            "questionWeight":1345
+            "questionWeight":1345,
+            "definition": "stringfied JSON",
+          "visibility": true,
+          "category":"question category",
+          "subcategory":"question sub category"
+
          },
          {
             "questionId":"97342127-06b5-4455-b757-63961a523121",

@@ -1,6 +1,6 @@
 #%RAML 1.0
 title:  Survey Service
-version: 3.0.0
+version: 3.0.1
 baseUri: https://www.hmislynk.com/survey-api/rest
 mediaType: application/json
 protocols:
@@ -482,8 +482,8 @@ resourceTypes:
             description: Recalcute the score specified section
           delete:
             description: Delete score of a specfied section
-        /submissions:
-          /{submissionid}:
+        /submissions/{submissionid}:
+
           put:
             description: |
                              To update responses data of submission
@@ -529,7 +529,7 @@ resourceTypes:
                                   }
           delete:
             description:  |
-                    To get responses of a submission.
+                    To delete responses of a submission.
             responses:
               200:
                 body:
