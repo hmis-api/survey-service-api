@@ -545,3 +545,80 @@ resourceTypes:
                                     }
                                     ]
                                   }
+/clientsurveysubmissions/{clientId}:
+  get:
+    description: Retrive all client survey submission details
+    responses:
+      200:
+        body:
+          application/json:
+            example:
+              {
+                "clientSurveySubmissions":{
+                  "pagination":{
+                     "from":0,
+                     "returned":6,
+                     "total":6,
+                     "maximum":30,
+                     "sort":{
+
+                     }
+                  },
+                  "clientSurveySubmissions":[
+                     {
+                        "id":"dd8ac46d-58ef-48a0-9783-bcce32f115bd",
+                        "clientId":"035c313e-a39d-4098-bf89-544b553d752f",
+                        "surveyId":"d132c70e-b875-4ead-a772-e6864090674b",
+                        "submissionId":"d429d6a9-e10e-4da5-8a1c-76f876349167"
+                     },
+                     {
+                        "id":"4a59b684-3893-4257-bb42-7c6a2d8bd440",
+                        "clientId":"035c313e-a39d-4098-bf89-544b553d752f",
+                        "surveyId":"1b839523-2d32-45b5-98be-478d63e31042",
+                        "submissionId":"8a64fed6-96c3-490a-be62-f30dede3b197"
+                     },
+                     {
+                        "id":"2e78fe0f-1d40-4a8e-b1fb-16073348ab1c",
+                        "clientId":"035c313e-a39d-4098-bf89-544b553d752f",
+                        "surveyId":"2bacb763-4cfc-458a-af38-007e9da01f47",
+                        "submissionId":"f1fa6e16-fd1c-4f62-a6a8-addd3b1e2940"
+                     },
+                     {
+                        "id":"5c5b8760-a691-46a0-b762-f74fc2bf56cc",
+                        "clientId":"035c313e-a39d-4098-bf89-544b553d752f",
+                        "surveyId":"b76927dc-715d-4104-a1dc-1fa4d933d8b1",
+                        "submissionId":"52377ce7-a246-4809-be94-874a3af9f035",
+                        "globalEnrollmentId":"7634b7ed-3f31-4822-81c0-d805b2f5ac3b"
+                     },
+                     {
+                        "id":"90f5e307-ec7e-401f-8243-2bd65e148bed",
+                        "clientId":"035c313e-a39d-4098-bf89-544b553d752f",
+                        "surveyId":"895da1f1-8406-469d-9018-3dd5f20a375a",
+                        "submissionId":"7aaf5d10-eb8b-492b-bba2-1cef3bf7289f"
+                     },
+                     {
+                        "id":"e67bb703-bce1-49b0-948d-75f286f4497b",
+                        "clientId":"035c313e-a39d-4098-bf89-544b553d752f",
+                        "surveyId":"57dbe6b2-83a9-4a8b-b4aa-65985241d341",
+                        "submissionId":"d89ac01a-32a4-4530-92a6-d59b161b5ca8",
+                        "globalEnrollmentId":"e166faae-1661-49ab-9987-4f66fd982cb2"
+                     }
+                  ]
+                }
+                }
+/clientsurveysubmissions/{clientSubmissionId}:
+  put:
+    description: Updae global enrollment to a survey submission
+    body:
+      application/json:
+        example:
+          {
+            "clientsurveysubmission":{
+                "globalEnrollmentId":"e166faae-1661-49ab-9987-4f66fd982cb2"
+            }
+          }
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
