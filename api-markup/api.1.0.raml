@@ -1,6 +1,6 @@
 #%RAML 1.0
 title:  Survey Service
-version: 3.1.1
+version: 3.1.2
 baseUri: https://www.hmislynk.com/survey-api/rest
 mediaType: application/json
 protocols:
@@ -611,9 +611,22 @@ resourceTypes:
           }
     responses:
       200:
-        body:
-          application/json:
-            example: |
+        description: Returns empty response
+      404:
+          body:
+            application/json:
+              example: |
+                      {
+                                "errors": {
+                                  "error": {
+                                              "code": "ERR_CODE_CLIENT_SUBMISSION_NOT_FOUND",
+                                              "message": "Client survey submission Not found."
+                                           }
+                                  }
+                              }
+
+
+
 /clientsurveysubmissions:
   description: search on client survey submissions based on by FN/LN and global client id
   get:
