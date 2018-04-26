@@ -1,0 +1,1585 @@
+openapi: 3.0.0
+info:
+  title: Survey Service
+  version: 2.0.1
+servers:
+  - url: 'https://www.hmislynk.com/survey-api/rest/v2'
+paths:
+  '/questiongroups/{questiongroupid}/questions':
+    get:
+      responses:
+        '200':
+          description: OK – Everything is working.
+          content:
+            application/json:
+              example:
+                questions:
+                  pagination:
+                    from: 0
+                    returned: 16
+                    total: 16
+                    maximum: 30
+                    sort: {}
+                  questions:
+                    - questionId: 4bd3d3e1-a70a-4e66-89d9-43fd23f5f3c8
+                      questionDescription: asvsvsav
+                      displayText: wefewf
+                      questionDataType: nhhhee
+                      questionType: sddvdv
+                      correctValueForAssessment: ergreg
+                      copyQuestionId: true
+                      hudQuestion: false
+                      locked: false
+                      questionWeight: 1345
+                      pickListValues: '  { "1" : "Full address reported" } ,  { "2" : "Incomplete or estimated address reported" }'
+                    - questionId: aeaed6cd-dbe3-4b40-951a-85d7abf410d2
+                      questionDescription: asvsvsav
+                      displayText: wefewf
+                      questionDataType: nhhhee
+                      questionType: sddvdv
+                      correctValueForAssessment: ergreg
+                      copyQuestionId: true
+                      hudQuestion: false
+                      locked: false
+                      questionWeight: 1345
+                    - questionId: eb0266df-8a62-47da-af35-08fca477aa97
+                      questionDescription: asvsvsav
+                      displayText: wefewf
+                      questionDataType: nhhhee
+                      questionType: sddvdv
+                      correctValueForAssessment: ergreg
+                      copyQuestionId: true
+                      hudQuestion: false
+                      locked: false
+                      questionWeight: 1345
+                    - questionId: 97342127-06b5-4455-b757-63961a523121
+                      questionDescription: asvsvsav
+                      displayText: wefewf
+                      questionDataType: nhhhee
+                      questionType: sddvdv
+                      correctValueForAssessment: ergreg
+                      copyQuestionId: true
+                      hudQuestion: false
+                      locked: false
+                      questionWeight: 1345
+                    - questionId: ab7a4b52-8818-415a-b0ce-3ee29c58e226
+                      questionDescription: asvsvsav
+                      displayText: wefewf
+                      questionDataType: nhhhee
+                      questionType: sddvdv
+                      correctValueForAssessment: ergreg
+                      copyQuestionId: true
+                      hudQuestion: false
+                      locked: false
+                      questionWeight: 1345
+                    - questionId: 62988239-88ae-41ce-be55-65fc1732ef88
+                      questionDescription: asvsvsav
+                      displayText: wefewf
+                      questionDataType: nhhhee
+                      questionType: sddvdv
+                      correctValueForAssessment: ergreg
+                      copyQuestionId: true
+                      hudQuestion: false
+                      locked: false
+                      questionWeight: 1345
+                    - questionId: ffb54b34-a6dc-4fc3-9631-145b705daeaf
+                      questionDescription: asvsvsav
+                      displayText: wefewf
+                      questionDataType: nhhhee
+                      questionType: sddvdv
+                      correctValueForAssessment: ergreg
+                      copyQuestionId: true
+                      hudQuestion: false
+                      locked: false
+                      questionWeight: 1345
+                    - questionId: 2b3c1941-be73-4fc6-b99f-5dd4382804aa
+                      questionDescription: asvsvsav
+                      displayText: wefewf
+                      questionDataType: nhhhee
+                      questionType: sddvdv
+                      correctValueForAssessment: ergreg
+                      copyQuestionId: true
+                      hudQuestion: false
+                      locked: false
+                      questionWeight: 1345
+                    - questionId: e5d0ac93-6070-4bf0-ae0c-3e21e3c6cd54
+                      questionDescription: asvsvsav
+                      displayText: wefewf
+                      questionDataType: nhhhee
+                      questionType: sddvdv
+                      correctValueForAssessment: ergreg
+                      copyQuestionId: true
+                      hudQuestion: false
+                      locked: false
+                      questionWeight: 1345
+                    - questionId: 6432fb8b-ad4a-47b7-8927-b18eaa91f54c
+                      questionDescription: asvsvsav
+                      displayText: wefewf
+                      questionDataType: nhhhee
+                      questionType: sddvdv
+                      correctValueForAssessment: ergreg
+                      copyQuestionId: true
+                      hudQuestion: false
+                      locked: false
+                      questionWeight: 1345
+                    - questionId: f58d1b36-2208-4bee-a616-649291cf148e
+                      questionDescription: asvsvsav
+                      displayText: wefewf
+                      questionDataType: nhhhee
+                      questionType: sddvdv
+                      correctValueForAssessment: ergreg
+                      copyQuestionId: true
+                      hudQuestion: false
+                      locked: false
+                      questionWeight: 1345
+                    - questionId: cd65e411-194a-421b-a73e-f33b7f928085
+                      questionDescription: asvsvsav
+                      displayText: wefewf
+                      questionDataType: nhhhee
+                      questionType: sddvdv
+                      correctValueForAssessment: ergreg
+                      copyQuestionId: true
+                      hudQuestion: false
+                      locked: false
+                      questionWeight: 1345
+                    - questionId: 2b62b56e-f8ad-40b5-beb8-a554e706544e
+                      questionDescription: asvsvsav
+                      displayText: wefewf
+                      questionDataType: nhhhee
+                      questionType: sddvdv
+                      correctValueForAssessment: ergreg
+                      copyQuestionId: true
+                      hudQuestion: false
+                      locked: false
+                      questionWeight: 1345
+                    - questionId: 50169178-a7fb-4d28-b935-cea1399e2df2
+                      questionDescription: asvsvsav
+                      displayText: wefewf
+                      questionDataType: nhhhee
+                      questionType: sddvdv
+                      correctValueForAssessment: ergreg
+                      copyQuestionId: true
+                      hudQuestion: false
+                      locked: false
+                      questionWeight: 1345
+                    - questionId: 029bd4a9-4035-4d7c-b661-bed328e8010f
+                      questionDescription: asvsvsav
+                      displayText: wefewf
+                      questionDataType: nhhhee
+                      questionType: sddvdv
+                      correctValueForAssessment: ergreg
+                      copyQuestionId: true
+                      hudQuestion: false
+                      locked: false
+                      questionWeight: 1345
+                    - questionId: f3e7f22d-c136-4128-8d88-9de3f1be9540
+                      questionDescription: asvsvsav
+                      displayText: wefewf
+                      questionDataType: nhhhee
+                      questionType: sddvdv
+                      correctValueForAssessment: ergreg
+                      copyQuestionId: true
+                      hudQuestion: false
+                      locked: false
+                      questionWeight: 1345
+              schema:
+                $ref: '#/components/schemas/questions_ids_json_v2'
+        '400':
+          description: Bad Request – The request was invalid or cannot be served.
+        '403':
+          description: >-
+            Forbidden – The server understood the request, but is refusing it or
+            the access is not allowed.
+        '404':
+          description: Not found – There is no resource behind the URI.
+        '500':
+          description: 500 – Internal Server Error
+      description: >-
+        Searches for <<resourcePathName|!singularize>>.  Returns a list of
+        <<resourcePathName|!singularize>> ids, based on the query parameters
+        sent.  The query parameters are cumulative, so each additional query
+        parameter narrows the search down further.
+      operationId: GET_questiongroups-questiongroupid-questions
+    post:
+      responses:
+        '201':
+          description: OK - New resource has been created.
+          content:
+            application/json:
+              example:
+                question:
+                  questionId: f3e7f22d-c136-4128-8d88-9de3f1be9540
+                  copyQuestionId: false
+                  hudQuestion: false
+                  locked: false
+                  questionWeight: 0
+                  pickListValues: '  { "1" : "Full address reported" } ,  { "2" : "Incomplete or estimated address reported" }'
+              schema:
+                $ref: '#/components/schemas/id_questions_json_v2'
+        '400':
+          description: Bad Request – The request was invalid or cannot be served.
+        '401':
+          description: Unauthorized – The request requires user authentication.
+        '403':
+          description: >-
+            Forbidden – The server understood the request, but is refusing it or
+            access is not allowed.
+        '404':
+          description: Not found – There is no resource behind the URI.
+        '422':
+          description: Unprocessable Entity - Request body is incorrect.
+        '500':
+          description: 500 – Internal Server Error.
+      description: >
+        The following operators can be used for "correctValueForAssessment"
+        field.
+          1) Relational operators – equal (==, eq), not equal (!=, ne), less than (<, lt), less than or equal (<= , le), greater than (>, gt), and greater than or equal (>=, ge).
+          2) Logical operators – and, or, and not (!).
+          Question Data Type indicates the data type of the question and currently the following data types are allowed
+          Allowed values for questionDataType : NUMBER , STRING , BOOLEAN
+          Question Type indicates the type of UI control that is to be presented to the end us.
+          Allowed values for questionType: TEXT, CHECKBOX, DROPDOWN , RADIOBUTTON
+          For questions of type RADIOBUTTON , CHECKBOX and DROPDOWN pickListValues is required - Note that pickListValues should be a stringfied json.
+          Please refer the following for more details on stringying JSON
+          https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
+      operationId: POST_questiongroups-questiongroupid-questions
+      requestBody:
+        content:
+          application/json:
+            example:
+              question:
+                questionDescription: asvsvsav
+                displayText: wefewf
+                questionDataType: NUMBER
+                questionType: CHECKBOX
+                correctValueForAssessment: ergreg
+                copyQuestionId: true
+                hudQuestion: false
+                locked: false
+                questionWeight: 1345
+                pickListValues: '  { "1" : "Full address reported" } ,  { "2" : "Incomplete or estimated address reported" }'
+            schema:
+              $ref: '#/components/schemas/questions_json_v2'
+        required: true
+    parameters:
+      - name: questiongroupid
+        in: path
+        required: true
+        schema:
+          type: string
+  '/questiongroups/{questiongroupid}/questions/{questionid}':
+    get:
+      responses:
+        '200':
+          description: OK – Everything is working.
+          content:
+            application/json:
+              example:
+                question:
+                  questionId: 7c949e03-6bd0-402f-b35c-7a0f23e48863
+                  questionDescription: asvsvsav
+                  displayText: wefewf
+                  questionDataType: nhhhee
+                  questionType: sddvdv
+                  correctValueForAssessment: ergreg
+                  copyQuestionId: true
+                  hudQuestion: false
+                  locked: false
+                  questionWeight: 1345
+                  pickListValues: '  { "1" : "Full address reported" } ,  { "2" : "Incomplete or estimated address reported" }'
+              schema:
+                $ref: '#/components/schemas/questions_id_json_v2'
+        '400':
+          description: Bad Request – The request was invalid or cannot be served.
+        '401':
+          description: Unauthorized – The request requires an user authentication.
+        '403':
+          description: >-
+            Forbidden – The server understood the request, but is refusing it or
+            the access is not allowed.
+        '404':
+          description: Not found – There is no resource behind the URI.
+        '500':
+          description: Internal Server Error
+      description: Gets a question using a URI resource parameter/ID.
+      operationId: GET_questiongroups-questiongroupid-questions-questionid
+    put:
+      responses:
+        '200':
+          description: OK – Everything is working.
+        '304':
+          description: Not Modified – The client can use cached data.
+        '400':
+          description: Bad Request – The request was invalid or cannot be served.
+        '401':
+          description: Unauthorized – The request requires a user.
+        '403':
+          description: >-
+            Forbidden – The server understood the request, but is refusing it or
+            the access is not allowed.
+        '404':
+          description: Not found – There is no resource behind the URI.
+        '500':
+          description: Internal Server Error.
+      description: Updates a specific question specified by the URI resource parameter/ID.
+      operationId: PUT_questiongroups-questiongroupid-questions-questionid
+      requestBody:
+        content:
+          application/json:
+            example:
+              question:
+                questionDescription: asvsvsav
+                displayText: wefewf
+                questionDataType: NUMBER
+                questionType: CHECKBOX
+                correctValueForAssessment: ergreg
+                copyQuestionId: true
+                hudQuestion: false
+                locked: false
+                questionWeight: 1345
+                pickListValues: '  { "1" : "Full address reported" } ,  { "2" : "Incomplete or estimated address reported" }'
+            schema:
+              $ref: '#/components/schemas/questions_json_v2'
+        required: true
+    delete:
+      responses:
+        '204':
+          description: OK – The resource was successfully deleted.
+        '400':
+          description: Bad Request – The request was invalid or cannot be served.
+        '401':
+          description: Unauthorized – The request requires user authentication.
+        '403':
+          description: >-
+            Forbidden – The server understood the request, but is refusing it or
+            the access is not allowed.
+        '404':
+          description: Not found – There is no resource behind the URI.
+        '500':
+          description: Internal Server Error
+      description: Deletes a specific question specified by the URI resource parameter/ID.
+      operationId: DELETE_questiongroups-questiongroupid-questions-questionid
+    parameters:
+      - name: questiongroupid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: questionid
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Questions Identifier
+  /surveys:
+    get:
+      responses:
+        '200':
+          description: OK – Everything is working.
+          content:
+            application/json:
+              example:
+                surveys:
+                  pagination:
+                    from: 0
+                    returned: 1
+                    total: 1
+                    maximum: 30
+                    sort: {}
+                  surveys:
+                    - surveyId: bff91ee3-4e88-4953-8f67-e6c549fc2d01
+                      surveyTitle: dsvnjkvjnds
+                      surveyOwner: asssa
+                      tagValue: vfvnjkj
+                      locked: true
+                      copySurveyId: false
+                      surveyDefinition: ' { " title " : " Survey Definition " } '
+              schema:
+                $ref: '#/components/schemas/surveys_ids_json_v2'
+        '400':
+          description: Bad Request – The request was invalid or cannot be served.
+        '403':
+          description: >-
+            Forbidden – The server understood the request, but is refusing it or
+            the access is not allowed.
+        '404':
+          description: Not found – There is no resource behind the URI.
+        '500':
+          description: 500 – Internal Server Error
+      description: >-
+        Searches for survey.  Returns a list of survey ids, based on the query
+        parameters sent.  The query parameters are cumulative, so each
+        additional query parameter narrows the search down further.
+      operationId: GET_surveys
+    post:
+      responses:
+        '201':
+          description: OK - New resource has been created.
+          content:
+            application/json:
+              example:
+                survey:
+                  surveyId: fd628990-623a-42c6-8df2-f74a4c6d2c77
+                  locked: false
+                  copySurveyId: false
+                  surveyDefinition: ' { " title " : " Survey Definition " } '
+              schema:
+                $ref: '#/components/schemas/id_surveys_json_v2'
+        '400':
+          description: Bad Request – The request was invalid or cannot be served.
+        '401':
+          description: Unauthorized – The request requires user authentication.
+        '403':
+          description: >-
+            Forbidden – The server understood the request, but is refusing it or
+            access is not allowed.
+        '404':
+          description: Not found – There is no resource behind the URI.
+        '422':
+          description: Unprocessable Entity - Request body is incorrect.
+        '500':
+          description: 500 – Internal Server Error.
+      description: |
+        Add a survey
+      operationId: POST_surveys
+      requestBody:
+        content:
+          application/json:
+            example:
+              survey:
+                surveyTitle: VI-SPDAT Survey
+                surveyOwner: eric@hmislynk.com
+                tagValue: SINGLE_ADULT
+                locked: true
+                copySurveyId: false
+                surveyDefinition: ' { " title " : " Survey Definition " } '
+            schema:
+              $ref: '#/components/schemas/surveys_json_v2'
+        required: true
+  '/surveys/{surveyid}':
+    get:
+      responses:
+        '200':
+          description: OK – Everything is working.
+          content:
+            application/json:
+              example:
+                survey:
+                  surveyId: 4ff874ec-88ef-46bb-93d6-66be064d5dd2
+                  surveyTitle: dsvnjkvjnds
+                  surveyOwner: asssa
+                  tagValue: vfvnjkj
+                  locked: true
+                  copySurveyId: false
+                  surveyDefinition: ' { " title " : " Survey Definition " } '
+              schema:
+                $ref: '#/components/schemas/surveys_id_json_v2'
+        '400':
+          description: Bad Request – The request was invalid or cannot be served.
+        '401':
+          description: Unauthorized – The request requires an user authentication.
+        '403':
+          description: >-
+            Forbidden – The server understood the request, but is refusing it or
+            the access is not allowed.
+        '404':
+          description: Not found – There is no resource behind the URI.
+        '500':
+          description: Internal Server Error
+      description: Gets a survey using a URI resource parameter/ID.
+      operationId: GET_surveys-surveyid
+    put:
+      responses:
+        '200':
+          description: OK – Everything is working.
+        '304':
+          description: Not Modified – The client can use cached data.
+        '400':
+          description: Bad Request – The request was invalid or cannot be served.
+        '401':
+          description: Unauthorized – The request requires a user.
+        '403':
+          description: >-
+            Forbidden – The server understood the request, but is refusing it or
+            the access is not allowed.
+        '404':
+          description: Not found – There is no resource behind the URI.
+        '500':
+          description: Internal Server Error.
+      description: Updates a specific survey specified by the URI resource parameter/ID.
+      operationId: PUT_surveys-surveyid
+      requestBody:
+        content:
+          application/json:
+            example:
+              survey:
+                surveyTitle: VI-SPDAT Survey
+                surveyOwner: eric@hmislynk.com
+                tagValue: SINGLE_ADULT
+                locked: true
+                copySurveyId: false
+                surveyDefinition: ' { " title " : " Survey Definition " } '
+            schema:
+              $ref: '#/components/schemas/surveys_json_v2'
+        required: true
+    delete:
+      responses:
+        '204':
+          description: OK – The resource was successfully deleted.
+        '400':
+          description: Bad Request – The request was invalid or cannot be served.
+        '401':
+          description: Unauthorized – The request requires user authentication.
+        '403':
+          description: >-
+            Forbidden – The server understood the request, but is refusing it or
+            the access is not allowed.
+        '404':
+          description: Not found – There is no resource behind the URI.
+        '500':
+          description: Internal Server Error
+      description: Deletes a specific survey specified by the URI resource parameter/ID.
+      operationId: DELETE_surveys-surveyid
+    parameters:
+      - name: surveyid
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Surveys Identifier
+components:
+  schemas:
+    pickListGroup_id_json:
+      required:
+        - pickListGroup
+      type: object
+      properties:
+        pickListGroup:
+          required:
+            - pickListGroupId
+            - pickListGroupName
+          type: object
+          properties:
+            pickListGroupId:
+              type: string
+            pickListGroupName:
+              type: string
+    pickListGroup_ids_json:
+      required:
+        - pickListGroups
+      type: object
+      properties:
+        pickListGroups:
+          required:
+            - pagination
+            - pickListGroups
+          type: object
+          properties:
+            pagination:
+              required:
+                - from
+                - returned
+                - total
+                - maximum
+                - sort
+              type: object
+              properties:
+                from:
+                  type: integer
+                returned:
+                  type: integer
+                total:
+                  type: integer
+                maximum:
+                  type: integer
+                sort:
+                  type: object
+            pickListGroups:
+              type: array
+              items:
+                required:
+                  - pickListGroupId
+                  - pickListGroupName
+                type: object
+                properties:
+                  pickListGroupId:
+                    type: string
+                  pickListGroupName:
+                    type: string
+    pickListGroup_json:
+      required:
+        - pickListGroup
+      type: object
+      properties:
+        pickListGroup:
+          required:
+            - pickListGroupName
+          type: object
+          properties:
+            pickListGroupName:
+              type: string
+    id_pickListGroup_json:
+      required:
+        - pickListGroup
+      type: object
+      properties:
+        pickListGroup:
+          required:
+            - pickListGroupId
+          type: object
+          properties:
+            pickListGroupId:
+              type: string
+    pickListValues_id_json:
+      required:
+        - pickListValue
+      type: object
+      properties:
+        pickListValue:
+          required:
+            - pickListValueId
+            - pickListValueCode
+            - valueText
+          type: object
+          properties:
+            pickListValueId:
+              type: string
+            pickListValueCode:
+              type: string
+            valueText:
+              type: string
+    pickListValues_ids_json:
+      required:
+        - pickListValues
+      type: object
+      properties:
+        pickListValues:
+          required:
+            - pagination
+            - pickListValues
+          type: object
+          properties:
+            pagination:
+              required:
+                - from
+                - returned
+                - total
+                - maximum
+                - sort
+              type: object
+              properties:
+                from:
+                  type: integer
+                returned:
+                  type: integer
+                total:
+                  type: integer
+                maximum:
+                  type: integer
+                sort:
+                  type: object
+            pickListValues:
+              type: array
+              items:
+                required:
+                  - pickListValueId
+                  - pickListValueCode
+                  - valueText
+                type: object
+                properties:
+                  pickListValueId:
+                    type: string
+                  pickListValueCode:
+                    type: string
+                  valueText:
+                    type: string
+    pickListValues_json:
+      required:
+        - pickListValues
+      type: object
+      properties:
+        pickListValues:
+          required:
+            - pickListValues
+          type: object
+          properties:
+            pickListValues:
+              type: array
+              items:
+                required:
+                  - pickListValueCode
+                  - valueText
+                type: object
+                properties:
+                  pickListValueCode:
+                    type: string
+                  valueText:
+                    type: string
+    id_pickListValues_json:
+      required:
+        - pickListValue
+      type: object
+      properties:
+        pickListValue:
+          required:
+            - pickListValueId
+          type: object
+          properties:
+            pickListValueId:
+              type: string
+    questionGroups_id_json:
+      required:
+        - questionGroup
+      type: object
+      properties:
+        questionGroup:
+          required:
+            - questionIGroupId
+            - questionGroupName
+          type: object
+          properties:
+            questionIGroupId:
+              type: string
+            questionGroupName:
+              type: string
+    questionGroup_ids_json:
+      required:
+        - questionGroups
+      type: object
+      properties:
+        questionGroups:
+          required:
+            - pagination
+            - questionGroups
+          type: object
+          properties:
+            pagination:
+              required:
+                - from
+                - returned
+                - total
+                - maximum
+                - sort
+              type: object
+              properties:
+                from:
+                  type: integer
+                returned:
+                  type: integer
+                total:
+                  type: integer
+                maximum:
+                  type: integer
+                sort:
+                  type: object
+            questionGroups:
+              type: array
+              items:
+                required:
+                  - questionIGroupId
+                  - questionGroupName
+                type: object
+                properties:
+                  questionIGroupId:
+                    type: string
+                  questionGroupName:
+                    type: string
+    questionGroups_json:
+      required:
+        - questionGroup
+      type: object
+      properties:
+        questionGroup:
+          required:
+            - questionGroupName
+          type: object
+          properties:
+            questionGroupName:
+              type: string
+    id_questionGroups_json:
+      required:
+        - questionGroup
+      type: object
+      properties:
+        questionGroup:
+          required:
+            - questionIGroupId
+          type: object
+          properties:
+            questionIGroupId:
+              type: string
+    questions_id_json_v2:
+      required:
+        - question
+      type: object
+      properties:
+        question:
+          required:
+            - questionId
+            - questionDescription
+            - displayText
+            - questionDataType
+            - questionType
+            - correctValueForAssessment
+            - copyQuestionId
+            - hudQuestion
+            - locked
+            - questionWeight
+          type: object
+          properties:
+            questionId:
+              type: string
+            questionDescription:
+              type: string
+            displayText:
+              type: string
+            questionDataType:
+              type: string
+            questionType:
+              type: string
+            correctValueForAssessment:
+              type: string
+            copyQuestionId:
+              type: boolean
+            hudQuestion:
+              type: boolean
+            locked:
+              type: boolean
+            questionWeight:
+              type: integer
+            pickListValues:
+              type: string
+    questions_ids_json_v2:
+      required:
+        - questions
+      type: object
+      properties:
+        questions:
+          required:
+            - pagination
+            - questions
+          type: object
+          properties:
+            pagination:
+              required:
+                - from
+                - returned
+                - total
+                - maximum
+                - sort
+              type: object
+              properties:
+                from:
+                  type: integer
+                returned:
+                  type: integer
+                total:
+                  type: integer
+                maximum:
+                  type: integer
+                sort:
+                  type: object
+            questions:
+              type: array
+              items:
+                required:
+                  - questionId
+                  - questionDescription
+                  - displayText
+                  - questionDataType
+                  - questionType
+                  - correctValueForAssessment
+                  - copyQuestionId
+                  - hudQuestion
+                  - locked
+                  - questionWeight
+                type: object
+                properties:
+                  questionId:
+                    type: string
+                  questionDescription:
+                    type: string
+                  displayText:
+                    type: string
+                  questionDataType:
+                    type: string
+                  questionType:
+                    type: string
+                  correctValueForAssessment:
+                    type: string
+                  copyQuestionId:
+                    type: boolean
+                  hudQuestion:
+                    type: boolean
+                  locked:
+                    type: boolean
+                  questionWeight:
+                    type: integer
+                  pickListValues:
+                    type: string
+    questions_json_v2:
+      required:
+        - question
+      type: object
+      properties:
+        question:
+          required:
+            - questionDescription
+            - displayText
+            - questionDataType
+            - questionType
+            - correctValueForAssessment
+            - copyQuestionId
+            - hudQuestion
+            - locked
+            - questionWeight
+          type: object
+          properties:
+            questionDescription:
+              type: string
+            displayText:
+              type: string
+            questionDataType:
+              type: string
+            questionType:
+              type: string
+            correctValueForAssessment:
+              type: string
+            copyQuestionId:
+              type: boolean
+            hudQuestion:
+              type: boolean
+            locked:
+              type: boolean
+            questionWeight:
+              type: integer
+            pickListValues:
+              type: string
+    surveySections_json:
+      required:
+        - surveySection
+      type: object
+      properties:
+        surveySection:
+          required:
+            - sectionText
+            - sectionDetail
+            - sectionWeight
+            - order
+          type: object
+          properties:
+            sectionText:
+              type: string
+            sectionDetail:
+              type: string
+            sectionWeight:
+              type: integer
+            order:
+              type: integer
+    id_questions_json_v2:
+      required:
+        - question
+      type: object
+      properties:
+        question:
+          required:
+            - questionId
+            - copyQuestionId
+            - hudQuestion
+            - locked
+            - questionWeight
+          type: object
+          properties:
+            questionId:
+              type: string
+            copyQuestionId:
+              type: boolean
+            hudQuestion:
+              type: boolean
+            locked:
+              type: boolean
+            questionWeight:
+              type: integer
+            pickListValues:
+              type: string
+    response_id_json:
+      required:
+        - response
+      type: object
+      properties:
+        response:
+          required:
+            - responseId
+            - responseText
+            - questionScore
+          type: object
+          properties:
+            responseId:
+              type: string
+            responseText:
+              type: string
+            questionScore:
+              type: integer
+            effectiveDate:
+              type: string
+    response_ids_json:
+      required:
+        - responses
+      type: object
+      properties:
+        responses:
+          required:
+            - pagination
+            - responses
+          type: object
+          properties:
+            pagination:
+              required:
+                - from
+                - returned
+                - total
+                - maximum
+                - sort
+              type: object
+              properties:
+                from:
+                  type: integer
+                returned:
+                  type: integer
+                total:
+                  type: integer
+                maximum:
+                  type: integer
+                sort:
+                  type: object
+            responses:
+              type: array
+              items:
+                required:
+                  - responseId
+                  - responseText
+                  - questionScore
+                type: object
+                properties:
+                  responseId:
+                    type: string
+                  responseText:
+                    type: string
+                  questionScore:
+                    type: integer
+                  effectiveDate:
+                    type: string
+    response_json:
+      required:
+        - responses
+      type: object
+      properties:
+        responses:
+          required:
+            - responses
+          type: object
+          properties:
+            responses:
+              type: array
+              items:
+                required:
+                  - questionId
+                  - responseText
+                type: object
+                properties:
+                  questionId:
+                    type: string
+                  responseText:
+                    type: string
+                  appId:
+                    type: string
+                  sectionId:
+                    type: string
+                  effectiveDate:
+                    type: string
+    id_response_json:
+      required:
+        - response
+      type: object
+      properties:
+        response:
+          required:
+            - responseId
+            - questionScore
+          type: object
+          properties:
+            responseId:
+              type: string
+            questionScore:
+              type: integer
+    surveys_id_json:
+      required:
+        - survey
+      type: object
+      properties:
+        survey:
+          required:
+            - surveyId
+            - surveyTitle
+            - surveyOwner
+            - tagValue
+            - locked
+            - copySurveyId
+          type: object
+          properties:
+            surveyId:
+              type: string
+            surveyTitle:
+              type: string
+            surveyOwner:
+              type: string
+            tagValue:
+              type: string
+            locked:
+              type: boolean
+            copySurveyId:
+              type: boolean
+    surveys_ids_json:
+      required:
+        - surveys
+      type: object
+      properties:
+        surveys:
+          required:
+            - pagination
+            - surveys
+          type: object
+          properties:
+            pagination:
+              required:
+                - from
+                - returned
+                - total
+                - maximum
+                - sort
+              type: object
+              properties:
+                from:
+                  type: integer
+                returned:
+                  type: integer
+                total:
+                  type: integer
+                maximum:
+                  type: integer
+                sort:
+                  type: object
+            surveys:
+              type: array
+              items:
+                required:
+                  - surveyId
+                  - surveyTitle
+                  - surveyOwner
+                  - tagValue
+                  - locked
+                  - copySurveyId
+                type: object
+                properties:
+                  surveyId:
+                    type: string
+                  surveyTitle:
+                    type: string
+                  surveyOwner:
+                    type: string
+                  tagValue:
+                    type: string
+                  locked:
+                    type: boolean
+                  copySurveyId:
+                    type: boolean
+    surveys_json:
+      required:
+        - survey
+      type: object
+      properties:
+        survey:
+          required:
+            - surveyTitle
+            - surveyOwner
+            - tagValue
+            - locked
+            - copySurveyId
+          type: object
+          properties:
+            surveyTitle:
+              type: string
+            surveyOwner:
+              type: string
+            tagValue:
+              type: string
+            locked:
+              type: boolean
+            copySurveyId:
+              type: boolean
+    id_surveys_json:
+      required:
+        - survey
+      type: object
+      properties:
+        survey:
+          required:
+            - surveyId
+            - locked
+            - copySurveyId
+          type: object
+          properties:
+            surveyId:
+              type: string
+            locked:
+              type: boolean
+            copySurveyId:
+              type: boolean
+    surveys_id_json_v2:
+      required:
+        - survey
+      type: object
+      properties:
+        survey:
+          required:
+            - surveyId
+            - surveyTitle
+            - surveyOwner
+            - tagValue
+            - locked
+            - copySurveyId
+            - surveyDefinition
+          type: object
+          properties:
+            surveyId:
+              type: string
+            surveyTitle:
+              type: string
+            surveyOwner:
+              type: string
+            tagValue:
+              type: string
+            locked:
+              type: boolean
+            copySurveyId:
+              type: boolean
+            surveyDefinition:
+              type: string
+    surveys_ids_json_v2:
+      required:
+        - surveys
+      type: object
+      properties:
+        surveys:
+          required:
+            - pagination
+            - surveys
+          type: object
+          properties:
+            pagination:
+              required:
+                - from
+                - returned
+                - total
+                - maximum
+                - sort
+              type: object
+              properties:
+                from:
+                  type: integer
+                returned:
+                  type: integer
+                total:
+                  type: integer
+                maximum:
+                  type: integer
+                sort:
+                  type: object
+            surveys:
+              type: array
+              items:
+                required:
+                  - surveyId
+                  - surveyTitle
+                  - surveyOwner
+                  - tagValue
+                  - locked
+                  - copySurveyId
+                  - surveyDefinition
+                type: object
+                properties:
+                  surveyId:
+                    type: string
+                  surveyTitle:
+                    type: string
+                  surveyOwner:
+                    type: string
+                  tagValue:
+                    type: string
+                  locked:
+                    type: boolean
+                  copySurveyId:
+                    type: boolean
+                  surveyDefinition:
+                    type: string
+    surveys_json_v2:
+      required:
+        - survey
+      type: object
+      properties:
+        survey:
+          required:
+            - surveyTitle
+            - surveyOwner
+            - tagValue
+            - locked
+            - copySurveyId
+            - surveyDefinition
+          type: object
+          properties:
+            surveyTitle:
+              type: string
+            surveyOwner:
+              type: string
+            tagValue:
+              type: string
+            locked:
+              type: boolean
+            copySurveyId:
+              type: boolean
+            surveyDefinition:
+              type: string
+    id_surveys_json_v2:
+      required:
+        - survey
+      type: object
+      properties:
+        survey:
+          required:
+            - surveyId
+            - locked
+            - copySurveyId
+            - surveyDefinition
+          type: object
+          properties:
+            surveyId:
+              type: string
+            locked:
+              type: boolean
+            copySurveyId:
+              type: boolean
+            surveyDefinition:
+              type: string
+    surveySections_id_json:
+      required:
+        - surveySection
+      type: object
+      properties:
+        surveySection:
+          required:
+            - surveySectionId
+            - sectionText
+            - sectionDetail
+            - sectionWeight
+            - order
+          type: object
+          properties:
+            surveySectionId:
+              type: string
+            sectionText:
+              type: string
+            sectionDetail:
+              type: string
+            sectionWeight:
+              type: integer
+            order:
+              type: integer
+    surveySection_ids_json:
+      required:
+        - surveySections
+      type: object
+      properties:
+        surveySections:
+          required:
+            - pagination
+            - surveySections
+          type: object
+          properties:
+            pagination:
+              required:
+                - from
+                - returned
+                - total
+                - maximum
+                - sort
+              type: object
+              properties:
+                from:
+                  type: integer
+                returned:
+                  type: integer
+                total:
+                  type: integer
+                maximum:
+                  type: integer
+                sort:
+                  type: object
+            surveySections:
+              type: array
+              items:
+                required:
+                  - surveySectionId
+                  - sectionText
+                  - sectionDetail
+                  - sectionWeight
+                  - order
+                type: object
+                properties:
+                  surveySectionId:
+                    type: string
+                  sectionText:
+                    type: string
+                  sectionDetail:
+                    type: string
+                  sectionWeight:
+                    type: integer
+                  order:
+                    type: integer
+    id_surveySection_json:
+      required:
+        - surveySection
+      type: object
+      properties:
+        surveySection:
+          required:
+            - surveySectionId
+            - sectionWeight
+            - order
+          type: object
+          properties:
+            surveySectionId:
+              type: string
+            sectionWeight:
+              type: integer
+            order:
+              type: integer
+    score_ids_json:
+      required:
+        - sectionScores
+      type: object
+      properties:
+        sectionScores:
+          required:
+            - pagination
+            - sectionScores
+          type: object
+          properties:
+            pagination:
+              required:
+                - from
+                - returned
+                - total
+                - maximum
+                - sort
+              type: object
+              properties:
+                from:
+                  type: integer
+                returned:
+                  type: integer
+                total:
+                  type: integer
+                maximum:
+                  type: integer
+                sort:
+                  type: object
+            sectionScores:
+              type: array
+              items:
+                required:
+                  - sectionScoreId
+                  - sectionId
+                  - surveyId
+                  - clientId
+                  - sectionScore
+                type: object
+                properties:
+                  sectionScoreId:
+                    type: string
+                  sectionId:
+                    type: string
+                  surveyId:
+                    type: string
+                  clientId:
+                    type: string
+                  sectionScore:
+                    type: integer
+    section_question:
+      required:
+        - sectionQuestionMappings
+      type: object
+      properties:
+        sectionQuestionMappings:
+          required:
+            - sectionQuestionMappings
+          type: object
+          properties:
+            sectionQuestionMappings:
+              type: array
+              items:
+                required:
+                  - question
+                  - required
+                type: object
+                properties:
+                  question:
+                    required:
+                      - questionId
+                    type: object
+                    properties:
+                      questionId:
+                        type: string
+                  required:
+                    type: boolean
+    section_score:
+      required:
+        - sectionScore
+      type: object
+      properties:
+        sectionScore:
+          required:
+            - sectionScoreId
+            - sectionId
+            - surveyId
+            - clientId
+            - sectionScore
+          type: object
+          properties:
+            sectionScoreId:
+              type: string
+            sectionId:
+              type: string
+            surveyId:
+              type: string
+            clientId:
+              type: string
+            sectionScore:
+              type: integer
+  responses: {}
+  parameters: {}
+  examples: {}
+  requestBodies: {}
+  headers: {}
+  securitySchemes:
+    oauth_2_0:
+      description: |
+        The HMIS API supports OAuth 2.0 for authenticating all API requests.
+      type: oauth2
+      flows:
+        password:
+          tokenUrl: 'https://hmislynk.com/hmis-authorization-service/rest/token'
+          scopes:
+            user: ''
+            administrator: ''
+  links: {}
+  callbacks: {}
