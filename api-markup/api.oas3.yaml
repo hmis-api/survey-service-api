@@ -9,7 +9,7 @@ paths:
     get:
       responses:
         '200':
-          description: OK – Everything is working.
+          description: OK â€“ Everything is working.
           content:
             application/json:
               example:
@@ -64,15 +64,15 @@ paths:
               schema:
                 $ref: '#/components/schemas/pickListGroup_ids_json'
         '400':
-          description: Bad Request – The request was invalid or cannot be served.
+          description: Bad Request â€“ The request was invalid or cannot be served.
         '403':
           description: >-
-            Forbidden – The server understood the request, but is refusing it or
+            Forbidden â€“ The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found – There is no resource behind the URI.
+          description: Not found â€“ There is no resource behind the URI.
         '500':
-          description: 500 – Internal Server Error
+          description: 500 â€“ Internal Server Error
       description: >-
         Searches for picklistgroup.  Returns a list of picklistgroup ids, based
         on the query parameters sent.  The query parameters are cumulative, so
@@ -90,19 +90,19 @@ paths:
               schema:
                 $ref: '#/components/schemas/id_pickListGroup_json'
         '400':
-          description: Bad Request – The request was invalid or cannot be served.
+          description: Bad Request â€“ The request was invalid or cannot be served.
         '401':
-          description: Unauthorized – The request requires user authentication.
+          description: Unauthorized â€“ The request requires user authentication.
         '403':
           description: >-
-            Forbidden – The server understood the request, but is refusing it or
+            Forbidden â€“ The server understood the request, but is refusing it or
             access is not allowed.
         '404':
-          description: Not found – There is no resource behind the URI.
+          description: Not found â€“ There is no resource behind the URI.
         '422':
           description: Unprocessable Entity - Request body is incorrect.
         '500':
-          description: 500 – Internal Server Error.
+          description: 500 â€“ Internal Server Error.
       description: |
         Add a picklistgroup
       operationId: POST_picklistgroups
@@ -119,7 +119,7 @@ paths:
     get:
       responses:
         '200':
-          description: OK – Everything is working.
+          description: OK â€“ Everything is working.
           content:
             application/json:
               example:
@@ -129,15 +129,15 @@ paths:
               schema:
                 $ref: '#/components/schemas/pickListGroup_id_json'
         '400':
-          description: Bad Request – The request was invalid or cannot be served.
+          description: Bad Request â€“ The request was invalid or cannot be served.
         '401':
-          description: Unauthorized – The request requires an user authentication.
+          description: Unauthorized â€“ The request requires an user authentication.
         '403':
           description: >-
-            Forbidden – The server understood the request, but is refusing it or
+            Forbidden â€“ The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found – There is no resource behind the URI.
+          description: Not found â€“ There is no resource behind the URI.
         '500':
           description: Internal Server Error
       description: Gets a picklistgroup using a URI resource parameter/ID.
@@ -145,19 +145,19 @@ paths:
     put:
       responses:
         '200':
-          description: OK – Everything is working.
+          description: OK â€“ Everything is working.
         '304':
-          description: Not Modified – The client can use cached data.
+          description: Not Modified â€“ The client can use cached data.
         '400':
-          description: Bad Request – The request was invalid or cannot be served.
+          description: Bad Request â€“ The request was invalid or cannot be served.
         '401':
-          description: Unauthorized – The request requires a user.
+          description: Unauthorized â€“ The request requires a user.
         '403':
           description: >-
-            Forbidden – The server understood the request, but is refusing it or
+            Forbidden â€“ The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found – There is no resource behind the URI.
+          description: Not found â€“ There is no resource behind the URI.
         '500':
           description: Internal Server Error.
       description: >-
@@ -176,17 +176,17 @@ paths:
     delete:
       responses:
         '204':
-          description: OK – The resource was successfully deleted.
+          description: OK â€“ The resource was successfully deleted.
         '400':
-          description: Bad Request – The request was invalid or cannot be served.
+          description: Bad Request â€“ The request was invalid or cannot be served.
         '401':
-          description: Unauthorized – The request requires user authentication.
+          description: Unauthorized â€“ The request requires user authentication.
         '403':
           description: >-
-            Forbidden – The server understood the request, but is refusing it or
+            Forbidden â€“ The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found – There is no resource behind the URI.
+          description: Not found â€“ There is no resource behind the URI.
         '500':
           description: Internal Server Error.
       description: >-
@@ -204,72 +204,71 @@ paths:
     get:
       responses:
         '200':
-          description: OK – Everything is working.
+          description: OK â€“ Everything is working.
           content:
             application/json:
-              example:
-                pickList:
-                  pickList:
-                    - pickListValueId: eff61efc-edcf-44d1-989b-452463d17db2
-                      pickListValueCode: TestCode
-                      valueText: Test
-                    - pickListValueId: 7b620bb1-007c-494a-aa3a-a5ff249f94d5
-                      pickListValueCode: TestCode
-                      valueText: Test
-                    - pickListValueId: ef93bedd-5cae-4c99-b1da-34fb2580e859
-                      pickListValueCode: TestCode
-                      valueText: Test
-                    - pickListValueId: d7197e96-d932-4844-8304-911d3ddc238c
-                      pickListValueCode: TestCode
-                      valueText: Test
-                    - pickListValueId: 27c89fc5-549b-4111-926c-adbf9106f321
-                      pickListValueCode: TestCode
-                      valueText: Test
-                    - pickListValueId: 26d7ee8a-a604-432f-ad5b-87cf4fae9513
-                      pickListValueCode: TestCode
-                      valueText: Test
-                    - pickListValueId: 9b1706c5-1f32-40d9-9c72-1c0e1e8562a4
-                      pickListValueCode: TestCode
-                      valueText: Test
-                    - pickListValueId: fbf262e2-e725-4dfd-bb6e-3c93aef88096
-                      pickListValueCode: TestCode
-                      valueText: Test
-                    - pickListValueId: c9eadcd0-c54f-40ec-8f84-f1f055569a22
-                      pickListValueCode: TestCode
-                      valueText: Test
-                    - pickListValueId: dc8d37ea-c178-4d79-a2b2-b16dbf51b627
-                      pickListValueCode: TestCode
-                      valueText: Test
-                    - pickListValueId: 81744500-3404-4865-b91e-7629cc680afa
-                      pickListValueCode: TestCode
-                      valueText: Test
-                    - pickListValueId: 1f4a043c-5ec6-4e88-8a32-c46bb6093454
-                      pickListValueCode: TestCode
-                      valueText: Test
-                    - pickListValueId: 9caa01cf-7a8c-466b-a0f0-81691c33ded6
-                      pickListValueCode: TestCode
-                      valueText: Test
-                    - pickListValueId: 142cec7f-3714-4e6e-b047-87415130ec8f
-                      pickListValueCode: TestCode
-                      valueText: Test
-                    - pickListValueId: 580007eb-0f50-490a-85bb-a0204bcb077c
-                      pickListValueCode: TestCode
-                      valueText: Test
-                    - pickListValueId: 2c668282-5130-4f91-89e6-9a020f638919
-                      pickListValueCode: TestCode
-                      valueText: Test
               schema:
-                $ref: '#/components/schemas/pickListValues_ids_json'
+                example:
+                  pickList:
+                    pickList:
+                      - pickListValueId: eff61efc-edcf-44d1-989b-452463d17db2
+                        pickListValueCode: TestCode
+                        valueText: Test
+                      - pickListValueId: 7b620bb1-007c-494a-aa3a-a5ff249f94d5
+                        pickListValueCode: TestCode
+                        valueText: Test
+                      - pickListValueId: ef93bedd-5cae-4c99-b1da-34fb2580e859
+                        pickListValueCode: TestCode
+                        valueText: Test
+                      - pickListValueId: d7197e96-d932-4844-8304-911d3ddc238c
+                        pickListValueCode: TestCode
+                        valueText: Test
+                      - pickListValueId: 27c89fc5-549b-4111-926c-adbf9106f321
+                        pickListValueCode: TestCode
+                        valueText: Test
+                      - pickListValueId: 26d7ee8a-a604-432f-ad5b-87cf4fae9513
+                        pickListValueCode: TestCode
+                        valueText: Test
+                      - pickListValueId: 9b1706c5-1f32-40d9-9c72-1c0e1e8562a4
+                        pickListValueCode: TestCode
+                        valueText: Test
+                      - pickListValueId: fbf262e2-e725-4dfd-bb6e-3c93aef88096
+                        pickListValueCode: TestCode
+                        valueText: Test
+                      - pickListValueId: c9eadcd0-c54f-40ec-8f84-f1f055569a22
+                        pickListValueCode: TestCode
+                        valueText: Test
+                      - pickListValueId: dc8d37ea-c178-4d79-a2b2-b16dbf51b627
+                        pickListValueCode: TestCode
+                        valueText: Test
+                      - pickListValueId: 81744500-3404-4865-b91e-7629cc680afa
+                        pickListValueCode: TestCode
+                        valueText: Test
+                      - pickListValueId: 1f4a043c-5ec6-4e88-8a32-c46bb6093454
+                        pickListValueCode: TestCode
+                        valueText: Test
+                      - pickListValueId: 9caa01cf-7a8c-466b-a0f0-81691c33ded6
+                        pickListValueCode: TestCode
+                        valueText: Test
+                      - pickListValueId: 142cec7f-3714-4e6e-b047-87415130ec8f
+                        pickListValueCode: TestCode
+                        valueText: Test
+                      - pickListValueId: 580007eb-0f50-490a-85bb-a0204bcb077c
+                        pickListValueCode: TestCode
+                        valueText: Test
+                      - pickListValueId: 2c668282-5130-4f91-89e6-9a020f638919
+                        pickListValueCode: TestCode
+                        valueText: Test
         '400':
-          description: Bad Request – The request was invalid or cannot be served.
+          description: Bad Request â€“ The request was invalid or cannot be served.
         '403':
           description: >-
-            Forbidden – The server understood the request, but is refusing it or
+            Forbidden â€“ The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found – There is no resource behind the URI.
+          description: Not found â€“ There is no resource behind the URI.
         '500':
-          description: 500 – Internal Server Error
+          description: 500 â€“ Internal Server Error
       description: >-
         Searches for picklistvalue.  Returns a list of picklistvalue ids, based
         on the query parameters sent.  The query parameters are cumulative, so
@@ -287,19 +286,19 @@ paths:
               schema:
                 $ref: '#/components/schemas/id_pickListValues_json'
         '400':
-          description: Bad Request – The request was invalid or cannot be served.
+          description: Bad Request â€“ The request was invalid or cannot be served.
         '401':
-          description: Unauthorized – The request requires user authentication.
+          description: Unauthorized â€“ The request requires user authentication.
         '403':
           description: >-
-            Forbidden – The server understood the request, but is refusing it or
+            Forbidden â€“ The server understood the request, but is refusing it or
             access is not allowed.
         '404':
-          description: Not found – There is no resource behind the URI.
+          description: Not found â€“ There is no resource behind the URI.
         '422':
           description: Unprocessable Entity - Request body is incorrect.
         '500':
-          description: 500 – Internal Server Error.
+          description: 500 â€“ Internal Server Error.
       description: |
         Add a picklistvalue
       operationId: POST_picklistgroup-picklistgroupid-picklistvalues
@@ -328,7 +327,7 @@ paths:
     get:
       responses:
         '200':
-          description: OK – Everything is working.
+          description: OK â€“ Everything is working.
           content:
             application/json:
               example:
@@ -339,15 +338,15 @@ paths:
               schema:
                 $ref: '#/components/schemas/pickListValues_id_json'
         '400':
-          description: Bad Request – The request was invalid or cannot be served.
+          description: Bad Request â€“ The request was invalid or cannot be served.
         '401':
-          description: Unauthorized – The request requires an user authentication.
+          description: Unauthorized â€“ The request requires an user authentication.
         '403':
           description: >-
-            Forbidden – The server understood the request, but is refusing it or
+            Forbidden â€“ The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found – There is no resource behind the URI.
+          description: Not found â€“ There is no resource behind the URI.
         '500':
           description: Internal Server Error
       description: Gets a picklistvalue using a URI resource parameter/ID.
@@ -355,19 +354,19 @@ paths:
     put:
       responses:
         '200':
-          description: OK – Everything is working.
+          description: OK â€“ Everything is working.
         '304':
-          description: Not Modified – The client can use cached data.
+          description: Not Modified â€“ The client can use cached data.
         '400':
-          description: Bad Request – The request was invalid or cannot be served.
+          description: Bad Request â€“ The request was invalid or cannot be served.
         '401':
-          description: Unauthorized – The request requires a user.
+          description: Unauthorized â€“ The request requires a user.
         '403':
           description: >-
-            Forbidden – The server understood the request, but is refusing it or
+            Forbidden â€“ The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found – There is no resource behind the URI.
+          description: Not found â€“ There is no resource behind the URI.
         '500':
           description: Internal Server Error.
       description: >-
@@ -392,17 +391,17 @@ paths:
     delete:
       responses:
         '204':
-          description: OK – The resource was successfully deleted.
+          description: OK â€“ The resource was successfully deleted.
         '400':
-          description: Bad Request – The request was invalid or cannot be served.
+          description: Bad Request â€“ The request was invalid or cannot be served.
         '401':
-          description: Unauthorized – The request requires user authentication.
+          description: Unauthorized â€“ The request requires user authentication.
         '403':
           description: >-
-            Forbidden – The server understood the request, but is refusing it or
+            Forbidden â€“ The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found – There is no resource behind the URI.
+          description: Not found â€“ There is no resource behind the URI.
         '500':
           description: Internal Server Error.
       description: >-
@@ -425,7 +424,7 @@ paths:
     get:
       responses:
         '200':
-          description: OK – Everything is working.
+          description: OK â€“ Everything is working.
           content:
             application/json:
               example:
@@ -472,15 +471,15 @@ paths:
               schema:
                 $ref: '#/components/schemas/questionGroup_ids_json'
         '400':
-          description: Bad Request – The request was invalid or cannot be served.
+          description: Bad Request â€“ The request was invalid or cannot be served.
         '403':
           description: >-
-            Forbidden – The server understood the request, but is refusing it or
+            Forbidden â€“ The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found – There is no resource behind the URI.
+          description: Not found â€“ There is no resource behind the URI.
         '500':
-          description: 500 – Internal Server Error
+          description: 500 â€“ Internal Server Error
       description: >-
         Searches for questiongroup.  Returns a list of questiongroup ids, based
         on the query parameters sent.  The query parameters are cumulative, so
@@ -498,19 +497,19 @@ paths:
               schema:
                 $ref: '#/components/schemas/id_questionGroups_json'
         '400':
-          description: Bad Request – The request was invalid or cannot be served.
+          description: Bad Request â€“ The request was invalid or cannot be served.
         '401':
-          description: Unauthorized – The request requires user authentication.
+          description: Unauthorized â€“ The request requires user authentication.
         '403':
           description: >-
-            Forbidden – The server understood the request, but is refusing it or
+            Forbidden â€“ The server understood the request, but is refusing it or
             access is not allowed.
         '404':
-          description: Not found – There is no resource behind the URI.
+          description: Not found â€“ There is no resource behind the URI.
         '422':
           description: Unprocessable Entity - Request body is incorrect.
         '500':
-          description: 500 – Internal Server Error.
+          description: 500 â€“ Internal Server Error.
       description: |
         Add a questiongroup
       operationId: POST_questiongroups
@@ -527,7 +526,7 @@ paths:
     get:
       responses:
         '200':
-          description: OK – Everything is working.
+          description: OK â€“ Everything is working.
           content:
             application/json:
               example:
@@ -537,15 +536,15 @@ paths:
               schema:
                 $ref: '#/components/schemas/questionGroups_id_json'
         '400':
-          description: Bad Request – The request was invalid or cannot be served.
+          description: Bad Request â€“ The request was invalid or cannot be served.
         '401':
-          description: Unauthorized – The request requires an user authentication.
+          description: Unauthorized â€“ The request requires an user authentication.
         '403':
           description: >-
-            Forbidden – The server understood the request, but is refusing it or
+            Forbidden â€“ The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found – There is no resource behind the URI.
+          description: Not found â€“ There is no resource behind the URI.
         '500':
           description: Internal Server Error
       description: Gets a questiongroup using a URI resource parameter/ID.
@@ -553,19 +552,19 @@ paths:
     put:
       responses:
         '200':
-          description: OK – Everything is working.
+          description: OK â€“ Everything is working.
         '304':
-          description: Not Modified – The client can use cached data.
+          description: Not Modified â€“ The client can use cached data.
         '400':
-          description: Bad Request – The request was invalid or cannot be served.
+          description: Bad Request â€“ The request was invalid or cannot be served.
         '401':
-          description: Unauthorized – The request requires a user.
+          description: Unauthorized â€“ The request requires a user.
         '403':
           description: >-
-            Forbidden – The server understood the request, but is refusing it or
+            Forbidden â€“ The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found – There is no resource behind the URI.
+          description: Not found â€“ There is no resource behind the URI.
         '500':
           description: Internal Server Error.
       description: >-
@@ -584,17 +583,17 @@ paths:
     delete:
       responses:
         '204':
-          description: OK – The resource was successfully deleted.
+          description: OK â€“ The resource was successfully deleted.
         '400':
-          description: Bad Request – The request was invalid or cannot be served.
+          description: Bad Request â€“ The request was invalid or cannot be served.
         '401':
-          description: Unauthorized – The request requires user authentication.
+          description: Unauthorized â€“ The request requires user authentication.
         '403':
           description: >-
-            Forbidden – The server understood the request, but is refusing it or
+            Forbidden â€“ The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found – There is no resource behind the URI.
+          description: Not found â€“ There is no resource behind the URI.
         '500':
           description: Internal Server Error.
       description: >-
@@ -612,65 +611,66 @@ paths:
     get:
       responses:
         '200':
-          description: OK – Everything is working.
+          description: OK â€“ Everything is working.
           content:
             application/json:
-              example:
-                questions:
-                  pagination:
-                    from: 0
-                    returned: 2
-                    total: 2
-                    maximum: 30
-                    sort: {}
+              schema:
+                example:
                   questions:
-                  - questionId: ecb205ae-74e9-4c1b-9e2d-e90854c81f95
-                    projectGroupId: test
-                    questionDescription: asvsvsav
-                    displayText: wefewf
-                    questionDataType: NUMBER
-                    questionType: CHECKBOX
-                    correctValueForAssessment: ergreg
-                    copyQuestionId: true
-                    hudQuestion: false
-                    locked: false
-                    questionWeight: 1345
-                    questionGroupId: 46f77e0c-a890-433b-ad7c-b736c08bad75
-                    pickListValues: '  { "1" : "Full address reported" } ,  { "2" : "Incomplete or
-                      estimated address reported" }'
-                    visibility: false
-                  - questionId: 4ccc7c66-3da5-4efd-8e0b-23da10a9a7fa
-                    questionDescription: additional description to display
-                    displayText: Question title
-                    questionDataType: NUMBER
-                    questionType: CHECKBOX
-                    copyQuestionId: false
-                    hudQuestion: false
-                    locked: false
-                    questionWeight: 0
-                    questionGroupId: 46f77e0c-a890-433b-ad7c-b736c08bad75
-                    visibility: true
-                    pickList:
+                    pagination:
+                      from: 0
+                      returned: 2
+                      total: 2
+                      maximum: 30
+                      sort: {}
+                    questions:
+                    - questionId: ecb205ae-74e9-4c1b-9e2d-e90854c81f95
+                      projectGroupId: test
+                      questionDescription: asvsvsav
+                      displayText: wefewf
+                      questionDataType: NUMBER
+                      questionType: CHECKBOX
+                      correctValueForAssessment: ergreg
+                      copyQuestionId: true
+                      hudQuestion: false
+                      locked: false
+                      questionWeight: 1345
+                      questionGroupId: 46f77e0c-a890-433b-ad7c-b736c08bad75
+                      pickListValues: '  { "1" : "Full address reported" } ,  { "2" : "Incomplete or
+                        estimated address reported" }'
+                      visibility: false
+                    - questionId: 4ccc7c66-3da5-4efd-8e0b-23da10a9a7fa
+                      questionDescription: additional description to display
+                      displayText: Question title
+                      questionDataType: NUMBER
+                      questionType: CHECKBOX
+                      copyQuestionId: false
+                      hudQuestion: false
+                      locked: false
+                      questionWeight: 0
+                      questionGroupId: 46f77e0c-a890-433b-ad7c-b736c08bad75
+                      visibility: true
                       pickList:
-                      - pickListValueId: 7bfa8c09-8b19-4bc6-9191-d4522dc9ef96
-                        pickListValueCode: TestCode
-                        valueText: Test
-                      - pickListValueId: ef481036-e71a-4ec2-bccf-d6c9776b12c3
-                        pickListValueCode: TestCode
-                        valueText: Test
-                      - pickListValueId: 3d4dc9a3-ec8f-4715-95fe-5750328acc1c
-                        pickListValueCode: TestCode
-                        valueText: Test
+                        pickList:
+                        - pickListValueId: 7bfa8c09-8b19-4bc6-9191-d4522dc9ef96
+                          pickListValueCode: TestCode
+                          valueText: Test
+                        - pickListValueId: ef481036-e71a-4ec2-bccf-d6c9776b12c3
+                          pickListValueCode: TestCode
+                          valueText: Test
+                        - pickListValueId: 3d4dc9a3-ec8f-4715-95fe-5750328acc1c
+                          pickListValueCode: TestCode
+                          valueText: Test
         '400':
-          description: Bad Request – The request was invalid or cannot be served.
+          description: Bad Request â€“ The request was invalid or cannot be served.
         '403':
           description: >-
-            Forbidden – The server understood the request, but is refusing it or
+            Forbidden â€“ The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found – There is no resource behind the URI.
+          description: Not found â€“ There is no resource behind the URI.
         '500':
-          description: 500 – Internal Server Error
+          description: 500 â€“ Internal Server Error
       description: >-
         Searches for <<resourcePathName|!singularize>>.  Returns a list of
         <<resourcePathName|!singularize>> ids, based on the query parameters
@@ -694,24 +694,24 @@ paths:
               schema:
                 $ref: '#/components/schemas/id_questions_json_v2'
         '400':
-          description: Bad Request – The request was invalid or cannot be served.
+          description: Bad Request â€“ The request was invalid or cannot be served.
         '401':
-          description: Unauthorized – The request requires user authentication.
+          description: Unauthorized â€“ The request requires user authentication.
         '403':
           description: >-
-            Forbidden – The server understood the request, but is refusing it or
+            Forbidden â€“ The server understood the request, but is refusing it or
             access is not allowed.
         '404':
-          description: Not found – There is no resource behind the URI.
+          description: Not found â€“ There is no resource behind the URI.
         '422':
           description: Unprocessable Entity - Request body is incorrect.
         '500':
-          description: 500 – Internal Server Error.
+          description: 500 â€“ Internal Server Error.
       description: >
         The following operators can be used for "correctValueForAssessment"
         field.
-          1) Relational operators – equal (==, eq), not equal (!=, ne), less than (<, lt), less than or equal (<= , le), greater than (>, gt), and greater than or equal (>=, ge).
-          2) Logical operators – and, or, and not (!).
+          1) Relational operators â€“ equal (==, eq), not equal (!=, ne), less than (<, lt), less than or equal (<= , le), greater than (>, gt), and greater than or equal (>=, ge).
+          2) Logical operators â€“ and, or, and not (!).
           Question Data Type indicates the data type of the question and currently the following data types are allowed
           Allowed values for questionDataType : NUMBER , STRING , BOOLEAN
           Question Type indicates the type of UI control that is to be presented to the end us.
@@ -746,38 +746,37 @@ paths:
     get:
       responses:
         '200':
-          description: OK – Everything is working.
+          description: OK â€“ Everything is working.
           content:
-            application/json:
-              example:
-                question:
-                  questionId: 7c949e03-6bd0-402f-b35c-7a0f23e48863
-                  questionDescription: asvsvsav
-                  displayText: wefewf
-                  questionDataType: nhhhee
-                  questionType: sddvdv
-                  correctValueForAssessment: ergreg
-                  copyQuestionId: true
-                  hudQuestion: false
-                  locked: false
-                  questionWeight: 1345
-                  definition: stringfied JSON
-                  visibility: true
-                  category: question category
-                  subcategory: question sub category
-                  pickListValues: '  { "1" : "Full address reported" } ,  { "2" : "Incomplete or estimated address reported" }'
-              schema:
-                $ref: '#/components/schemas/questions_id_json_v2'
+              application/json:
+                schema:
+                  example:
+                    question:
+                      questionId: 7c949e03-6bd0-402f-b35c-7a0f23e48863
+                      questionDescription: asvsvsav
+                      displayText: wefewf
+                      questionDataType: nhhhee
+                      questionType: sddvdv
+                      correctValueForAssessment: ergreg
+                      copyQuestionId: true
+                      hudQuestion: false
+                      locked: false
+                      questionWeight: 1345
+                      definition: stringfied JSON
+                      visibility: true
+                      category: question category
+                      subcategory: question sub category
+                      pickListValues: '  { "1" : "Full address reported" } ,  { "2" : "Incomplete or estimated address reported" }'
         '400':
-          description: Bad Request – The request was invalid or cannot be served.
+          description: Bad Request â€“ The request was invalid or cannot be served.
         '401':
-          description: Unauthorized – The request requires an user authentication.
+          description: Unauthorized â€“ The request requires an user authentication.
         '403':
           description: >-
-            Forbidden – The server understood the request, but is refusing it or
+            Forbidden â€“ The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found – There is no resource behind the URI.
+          description: Not found â€“ There is no resource behind the URI.
         '500':
           description: Internal Server Error
       description: Gets a question using a URI resource parameter/ID.
@@ -785,19 +784,19 @@ paths:
     put:
       responses:
         '200':
-          description: OK – Everything is working.
+          description: OK â€“ Everything is working.
         '304':
-          description: Not Modified – The client can use cached data.
+          description: Not Modified â€“ The client can use cached data.
         '400':
-          description: Bad Request – The request was invalid or cannot be served.
+          description: Bad Request â€“ The request was invalid or cannot be served.
         '401':
-          description: Unauthorized – The request requires a user.
+          description: Unauthorized â€“ The request requires a user.
         '403':
           description: >-
-            Forbidden – The server understood the request, but is refusing it or
+            Forbidden â€“ The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found – There is no resource behind the URI.
+          description: Not found â€“ There is no resource behind the URI.
         '500':
           description: Internal Server Error.
       description: Updates a specific question specified by the URI resource parameter/ID.
@@ -821,17 +820,17 @@ paths:
     delete:
       responses:
         '204':
-          description: OK – The resource was successfully deleted.
+          description: OK â€“ The resource was successfully deleted.
         '400':
-          description: Bad Request – The request was invalid or cannot be served.
+          description: Bad Request â€“ The request was invalid or cannot be served.
         '401':
-          description: Unauthorized – The request requires user authentication.
+          description: Unauthorized â€“ The request requires user authentication.
         '403':
           description: >-
-            Forbidden – The server understood the request, but is refusing it or
+            Forbidden â€“ The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found – There is no resource behind the URI.
+          description: Not found â€“ There is no resource behind the URI.
         '500':
           description: Internal Server Error.
       description: Deletes a specific question specified by the URI resource parameter/ID.
@@ -852,7 +851,7 @@ paths:
     get:
       responses:
         '200':
-          description: OK – Everything is working.
+          description: OK â€“ Everything is working.
           content:
             application/json:
               example:
@@ -874,15 +873,15 @@ paths:
               schema:
                 $ref: '#/components/schemas/surveys_ids_json_v2'
         '400':
-          description: Bad Request – The request was invalid or cannot be served.
+          description: Bad Request â€“ The request was invalid or cannot be served.
         '403':
           description: >-
-            Forbidden – The server understood the request, but is refusing it or
+            Forbidden â€“ The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found – There is no resource behind the URI.
+          description: Not found â€“ There is no resource behind the URI.
         '500':
-          description: 500 – Internal Server Error
+          description: 500 â€“ Internal Server Error
       description: >-
         Searches for survey.  Returns a list of survey ids, based on the query
         parameters sent.  The query parameters are cumulative, so each
@@ -903,19 +902,19 @@ paths:
               schema:
                 $ref: '#/components/schemas/id_surveys_json_v2'
         '400':
-          description: Bad Request – The request was invalid or cannot be served.
+          description: Bad Request â€“ The request was invalid or cannot be served.
         '401':
-          description: Unauthorized – The request requires user authentication.
+          description: Unauthorized â€“ The request requires user authentication.
         '403':
           description: >-
-            Forbidden – The server understood the request, but is refusing it or
+            Forbidden â€“ The server understood the request, but is refusing it or
             access is not allowed.
         '404':
-          description: Not found – There is no resource behind the URI.
+          description: Not found â€“ There is no resource behind the URI.
         '422':
           description: Unprocessable Entity - Request body is incorrect.
         '500':
-          description: 500 – Internal Server Error.
+          description: 500 â€“ Internal Server Error.
       description: |
         Add a survey
       operationId: POST_v2-surveys
@@ -937,7 +936,7 @@ paths:
     get:
       responses:
         '200':
-          description: OK – Everything is working.
+          description: OK â€“ Everything is working.
           content:
             application/json:
               example:
@@ -952,15 +951,15 @@ paths:
               schema:
                 $ref: '#/components/schemas/surveys_id_json_v2'
         '400':
-          description: Bad Request – The request was invalid or cannot be served.
+          description: Bad Request â€“ The request was invalid or cannot be served.
         '401':
-          description: Unauthorized – The request requires an user authentication.
+          description: Unauthorized â€“ The request requires an user authentication.
         '403':
           description: >-
-            Forbidden – The server understood the request, but is refusing it or
+            Forbidden â€“ The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found – There is no resource behind the URI.
+          description: Not found â€“ There is no resource behind the URI.
         '500':
           description: Internal Server Error
       description: Gets a survey using a URI resource parameter/ID.
@@ -968,19 +967,19 @@ paths:
     put:
       responses:
         '200':
-          description: OK – Everything is working.
+          description: OK â€“ Everything is working.
         '304':
-          description: Not Modified – The client can use cached data.
+          description: Not Modified â€“ The client can use cached data.
         '400':
-          description: Bad Request – The request was invalid or cannot be served.
+          description: Bad Request â€“ The request was invalid or cannot be served.
         '401':
-          description: Unauthorized – The request requires a user.
+          description: Unauthorized â€“ The request requires a user.
         '403':
           description: >-
-            Forbidden – The server understood the request, but is refusing it or
+            Forbidden â€“ The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found – There is no resource behind the URI.
+          description: Not found â€“ There is no resource behind the URI.
         '500':
           description: Internal Server Error.
       description: Updates a specific survey specified by the URI resource parameter/ID.
@@ -1002,17 +1001,17 @@ paths:
     delete:
       responses:
         '204':
-          description: OK – The resource was successfully deleted.
+          description: OK â€“ The resource was successfully deleted.
         '400':
-          description: Bad Request – The request was invalid or cannot be served.
+          description: Bad Request â€“ The request was invalid or cannot be served.
         '401':
-          description: Unauthorized – The request requires user authentication.
+          description: Unauthorized â€“ The request requires user authentication.
         '403':
           description: >-
-            Forbidden – The server understood the request, but is refusing it or
+            Forbidden â€“ The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found – There is no resource behind the URI.
+          description: Not found â€“ There is no resource behind the URI.
         '500':
           description: Internal Server Error.
       description: Deletes a specific survey specified by the URI resource parameter/ID.
@@ -1028,7 +1027,7 @@ paths:
     get:
       responses:
         '200':
-          description: OK – Everything is working.
+          description: OK â€“ Everything is working.
           content:
             application/json:
               example:
@@ -1123,15 +1122,15 @@ paths:
               schema:
                 $ref: '#/components/schemas/surveySection_ids_json'
         '400':
-          description: Bad Request – The request was invalid or cannot be served.
+          description: Bad Request â€“ The request was invalid or cannot be served.
         '403':
           description: >-
-            Forbidden – The server understood the request, but is refusing it or
+            Forbidden â€“ The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found – There is no resource behind the URI.
+          description: Not found â€“ There is no resource behind the URI.
         '500':
-          description: 500 – Internal Server Error
+          description: 500 â€“ Internal Server Error
       description: >-
         Searches for surveysection.  Returns a list of surveysection ids, based
         on the query parameters sent.  The query parameters are cumulative, so
@@ -1151,19 +1150,19 @@ paths:
               schema:
                 $ref: '#/components/schemas/id_surveySection_json'
         '400':
-          description: Bad Request – The request was invalid or cannot be served.
+          description: Bad Request â€“ The request was invalid or cannot be served.
         '401':
-          description: Unauthorized – The request requires user authentication.
+          description: Unauthorized â€“ The request requires user authentication.
         '403':
           description: >-
-            Forbidden – The server understood the request, but is refusing it or
+            Forbidden â€“ The server understood the request, but is refusing it or
             access is not allowed.
         '404':
-          description: Not found – There is no resource behind the URI.
+          description: Not found â€“ There is no resource behind the URI.
         '422':
           description: Unprocessable Entity - Request body is incorrect.
         '500':
-          description: 500 – Internal Server Error.
+          description: 500 â€“ Internal Server Error.
       description: |
         Add a surveysection
       operationId: POST_surveys-surveyid-surveysections
@@ -1189,7 +1188,7 @@ paths:
     get:
       responses:
         '200':
-          description: OK – Everything is working.
+          description: OK â€“ Everything is working.
           content:
             application/json:
               example:
@@ -1202,15 +1201,15 @@ paths:
               schema:
                 $ref: '#/components/schemas/surveySections_id_json'
         '400':
-          description: Bad Request – The request was invalid or cannot be served.
+          description: Bad Request â€“ The request was invalid or cannot be served.
         '401':
-          description: Unauthorized – The request requires an user authentication.
+          description: Unauthorized â€“ The request requires an user authentication.
         '403':
           description: >-
-            Forbidden – The server understood the request, but is refusing it or
+            Forbidden â€“ The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found – There is no resource behind the URI.
+          description: Not found â€“ There is no resource behind the URI.
         '500':
           description: Internal Server Error
       description: Gets a surveysection using a URI resource parameter/ID.
@@ -1218,19 +1217,19 @@ paths:
     put:
       responses:
         '200':
-          description: OK – Everything is working.
+          description: OK â€“ Everything is working.
         '304':
-          description: Not Modified – The client can use cached data.
+          description: Not Modified â€“ The client can use cached data.
         '400':
-          description: Bad Request – The request was invalid or cannot be served.
+          description: Bad Request â€“ The request was invalid or cannot be served.
         '401':
-          description: Unauthorized – The request requires a user.
+          description: Unauthorized â€“ The request requires a user.
         '403':
           description: >-
-            Forbidden – The server understood the request, but is refusing it or
+            Forbidden â€“ The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found – There is no resource behind the URI.
+          description: Not found â€“ There is no resource behind the URI.
         '500':
           description: Internal Server Error.
       description: >-
@@ -1252,17 +1251,17 @@ paths:
     delete:
       responses:
         '204':
-          description: OK – The resource was successfully deleted.
+          description: OK â€“ The resource was successfully deleted.
         '400':
-          description: Bad Request – The request was invalid or cannot be served.
+          description: Bad Request â€“ The request was invalid or cannot be served.
         '401':
-          description: Unauthorized – The request requires user authentication.
+          description: Unauthorized â€“ The request requires user authentication.
         '403':
           description: >-
-            Forbidden – The server understood the request, but is refusing it or
+            Forbidden â€“ The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found – There is no resource behind the URI.
+          description: Not found â€“ There is no resource behind the URI.
         '500':
           description: Internal Server Error.
       description: >-
@@ -1287,19 +1286,19 @@ paths:
         '200':
           description: Question added to survey
         '400':
-          description: Bad Request – The request was invalid or cannot be served.
+          description: Bad Request â€“ The request was invalid or cannot be served.
         '401':
-          description: Unauthorized – The request requires user authentication.
+          description: Unauthorized â€“ The request requires user authentication.
         '403':
           description: >-
-            Forbidden – The server understood the request, but is refusing it or
+            Forbidden â€“ The server understood the request, but is refusing it or
             access is not allowed.
         '404':
-          description: Not found – There is no resource behind the URI.
+          description: Not found â€“ There is no resource behind the URI.
         '422':
           description: Unprocessable Entity - Request body is incorrect.
         '500':
-          description: 500 – Internal Server Error.
+          description: 500 â€“ Internal Server Error.
       description: |
         Add question to a survey section.
       operationId: POST_surveys-surveyid-surveysections-sectionid-questions
@@ -1318,7 +1317,7 @@ paths:
     get:
       responses:
         '200':
-          description: OK – Everything is working.
+          description: OK â€“ Everything is working.
           content:
             application/json:
               example:
@@ -1494,15 +1493,15 @@ paths:
               schema:
                 $ref: '#/components/schemas/questions_ids_json'
         '400':
-          description: Bad Request – The request was invalid or cannot be served.
+          description: Bad Request â€“ The request was invalid or cannot be served.
         '403':
           description: >-
-            Forbidden – The server understood the request, but is refusing it or
+            Forbidden â€“ The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found – There is no resource behind the URI.
+          description: Not found â€“ There is no resource behind the URI.
         '500':
-          description: 500 – Internal Server Error
+          description: 500 â€“ Internal Server Error
       description: |
         Read all the question of selected survey section.
       operationId: GET_surveys-surveyid-surveysections-sectionid-questions
@@ -1522,17 +1521,17 @@ paths:
     delete:
       responses:
         '204':
-          description: OK – The resource was successfully deleted.
+          description: OK â€“ The resource was successfully deleted.
         '400':
-          description: Bad Request – The request was invalid or cannot be served.
+          description: Bad Request â€“ The request was invalid or cannot be served.
         '401':
-          description: Unauthorized – The request requires user authentication.
+          description: Unauthorized â€“ The request requires user authentication.
         '403':
           description: >-
-            Forbidden – The server understood the request, but is refusing it or
+            Forbidden â€“ The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found – There is no resource behind the URI.
+          description: Not found â€“ There is no resource behind the URI.
         '500':
           description: Internal Server Error.
       description: Deletes a specific question from specified by section.
@@ -1558,7 +1557,7 @@ paths:
     get:
       responses:
         '200':
-          description: OK – Everything is working.
+          description: OK â€“ Everything is working.
           content:
             application/json:
               example:
@@ -1645,15 +1644,15 @@ paths:
               schema:
                 $ref: '#/components/schemas/response_ids_json'
         '400':
-          description: Bad Request – The request was invalid or cannot be served.
+          description: Bad Request â€“ The request was invalid or cannot be served.
         '403':
           description: >-
-            Forbidden – The server understood the request, but is refusing it or
+            Forbidden â€“ The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found – There is no resource behind the URI.
+          description: Not found â€“ There is no resource behind the URI.
         '500':
-          description: 500 – Internal Server Error
+          description: 500 â€“ Internal Server Error
       description: >-
         Searches for response.  Returns a list of response ids, based on the
         query parameters sent.  The query parameters are cumulative, so each
@@ -1689,19 +1688,19 @@ paths:
               schema:
                 $ref: '#/components/schemas/id_response_json'
         '400':
-          description: Bad Request – The request was invalid or cannot be served.
+          description: Bad Request â€“ The request was invalid or cannot be served.
         '401':
-          description: Unauthorized – The request requires user authentication.
+          description: Unauthorized â€“ The request requires user authentication.
         '403':
           description: >-
-            Forbidden – The server understood the request, but is refusing it or
+            Forbidden â€“ The server understood the request, but is refusing it or
             access is not allowed.
         '404':
-          description: Not found – There is no resource behind the URI.
+          description: Not found â€“ There is no resource behind the URI.
         '422':
           description: Unprocessable Entity - Request body is incorrect.
         '500':
-          description: 500 – Internal Server Error.
+          description: 500 â€“ Internal Server Error.
       description: |
         Add a response
       operationId: POST_v3-clients-dedupclientid-surveys-surveyid-responses
@@ -1739,7 +1738,7 @@ paths:
     get:
       responses:
         '200':
-          description: OK – Everything is working.
+          description: OK â€“ Everything is working.
           content:
             application/json:
               example:
@@ -1752,15 +1751,15 @@ paths:
               schema:
                 $ref: '#/components/schemas/response_id_json'
         '400':
-          description: Bad Request – The request was invalid or cannot be served.
+          description: Bad Request â€“ The request was invalid or cannot be served.
         '401':
-          description: Unauthorized – The request requires an user authentication.
+          description: Unauthorized â€“ The request requires an user authentication.
         '403':
           description: >-
-            Forbidden – The server understood the request, but is refusing it or
+            Forbidden â€“ The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found – There is no resource behind the URI.
+          description: Not found â€“ There is no resource behind the URI.
         '500':
           description: Internal Server Error
       description: Gets a response using a URI resource parameter/ID.
@@ -1768,19 +1767,19 @@ paths:
     put:
       responses:
         '200':
-          description: OK – Everything is working.
+          description: OK â€“ Everything is working.
         '304':
-          description: Not Modified – The client can use cached data.
+          description: Not Modified â€“ The client can use cached data.
         '400':
-          description: Bad Request – The request was invalid or cannot be served.
+          description: Bad Request â€“ The request was invalid or cannot be served.
         '401':
-          description: Unauthorized – The request requires a user.
+          description: Unauthorized â€“ The request requires a user.
         '403':
           description: >-
-            Forbidden – The server understood the request, but is refusing it or
+            Forbidden â€“ The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found – There is no resource behind the URI.
+          description: Not found â€“ There is no resource behind the URI.
         '500':
           description: Internal Server Error.
       description: Updates a specific response specified by the URI resource parameter/ID.
@@ -1801,17 +1800,17 @@ paths:
     delete:
       responses:
         '204':
-          description: OK – The resource was successfully deleted.
+          description: OK â€“ The resource was successfully deleted.
         '400':
-          description: Bad Request – The request was invalid or cannot be served.
+          description: Bad Request â€“ The request was invalid or cannot be served.
         '401':
-          description: Unauthorized – The request requires user authentication.
+          description: Unauthorized â€“ The request requires user authentication.
         '403':
           description: >-
-            Forbidden – The server understood the request, but is refusing it or
+            Forbidden â€“ The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found – There is no resource behind the URI.
+          description: Not found â€“ There is no resource behind the URI.
         '500':
           description: Internal Server Error.
       description: Deletes a specific response specified by the URI resource parameter/ID.
@@ -2414,51 +2413,6 @@ components:
               type: string
             valueText:
               type: string
-    pickListValues_ids_json:
-      required:
-        - pickListValues
-      type: object
-      properties:
-        pickListValues:
-          required:
-            - pagination
-            - pickListValues
-          type: object
-          properties:
-            pagination:
-              required:
-                - from
-                - returned
-                - total
-                - maximum
-                - sort
-              type: object
-              properties:
-                from:
-                  type: integer
-                returned:
-                  type: integer
-                total:
-                  type: integer
-                maximum:
-                  type: integer
-                sort:
-                  type: object
-            pickListValues:
-              type: array
-              items:
-                required:
-                  - pickListValueId
-                  - pickListValueCode
-                  - valueText
-                type: object
-                properties:
-                  pickListValueId:
-                    type: string
-                  pickListValueCode:
-                    type: string
-                  valueText:
-                    type: string
     pickListValues_json:
       required:
         - pickListValues
