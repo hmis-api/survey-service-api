@@ -208,14 +208,8 @@ paths:
           content:
             application/json:
               example:
-                pickListValues:
-                  pagination:
-                    from: 0
-                    returned: 16
-                    total: 16
-                    maximum: 30
-                    sort: {}
-                  pickListValues:
+                pickList:
+                  pickList:
                     - pickListValueId: eff61efc-edcf-44d1-989b-452463d17db2
                       pickListValueCode: TestCode
                       valueText: Test
@@ -625,182 +619,48 @@ paths:
                 questions:
                   pagination:
                     from: 0
-                    returned: 16
-                    total: 16
+                    returned: 2
+                    total: 2
                     maximum: 30
                     sort: {}
                   questions:
-                    - questionId: 4bd3d3e1-a70a-4e66-89d9-43fd23f5f3c8
-                      questionDescription: asvsvsav
-                      displayText: wefewf
-                      questionDataType: nhhhee
-                      questionType: sddvdv
-                      correctValueForAssessment: ergreg
-                      copyQuestionId: true
-                      hudQuestion: false
-                      locked: false
-                      questionWeight: 1345
-                      pickListValues: '  { "1" : "Full address reported" } ,  { "2" : "Incomplete or estimated address reported" }'
-                      definition: stringfied JSON
-                      visibility: true
-                      category: question category
-                      subcategory: question sub category
-                    - questionId: aeaed6cd-dbe3-4b40-951a-85d7abf410d2
-                      questionDescription: asvsvsav
-                      displayText: wefewf
-                      questionDataType: nhhhee
-                      questionType: sddvdv
-                      correctValueForAssessment: ergreg
-                      copyQuestionId: true
-                      hudQuestion: false
-                      locked: false
-                      questionWeight: 1345
-                    - questionId: eb0266df-8a62-47da-af35-08fca477aa97
-                      questionDescription: asvsvsav
-                      displayText: wefewf
-                      questionDataType: nhhhee
-                      questionType: sddvdv
-                      correctValueForAssessment: ergreg
-                      copyQuestionId: true
-                      hudQuestion: false
-                      locked: false
-                      questionWeight: 1345
-                      definition: stringfied JSON
-                      visibility: true
-                      category: question category
-                      subcategory: question sub category
-                    - questionId: 97342127-06b5-4455-b757-63961a523121
-                      questionDescription: asvsvsav
-                      displayText: wefewf
-                      questionDataType: nhhhee
-                      questionType: sddvdv
-                      correctValueForAssessment: ergreg
-                      copyQuestionId: true
-                      hudQuestion: false
-                      locked: false
-                      questionWeight: 1345
-                    - questionId: ab7a4b52-8818-415a-b0ce-3ee29c58e226
-                      questionDescription: asvsvsav
-                      displayText: wefewf
-                      questionDataType: nhhhee
-                      questionType: sddvdv
-                      correctValueForAssessment: ergreg
-                      copyQuestionId: true
-                      hudQuestion: false
-                      locked: false
-                      questionWeight: 1345
-                    - questionId: 62988239-88ae-41ce-be55-65fc1732ef88
-                      questionDescription: asvsvsav
-                      displayText: wefewf
-                      questionDataType: nhhhee
-                      questionType: sddvdv
-                      correctValueForAssessment: ergreg
-                      copyQuestionId: true
-                      hudQuestion: false
-                      locked: false
-                      questionWeight: 1345
-                    - questionId: ffb54b34-a6dc-4fc3-9631-145b705daeaf
-                      questionDescription: asvsvsav
-                      displayText: wefewf
-                      questionDataType: nhhhee
-                      questionType: sddvdv
-                      correctValueForAssessment: ergreg
-                      copyQuestionId: true
-                      hudQuestion: false
-                      locked: false
-                      questionWeight: 1345
-                    - questionId: 2b3c1941-be73-4fc6-b99f-5dd4382804aa
-                      questionDescription: asvsvsav
-                      displayText: wefewf
-                      questionDataType: nhhhee
-                      questionType: sddvdv
-                      correctValueForAssessment: ergreg
-                      copyQuestionId: true
-                      hudQuestion: false
-                      locked: false
-                      questionWeight: 1345
-                    - questionId: e5d0ac93-6070-4bf0-ae0c-3e21e3c6cd54
-                      questionDescription: asvsvsav
-                      displayText: wefewf
-                      questionDataType: nhhhee
-                      questionType: sddvdv
-                      correctValueForAssessment: ergreg
-                      copyQuestionId: true
-                      hudQuestion: false
-                      locked: false
-                      questionWeight: 1345
-                    - questionId: 6432fb8b-ad4a-47b7-8927-b18eaa91f54c
-                      questionDescription: asvsvsav
-                      displayText: wefewf
-                      questionDataType: nhhhee
-                      questionType: sddvdv
-                      correctValueForAssessment: ergreg
-                      copyQuestionId: true
-                      hudQuestion: false
-                      locked: false
-                      questionWeight: 1345
-                    - questionId: f58d1b36-2208-4bee-a616-649291cf148e
-                      questionDescription: asvsvsav
-                      displayText: wefewf
-                      questionDataType: nhhhee
-                      questionType: sddvdv
-                      correctValueForAssessment: ergreg
-                      copyQuestionId: true
-                      hudQuestion: false
-                      locked: false
-                      questionWeight: 1345
-                    - questionId: cd65e411-194a-421b-a73e-f33b7f928085
-                      questionDescription: asvsvsav
-                      displayText: wefewf
-                      questionDataType: nhhhee
-                      questionType: sddvdv
-                      correctValueForAssessment: ergreg
-                      copyQuestionId: true
-                      hudQuestion: false
-                      locked: false
-                      questionWeight: 1345
-                    - questionId: 2b62b56e-f8ad-40b5-beb8-a554e706544e
-                      questionDescription: asvsvsav
-                      displayText: wefewf
-                      questionDataType: nhhhee
-                      questionType: sddvdv
-                      correctValueForAssessment: ergreg
-                      copyQuestionId: true
-                      hudQuestion: false
-                      locked: false
-                      questionWeight: 1345
-                    - questionId: 50169178-a7fb-4d28-b935-cea1399e2df2
-                      questionDescription: asvsvsav
-                      displayText: wefewf
-                      questionDataType: nhhhee
-                      questionType: sddvdv
-                      correctValueForAssessment: ergreg
-                      copyQuestionId: true
-                      hudQuestion: false
-                      locked: false
-                      questionWeight: 1345
-                    - questionId: 029bd4a9-4035-4d7c-b661-bed328e8010f
-                      questionDescription: asvsvsav
-                      displayText: wefewf
-                      questionDataType: nhhhee
-                      questionType: sddvdv
-                      correctValueForAssessment: ergreg
-                      copyQuestionId: true
-                      hudQuestion: false
-                      locked: false
-                      questionWeight: 1345
-                    - questionId: f3e7f22d-c136-4128-8d88-9de3f1be9540
-                      questionDescription: asvsvsav
-                      displayText: wefewf
-                      questionDataType: nhhhee
-                      questionType: sddvdv
-                      correctValueForAssessment: ergreg
-                      copyQuestionId: true
-                      hudQuestion: false
-                      locked: false
-                      questionWeight: 1345
-              schema:
-                $ref: '#/components/schemas/questions_ids_json_v2'
+                  - questionId: ecb205ae-74e9-4c1b-9e2d-e90854c81f95
+                    projectGroupId: test
+                    questionDescription: asvsvsav
+                    displayText: wefewf
+                    questionDataType: NUMBER
+                    questionType: CHECKBOX
+                    correctValueForAssessment: ergreg
+                    copyQuestionId: true
+                    hudQuestion: false
+                    locked: false
+                    questionWeight: 1345
+                    questionGroupId: 46f77e0c-a890-433b-ad7c-b736c08bad75
+                    pickListValues: '  { "1" : "Full address reported" } ,  { "2" : "Incomplete or
+                      estimated address reported" }'
+                    visibility: false
+                  - questionId: 4ccc7c66-3da5-4efd-8e0b-23da10a9a7fa
+                    questionDescription: additional description to display
+                    displayText: Question title
+                    questionDataType: NUMBER
+                    questionType: CHECKBOX
+                    copyQuestionId: false
+                    hudQuestion: false
+                    locked: false
+                    questionWeight: 0
+                    questionGroupId: 46f77e0c-a890-433b-ad7c-b736c08bad75
+                    visibility: true
+                    pickList:
+                      pickList:
+                      - pickListValueId: 7bfa8c09-8b19-4bc6-9191-d4522dc9ef96
+                        pickListValueCode: TestCode
+                        valueText: Test
+                      - pickListValueId: ef481036-e71a-4ec2-bccf-d6c9776b12c3
+                        pickListValueCode: TestCode
+                        valueText: Test
+                      - pickListValueId: 3d4dc9a3-ec8f-4715-95fe-5750328acc1c
+                        pickListValueCode: TestCode
+                        valueText: Test
         '400':
           description: Bad Request – The request was invalid or cannot be served.
         '403':
