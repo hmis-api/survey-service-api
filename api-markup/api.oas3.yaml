@@ -9,70 +9,35 @@ paths:
     get:
       responses:
         '200':
-          description: OK â€“ Everything is working.
+          description: OK – Everything is working.
           content:
             application/json:
-              example:
-                pickListGroups:
-                  pagination:
-                    from: 0
-                    returned: 20
-                    total: 20
-                    maximum: 30
-                    sort: {}
-                  pickListGroups:
-                    - pickListGroupId: f2ef5e72-5549-4dc8-8885-8f11c284d7e9
-                      pickListGroupName: TestName
-                    - pickListGroupId: 748decb7-fc9c-4cf2-82fe-2859c5f9c597
-                      pickListGroupName: TestName
-                    - pickListGroupId: 7283aa39-697c-4014-8008-99e9e725627d
-                      pickListGroupName: TestName
-                    - pickListGroupId: 4d650943-99c5-482a-83b4-ef2555eef9c1
-                      pickListGroupName: TestName
-                    - pickListGroupId: e7c187a0-05f1-4c04-9b66-77e74ccca455
-                      pickListGroupName: TestName
-                    - pickListGroupId: abe13cea-cd23-4a81-8fd6-087e24051078
-                      pickListGroupName: TestName
-                    - pickListGroupId: 195077eb-3d37-470e-871a-c67cd3a1a82b
-                      pickListGroupName: TestName
-                    - pickListGroupId: 7592b9f1-9a39-4dda-b49a-f99e721f2c7b
-                      pickListGroupName: TestName
-                    - pickListGroupId: 5db04855-30a2-4a69-aee0-0616a52b2274
-                      pickListGroupName: TestName
-                    - pickListGroupId: 1893af91-85fe-48ce-befe-469186cd6d40
-                      pickListGroupName: TestName
-                    - pickListGroupId: ba029bdc-db36-4e46-a261-87cc1131028d
-                      pickListGroupName: TestName
-                    - pickListGroupId: 948867d0-b77c-432e-9ecb-ac7b71070491
-                      pickListGroupName: TestName
-                    - pickListGroupId: 7c304ec4-3fcd-4f69-bcf4-7126e61027ac
-                      pickListGroupName: TestName
-                    - pickListGroupId: fc7c687b-de0b-47ff-9d3e-63f3920fb4b5
-                      pickListGroupName: TestName
-                    - pickListGroupId: 885a21f0-7bfb-46e8-ada9-4bd82d03af4c
-                      pickListGroupName: TestName
-                    - pickListGroupId: 5c361bf4-395e-46a1-abaa-e3f5d96d2c1c
-                      pickListGroupName: TestName
-                    - pickListGroupId: 3a8f2567-3d4c-4719-8503-5a15bafe55a6
-                      pickListGroupName: TestName
-                    - pickListGroupId: 2d60e8e0-a1da-4ad7-af33-126cd5dfdbac
-                      pickListGroupName: TestName
-                    - pickListGroupId: edf422e3-8118-41cb-8b00-f34f2a2d9085
-                      pickListGroupName: TestName
-                    - pickListGroupId: 45852728-1543-4294-8d69-0e7e252a7932
-                      pickListGroupName: TestName
               schema:
-                $ref: '#/components/schemas/pickListGroup_ids_json'
+                example:
+                    pickListGroups:
+                      pagination:
+                        from: 0
+                        returned: 3
+                        total: 20
+                        maximum: 30
+                        sort: {}
+                      pickListGroups:
+                        - pickListGroupId: f2ef5e72-5549-4dc8-8885-8f11c284d7e9
+                          pickListGroupName: TestName
+                        - pickListGroupId: 748decb7-fc9c-4cf2-82fe-2859c5f9c597
+                          pickListGroupName: TestName
+                        - pickListGroupId: 7283aa39-697c-4014-8008-99e9e725627d
+                          pickListGroupName: TestName
         '400':
-          description: Bad Request â€“ The request was invalid or cannot be served.
+          description: Bad Request – The request was invalid or cannot be served.
         '403':
           description: >-
-            Forbidden â€“ The server understood the request, but is refusing it or
+            Forbidden – The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found â€“ There is no resource behind the URI.
+          description: Not found – There is no resource behind the URI.
         '500':
-          description: 500 â€“ Internal Server Error
+          description: 500 – Internal Server Error
       description: >-
         Searches for picklistgroup.  Returns a list of picklistgroup ids, based
         on the query parameters sent.  The query parameters are cumulative, so
@@ -84,60 +49,57 @@ paths:
           description: OK - New resource has been created.
           content:
             application/json:
-              example:
-                pickListGroup:
-                  pickListGroupId: 45852728-1543-4294-8d69-0e7e252a7932
               schema:
-                $ref: '#/components/schemas/id_pickListGroup_json'
+                example:
+                    pickListGroup:
+                      pickListGroupId: 45852728-1543-4294-8d69-0e7e252a7932
         '400':
-          description: Bad Request â€“ The request was invalid or cannot be served.
+          description: Bad Request – The request was invalid or cannot be served.
         '401':
-          description: Unauthorized â€“ The request requires user authentication.
+          description: Unauthorized – The request requires user authentication.
         '403':
           description: >-
-            Forbidden â€“ The server understood the request, but is refusing it or
+            Forbidden – The server understood the request, but is refusing it or
             access is not allowed.
         '404':
-          description: Not found â€“ There is no resource behind the URI.
+          description: Not found – There is no resource behind the URI.
         '422':
           description: Unprocessable Entity - Request body is incorrect.
         '500':
-          description: 500 â€“ Internal Server Error.
+          description: 500 – Internal Server Error.
       description: |
         Add a picklistgroup
       operationId: POST_picklistgroups
       requestBody:
         content:
           application/json:
-            example:
-              pickListGroup:
-                pickListGroupName: TestName
             schema:
-              $ref: '#/components/schemas/pickListGroup_json'
+              example:
+                  pickListGroup:
+                    pickListGroupName: TestPickListGroup
         required: true
   '/picklistgroups/{picklistgroupid}':
     get:
       responses:
         '200':
-          description: OK â€“ Everything is working.
+          description: OK – Everything is working.
           content:
             application/json:
-              example:
-                pickListGroup:
-                  pickListGroupId: 66a0181b-26d7-4335-807e-04b73e196d86
-                  pickListGroupName: TestName
               schema:
-                $ref: '#/components/schemas/pickListGroup_id_json'
+                example:
+                    pickListGroup:
+                      pickListGroupId: 66a0181b-26d7-4335-807e-04b73e196d86
+                      pickListGroupName: TestName
         '400':
-          description: Bad Request â€“ The request was invalid or cannot be served.
+          description: Bad Request – The request was invalid or cannot be served.
         '401':
-          description: Unauthorized â€“ The request requires an user authentication.
+          description: Unauthorized – The request requires an user authentication.
         '403':
           description: >-
-            Forbidden â€“ The server understood the request, but is refusing it or
+            Forbidden – The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found â€“ There is no resource behind the URI.
+          description: Not found – There is no resource behind the URI.
         '500':
           description: Internal Server Error
       description: Gets a picklistgroup using a URI resource parameter/ID.
@@ -145,19 +107,19 @@ paths:
     put:
       responses:
         '200':
-          description: OK â€“ Everything is working.
+          description: OK – Everything is working.
         '304':
-          description: Not Modified â€“ The client can use cached data.
+          description: Not Modified – The client can use cached data.
         '400':
-          description: Bad Request â€“ The request was invalid or cannot be served.
+          description: Bad Request – The request was invalid or cannot be served.
         '401':
-          description: Unauthorized â€“ The request requires a user.
+          description: Unauthorized – The request requires a user.
         '403':
           description: >-
-            Forbidden â€“ The server understood the request, but is refusing it or
+            Forbidden – The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found â€“ There is no resource behind the URI.
+          description: Not found – There is no resource behind the URI.
         '500':
           description: Internal Server Error.
       description: >-
@@ -167,26 +129,25 @@ paths:
       requestBody:
         content:
           application/json:
-            example:
-              pickListGroup:
-                pickListGroupName: TestName
             schema:
-              $ref: '#/components/schemas/pickListGroup_json'
+              example:
+                  pickListGroup:
+                    pickListGroupName: TestNewPicklistGroup
         required: true
     delete:
       responses:
         '204':
-          description: OK â€“ The resource was successfully deleted.
+          description: OK – The resource was successfully deleted.
         '400':
-          description: Bad Request â€“ The request was invalid or cannot be served.
+          description: Bad Request – The request was invalid or cannot be served.
         '401':
-          description: Unauthorized â€“ The request requires user authentication.
+          description: Unauthorized – The request requires user authentication.
         '403':
           description: >-
-            Forbidden â€“ The server understood the request, but is refusing it or
+            Forbidden – The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found â€“ There is no resource behind the URI.
+          description: Not found – There is no resource behind the URI.
         '500':
           description: Internal Server Error.
       description: >-
@@ -204,7 +165,7 @@ paths:
     get:
       responses:
         '200':
-          description: OK â€“ Everything is working.
+          description: OK – Everything is working.
           content:
             application/json:
               schema:
@@ -220,55 +181,16 @@ paths:
                       - pickListValueId: ef93bedd-5cae-4c99-b1da-34fb2580e859
                         pickListValueCode: TestCode
                         valueText: Test
-                      - pickListValueId: d7197e96-d932-4844-8304-911d3ddc238c
-                        pickListValueCode: TestCode
-                        valueText: Test
-                      - pickListValueId: 27c89fc5-549b-4111-926c-adbf9106f321
-                        pickListValueCode: TestCode
-                        valueText: Test
-                      - pickListValueId: 26d7ee8a-a604-432f-ad5b-87cf4fae9513
-                        pickListValueCode: TestCode
-                        valueText: Test
-                      - pickListValueId: 9b1706c5-1f32-40d9-9c72-1c0e1e8562a4
-                        pickListValueCode: TestCode
-                        valueText: Test
-                      - pickListValueId: fbf262e2-e725-4dfd-bb6e-3c93aef88096
-                        pickListValueCode: TestCode
-                        valueText: Test
-                      - pickListValueId: c9eadcd0-c54f-40ec-8f84-f1f055569a22
-                        pickListValueCode: TestCode
-                        valueText: Test
-                      - pickListValueId: dc8d37ea-c178-4d79-a2b2-b16dbf51b627
-                        pickListValueCode: TestCode
-                        valueText: Test
-                      - pickListValueId: 81744500-3404-4865-b91e-7629cc680afa
-                        pickListValueCode: TestCode
-                        valueText: Test
-                      - pickListValueId: 1f4a043c-5ec6-4e88-8a32-c46bb6093454
-                        pickListValueCode: TestCode
-                        valueText: Test
-                      - pickListValueId: 9caa01cf-7a8c-466b-a0f0-81691c33ded6
-                        pickListValueCode: TestCode
-                        valueText: Test
-                      - pickListValueId: 142cec7f-3714-4e6e-b047-87415130ec8f
-                        pickListValueCode: TestCode
-                        valueText: Test
-                      - pickListValueId: 580007eb-0f50-490a-85bb-a0204bcb077c
-                        pickListValueCode: TestCode
-                        valueText: Test
-                      - pickListValueId: 2c668282-5130-4f91-89e6-9a020f638919
-                        pickListValueCode: TestCode
-                        valueText: Test
         '400':
-          description: Bad Request â€“ The request was invalid or cannot be served.
+          description: Bad Request – The request was invalid or cannot be served.
         '403':
           description: >-
-            Forbidden â€“ The server understood the request, but is refusing it or
+            Forbidden – The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found â€“ There is no resource behind the URI.
+          description: Not found – There is no resource behind the URI.
         '500':
-          description: 500 â€“ Internal Server Error
+          description: 500 – Internal Server Error
       description: >-
         Searches for picklistvalue.  Returns a list of picklistvalue ids, based
         on the query parameters sent.  The query parameters are cumulative, so
@@ -280,42 +202,40 @@ paths:
           description: OK - New resource has been created.
           content:
             application/json:
-              example:
-                pickListValue:
-                  pickListValueId: eff61efc-edcf-44d1-989b-452463d17db2
               schema:
-                $ref: '#/components/schemas/id_pickListValues_json'
+                example:
+                    pickListValue:
+                      pickListValueId: eff61efc-edcf-44d1-989b-452463d17db2
         '400':
-          description: Bad Request â€“ The request was invalid or cannot be served.
+          description: Bad Request – The request was invalid or cannot be served.
         '401':
-          description: Unauthorized â€“ The request requires user authentication.
+          description: Unauthorized – The request requires user authentication.
         '403':
           description: >-
-            Forbidden â€“ The server understood the request, but is refusing it or
+            Forbidden – The server understood the request, but is refusing it or
             access is not allowed.
         '404':
-          description: Not found â€“ There is no resource behind the URI.
+          description: Not found – There is no resource behind the URI.
         '422':
           description: Unprocessable Entity - Request body is incorrect.
         '500':
-          description: 500 â€“ Internal Server Error.
+          description: 500 – Internal Server Error.
       description: |
         Add a picklistvalue
       operationId: POST_picklistgroup-picklistgroupid-picklistvalues
       requestBody:
         content:
           application/json:
-            example:
-              pickListValues:
-                pickListValues:
-                  - pickListValueCode: TestCode
-                    valueText: Test
-                  - pickListValueCode: TestCode
-                    valueText: Test
-                  - pickListValueCode: TestCode
-                    valueText: Test
             schema:
-              $ref: '#/components/schemas/pickListValues_json'
+              example:
+                  pickListValues:
+                    pickListValues:
+                      - pickListValueCode: TestCode1
+                        valueText: Test1
+                      - pickListValueCode: TestCode2
+                        valueText: Test2
+                      - pickListValueCode: TestCode3
+                        valueText: Test3
         required: true
     parameters:
       - name: picklistgroupid
@@ -327,26 +247,25 @@ paths:
     get:
       responses:
         '200':
-          description: OK â€“ Everything is working.
+          description: OK – Everything is working.
           content:
             application/json:
-              example:
-                pickListValue:
-                  pickListValueId: 4223e5cf-7f3e-46eb-aa36-5b2174ee62e9
-                  pickListValueCode: TestCode
-                  valueText: Test
               schema:
-                $ref: '#/components/schemas/pickListValues_id_json'
+                example:
+                    pickListValue:
+                      pickListValueId: 4223e5cf-7f3e-46eb-aa36-5b2174ee62e9
+                      pickListValueCode: TestCode
+                      valueText: Test
         '400':
-          description: Bad Request â€“ The request was invalid or cannot be served.
+          description: Bad Request – The request was invalid or cannot be served.
         '401':
-          description: Unauthorized â€“ The request requires an user authentication.
+          description: Unauthorized – The request requires an user authentication.
         '403':
           description: >-
-            Forbidden â€“ The server understood the request, but is refusing it or
+            Forbidden – The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found â€“ There is no resource behind the URI.
+          description: Not found – There is no resource behind the URI.
         '500':
           description: Internal Server Error
       description: Gets a picklistvalue using a URI resource parameter/ID.
@@ -354,19 +273,19 @@ paths:
     put:
       responses:
         '200':
-          description: OK â€“ Everything is working.
+          description: OK – Everything is working.
         '304':
-          description: Not Modified â€“ The client can use cached data.
+          description: Not Modified – The client can use cached data.
         '400':
-          description: Bad Request â€“ The request was invalid or cannot be served.
+          description: Bad Request – The request was invalid or cannot be served.
         '401':
-          description: Unauthorized â€“ The request requires a user.
+          description: Unauthorized – The request requires a user.
         '403':
           description: >-
-            Forbidden â€“ The server understood the request, but is refusing it or
+            Forbidden – The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found â€“ There is no resource behind the URI.
+          description: Not found – There is no resource behind the URI.
         '500':
           description: Internal Server Error.
       description: >-
@@ -376,32 +295,31 @@ paths:
       requestBody:
         content:
           application/json:
-            example:
-              pickListValues:
-                pickListValues:
-                  - pickListValueCode: TestCode
-                    valueText: Test
-                  - pickListValueCode: TestCode
-                    valueText: Test
-                  - pickListValueCode: TestCode
-                    valueText: Test
             schema:
-              $ref: '#/components/schemas/pickListValues_json'
+              example:
+                  pickListValues:
+                    pickListValues:
+                      - pickListValueCode: TestCode1
+                        valueText: Test1
+                      - pickListValueCode: TestCode2
+                        valueText: Test2
+                      - pickListValueCode: TestCode3
+                        valueText: Test3
         required: true
     delete:
       responses:
         '204':
-          description: OK â€“ The resource was successfully deleted.
+          description: OK – The resource was successfully deleted.
         '400':
-          description: Bad Request â€“ The request was invalid or cannot be served.
+          description: Bad Request – The request was invalid or cannot be served.
         '401':
-          description: Unauthorized â€“ The request requires user authentication.
+          description: Unauthorized – The request requires user authentication.
         '403':
           description: >-
-            Forbidden â€“ The server understood the request, but is refusing it or
+            Forbidden – The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found â€“ There is no resource behind the URI.
+          description: Not found – There is no resource behind the URI.
         '500':
           description: Internal Server Error.
       description: >-
@@ -424,62 +342,35 @@ paths:
     get:
       responses:
         '200':
-          description: OK â€“ Everything is working.
+          description: OK – Everything is working.
           content:
             application/json:
-              example:
-                questionGroups:
-                  pagination:
-                    from: 0
-                    returned: 16
-                    total: 16
-                    maximum: 30
-                    sort: {}
-                  questionGroups:
-                    - questionGroupId: 2680ce52-9357-461a-9f66-7714390358bc
-                      questionGroupName: jbsvjkbv
-                    - questionGroupId: 742e7ca8-4c97-4c2d-9438-3e872ed2571f
-                      questionGroupName: jbsvjkbv
-                    - questionGroupId: 012135a7-8a21-4098-9cd9-568559d45e5a
-                      questionGroupName: jbsvjkbv
-                    - questionGroupId: 9a6f734b-28f8-44ac-bc78-602afdf9e30b
-                      questionGroupName: jbsvjkbv
-                    - questionGroupId: 538319a9-b5c8-42ac-8321-27aeade5559b
-                      questionGroupName: jbsvjkbv
-                    - questionGroupId: 75709583-c0bd-4ab7-99a4-bbcd78ce6e5b
-                      questionGroupName: jbsvjkbv
-                    - questionGroupId: 5a397928-11fa-4db3-acd5-3584658978ae
-                      questionGroupName: jbsvjkbv
-                    - questionGroupId: 0b91396a-8697-4982-b357-2f2a67f63712
-                      questionGroupName: jbsvjkbv
-                    - questionGroupId: dd21ba01-7b63-42c2-9444-efc629035eab
-                      questionGroupName: jbsvjkbv
-                    - questionGroupId: 7d5d7a6d-8f93-44f2-9058-4175b4d2e25c
-                      questionGroupName: jbsvjkbv
-                    - questionGroupId: b3319a4c-4613-44e3-8484-a66d9f911dee
-                      questionGroupName: jbsvjkbv
-                    - questionGroupId: d2ef7565-bd4a-4ec0-8b45-5f2fcded584c
-                      questionGroupName: jbsvjkbv
-                    - questionGroupId: 1c111213-0069-4710-818e-a4972d2dadc2
-                      questionGroupName: jbsvjkbv
-                    - questionGroupId: 5436c94d-0a56-445e-8b1f-439f723775ad
-                      questionGroupName: jbsvjkbv
-                    - questionGroupId: f939e05e-b5ca-418c-aaa3-cbf1528c3bac
-                      questionGroupName: jbsvjkbv
-                    - questionGroupId: cc6418c3-5b8f-4d68-83c4-938bea625912
-                      questionGroupName: jbsvjkbv
               schema:
-                $ref: '#/components/schemas/questionGroup_ids_json'
+                example:
+                    questionGroups:
+                      pagination:
+                        from: 0
+                        returned: 16
+                        total: 16
+                        maximum: 30
+                        sort: {}
+                      questionGroups:
+                        - questionGroupId: 2680ce52-9357-461a-9f66-7714390358bc
+                          questionGroupName: questionGroupName1
+                        - questionGroupId: 742e7ca8-4c97-4c2d-9438-3e872ed2571f
+                          questionGroupName: questionGroupName2
+                        - questionGroupId: 012135a7-8a21-4098-9cd9-568559d45e5a
+                          questionGroupName: questionGroupName3
         '400':
-          description: Bad Request â€“ The request was invalid or cannot be served.
+          description: Bad Request – The request was invalid or cannot be served.
         '403':
           description: >-
-            Forbidden â€“ The server understood the request, but is refusing it or
+            Forbidden – The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found â€“ There is no resource behind the URI.
+          description: Not found – There is no resource behind the URI.
         '500':
-          description: 500 â€“ Internal Server Error
+          description: 500 – Internal Server Error
       description: >-
         Searches for questiongroup.  Returns a list of questiongroup ids, based
         on the query parameters sent.  The query parameters are cumulative, so
@@ -487,64 +378,61 @@ paths:
       operationId: GET_questiongroups
     post:
       responses:
-        '201':
+        '200':
           description: OK - New resource has been created.
           content:
             application/json:
-              example:
-                questionGroup:
-                  questionIGroupId: cc6418c3-5b8f-4d68-83c4-938bea625912
               schema:
-                $ref: '#/components/schemas/id_questionGroups_json'
+                example:
+                  questionGroup:
+                    questionIGroupId: cc6418c3-5b8f-4d68-83c4-938bea625912
         '400':
-          description: Bad Request â€“ The request was invalid or cannot be served.
+          description: Bad Request – The request was invalid or cannot be served.
         '401':
-          description: Unauthorized â€“ The request requires user authentication.
+          description: Unauthorized – The request requires user authentication.
         '403':
           description: >-
-            Forbidden â€“ The server understood the request, but is refusing it or
+            Forbidden – The server understood the request, but is refusing it or
             access is not allowed.
         '404':
-          description: Not found â€“ There is no resource behind the URI.
+          description: Not found – There is no resource behind the URI.
         '422':
           description: Unprocessable Entity - Request body is incorrect.
         '500':
-          description: 500 â€“ Internal Server Error.
+          description: 500 – Internal Server Error.
       description: |
         Add a questiongroup
       operationId: POST_questiongroups
       requestBody:
         content:
           application/json:
-            example:
-              questionGroup:
-                questionGroupName: jbsvjkbv
             schema:
-              $ref: '#/components/schemas/questionGroups_json'
+              example:
+                  questionGroup:
+                    questionGroupName: questionGroupName1
         required: true
   '/questiongroups/{questiongroupid}':
     get:
       responses:
         '200':
-          description: OK â€“ Everything is working.
+          description: OK – Everything is working.
           content:
             application/json:
-              example:
-                questionGroup:
-                  questionGroupId: de6de9cb-ee05-4eea-84b3-d368370b9180
-                  questionGroupName: jbsvjkbv
               schema:
-                $ref: '#/components/schemas/questionGroups_id_json'
+                example:
+                    questionGroup:
+                      questionGroupId: de6de9cb-ee05-4eea-84b3-d368370b9180
+                      questionGroupName: questionGroupName1
         '400':
-          description: Bad Request â€“ The request was invalid or cannot be served.
+          description: Bad Request – The request was invalid or cannot be served.
         '401':
-          description: Unauthorized â€“ The request requires an user authentication.
+          description: Unauthorized – The request requires an user authentication.
         '403':
           description: >-
-            Forbidden â€“ The server understood the request, but is refusing it or
+            Forbidden – The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found â€“ There is no resource behind the URI.
+          description: Not found – There is no resource behind the URI.
         '500':
           description: Internal Server Error
       description: Gets a questiongroup using a URI resource parameter/ID.
@@ -552,19 +440,19 @@ paths:
     put:
       responses:
         '200':
-          description: OK â€“ Everything is working.
+          description: OK – Everything is working.
         '304':
-          description: Not Modified â€“ The client can use cached data.
+          description: Not Modified – The client can use cached data.
         '400':
-          description: Bad Request â€“ The request was invalid or cannot be served.
+          description: Bad Request – The request was invalid or cannot be served.
         '401':
-          description: Unauthorized â€“ The request requires a user.
+          description: Unauthorized – The request requires a user.
         '403':
           description: >-
-            Forbidden â€“ The server understood the request, but is refusing it or
+            Forbidden – The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found â€“ There is no resource behind the URI.
+          description: Not found – There is no resource behind the URI.
         '500':
           description: Internal Server Error.
       description: >-
@@ -574,26 +462,25 @@ paths:
       requestBody:
         content:
           application/json:
-            example:
-              questionGroup:
-                questionGroupName: jbsvjkbv
             schema:
-              $ref: '#/components/schemas/questionGroups_json'
+              example:
+                  questionGroup:
+                    questionGroupName: questionGroupName1
         required: true
     delete:
       responses:
         '204':
-          description: OK â€“ The resource was successfully deleted.
+          description: OK – The resource was successfully deleted.
         '400':
-          description: Bad Request â€“ The request was invalid or cannot be served.
+          description: Bad Request – The request was invalid or cannot be served.
         '401':
-          description: Unauthorized â€“ The request requires user authentication.
+          description: Unauthorized – The request requires user authentication.
         '403':
           description: >-
-            Forbidden â€“ The server understood the request, but is refusing it or
+            Forbidden – The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found â€“ There is no resource behind the URI.
+          description: Not found – There is no resource behind the URI.
         '500':
           description: Internal Server Error.
       description: >-
@@ -611,7 +498,7 @@ paths:
     get:
       responses:
         '200':
-          description: OK â€“ Everything is working.
+          description: OK – Everything is working.
           content:
             application/json:
               schema:
@@ -624,53 +511,33 @@ paths:
                       maximum: 30
                       sort: {}
                     questions:
-                    - questionId: ecb205ae-74e9-4c1b-9e2d-e90854c81f95
-                      projectGroupId: test
-                      questionDescription: asvsvsav
-                      displayText: wefewf
-                      questionDataType: NUMBER
-                      questionType: CHECKBOX
-                      correctValueForAssessment: ergreg
-                      copyQuestionId: true
-                      hudQuestion: false
-                      locked: false
-                      questionWeight: 1345
-                      questionGroupId: 46f77e0c-a890-433b-ad7c-b736c08bad75
-                      pickListValues: '  { "1" : "Full address reported" } ,  { "2" : "Incomplete or
-                        estimated address reported" }'
-                      visibility: false
-                    - questionId: 4ccc7c66-3da5-4efd-8e0b-23da10a9a7fa
-                      questionDescription: additional description to display
-                      displayText: Question title
-                      questionDataType: NUMBER
-                      questionType: CHECKBOX
+                    - questionId: 23588047-2596-469b-841c-94fd4260cf30
+                      questionDescription: Times Homeless Past Three Years
+                      displayText: Times Homeless Past Three Years
+                      questionDataType: STRING
+                      questionType: DROPDOWN
                       copyQuestionId: false
-                      hudQuestion: false
+                      hudQuestion: true
                       locked: false
                       questionWeight: 0
-                      questionGroupId: 46f77e0c-a890-433b-ad7c-b736c08bad75
+                      questionGroupId: 10c0415d-85c0-4dbc-a0ec-562fb57245e3
+                      definition: '"{"questionType": "DROPDOWN","title": "Living Situation","options":
+                        {}}"'
                       visibility: true
-                      pickList:
-                        pickList:
-                        - pickListValueId: 7bfa8c09-8b19-4bc6-9191-d4522dc9ef96
-                          pickListValueCode: TestCode
-                          valueText: Test
-                        - pickListValueId: ef481036-e71a-4ec2-bccf-d6c9776b12c3
-                          pickListValueCode: TestCode
-                          valueText: Test
-                        - pickListValueId: 3d4dc9a3-ec8f-4715-95fe-5750328acc1c
-                          pickListValueCode: TestCode
-                          valueText: Test
+                      category: question category
+                      subcategory: question sub category
+                      updateUriTemplate: "/v2017/clients/{clientid}/enrollments/{enrollmentid}"
+                      uriObjectField: enrollment.timesHomelessPastThreeYears
         '400':
-          description: Bad Request â€“ The request was invalid or cannot be served.
+          description: Bad Request – The request was invalid or cannot be served.
         '403':
           description: >-
-            Forbidden â€“ The server understood the request, but is refusing it or
+            Forbidden – The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found â€“ There is no resource behind the URI.
+          description: Not found – There is no resource behind the URI.
         '500':
-          description: 500 â€“ Internal Server Error
+          description: 500 – Internal Server Error
       description: >-
         Searches for <<resourcePathName|!singularize>>.  Returns a list of
         <<resourcePathName|!singularize>> ids, based on the query parameters
@@ -683,35 +550,45 @@ paths:
           description: OK - New resource has been created.
           content:
             application/json:
-              example:
-                question:
-                  questionId: f3e7f22d-c136-4128-8d88-9de3f1be9540
-                  copyQuestionId: false
-                  hudQuestion: false
-                  locked: false
-                  questionWeight: 0
-                  pickListValues: '  { "1" : "Full address reported" } ,  { "2" : "Incomplete or estimated address reported" }'
-              schema:
-                $ref: '#/components/schemas/id_questions_json_v2'
+             schema:
+                example:
+                  question:
+                    questionId: 23588047-2596-469b-841c-94fd4260cf30
+                    questionDescription: Times Homeless Past Three Years
+                    displayText: Times Homeless Past Three Years
+                    questionDataType: STRING
+                    questionType: DROPDOWN
+                    copyQuestionId: false
+                    hudQuestion: true
+                    locked: false
+                    questionWeight: 0
+                    questionGroupId: 10c0415d-85c0-4dbc-a0ec-562fb57245e3
+                    definition: '"{"questionType": "DROPDOWN","title": "Living Situation","options":
+                      {}}"'
+                    visibility: true
+                    category: question category
+                    subcategory: question sub category
+                    updateUriTemplate: "/v2017/clients/{clientid}/enrollments/{enrollmentid}"
+                    uriObjectField: enrollment.timesHomelessPastThreeYears
         '400':
-          description: Bad Request â€“ The request was invalid or cannot be served.
+          description: Bad Request – The request was invalid or cannot be served.
         '401':
-          description: Unauthorized â€“ The request requires user authentication.
+          description: Unauthorized – The request requires user authentication.
         '403':
           description: >-
-            Forbidden â€“ The server understood the request, but is refusing it or
+            Forbidden – The server understood the request, but is refusing it or
             access is not allowed.
         '404':
-          description: Not found â€“ There is no resource behind the URI.
+          description: Not found – There is no resource behind the URI.
         '422':
           description: Unprocessable Entity - Request body is incorrect.
         '500':
-          description: 500 â€“ Internal Server Error.
+          description: 500 – Internal Server Error.
       description: >
         The following operators can be used for "correctValueForAssessment"
         field.
-          1) Relational operators â€“ equal (==, eq), not equal (!=, ne), less than (<, lt), less than or equal (<= , le), greater than (>, gt), and greater than or equal (>=, ge).
-          2) Logical operators â€“ and, or, and not (!).
+          1) Relational operators – equal (==, eq), not equal (!=, ne), less than (<, lt), less than or equal (<= , le), greater than (>, gt), and greater than or equal (>=, ge).
+          2) Logical operators – and, or, and not (!).
           Question Data Type indicates the data type of the question and currently the following data types are allowed
           Allowed values for questionDataType : NUMBER , STRING , BOOLEAN
           Question Type indicates the type of UI control that is to be presented to the end us.
@@ -723,18 +600,26 @@ paths:
       requestBody:
         content:
           application/json:
-            example:
-              question:
-                displayText: Question title
-                questionDescription: additional description to display
-                questionType: choice|text|number|date|grid
-                definition: stringfied JSON
-                visibility: true
-                category: question category
-                subcategory: question sub category
-                pickListValues: '  { "1" : "Full address reported" } ,  { "2" : "Incomplete or estimated address reported" }'
-            schema:
-              $ref: '#/components/schemas/questions_json_v2'
+            schema:          
+              example:
+                question:
+                  questionId: 23588047-2596-469b-841c-94fd4260cf30
+                  questionDescription: Times Homeless Past Three Years
+                  displayText: Times Homeless Past Three Years
+                  questionDataType: STRING
+                  questionType: DROPDOWN
+                  copyQuestionId: false
+                  hudQuestion: true
+                  locked: false
+                  questionWeight: 0
+                  questionGroupId: 10c0415d-85c0-4dbc-a0ec-562fb57245e3
+                  definition: '"{"questionType": "DROPDOWN","title": "Living Situation","options":
+                    {}}"'
+                  visibility: true
+                  category: question category
+                  subcategory: question sub category
+                  updateUriTemplate: "/v2017/clients/{clientid}/enrollments/{enrollmentid}"
+                  uriObjectField: enrollment.timesHomelessPastThreeYears
         required: true
     parameters:
       - name: questiongroupid
@@ -746,37 +631,39 @@ paths:
     get:
       responses:
         '200':
-          description: OK â€“ Everything is working.
+          description: OK – Everything is working.
           content:
               application/json:
                 schema:
                   example:
                     question:
-                      questionId: 7c949e03-6bd0-402f-b35c-7a0f23e48863
-                      questionDescription: asvsvsav
-                      displayText: wefewf
-                      questionDataType: nhhhee
-                      questionType: sddvdv
-                      correctValueForAssessment: ergreg
-                      copyQuestionId: true
-                      hudQuestion: false
+                      questionId: 23588047-2596-469b-841c-94fd4260cf30
+                      questionDescription: Times Homeless Past Three Years
+                      displayText: Times Homeless Past Three Years
+                      questionDataType: STRING
+                      questionType: DROPDOWN
+                      copyQuestionId: false
+                      hudQuestion: true
                       locked: false
-                      questionWeight: 1345
-                      definition: stringfied JSON
+                      questionWeight: 0
+                      questionGroupId: 10c0415d-85c0-4dbc-a0ec-562fb57245e3
+                      definition: '"{"questionType": "DROPDOWN","title": "Living Situation","options":
+                        {}}"'
                       visibility: true
                       category: question category
                       subcategory: question sub category
-                      pickListValues: '  { "1" : "Full address reported" } ,  { "2" : "Incomplete or estimated address reported" }'
+                      updateUriTemplate: "/v2017/clients/{clientid}/enrollments/{enrollmentid}"
+                      uriObjectField: enrollment.timesHomelessPastThreeYears
         '400':
-          description: Bad Request â€“ The request was invalid or cannot be served.
+          description: Bad Request – The request was invalid or cannot be served.
         '401':
-          description: Unauthorized â€“ The request requires an user authentication.
+          description: Unauthorized – The request requires an user authentication.
         '403':
           description: >-
-            Forbidden â€“ The server understood the request, but is refusing it or
+            Forbidden – The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found â€“ There is no resource behind the URI.
+          description: Not found – There is no resource behind the URI.
         '500':
           description: Internal Server Error
       description: Gets a question using a URI resource parameter/ID.
@@ -784,19 +671,19 @@ paths:
     put:
       responses:
         '200':
-          description: OK â€“ Everything is working.
+          description: OK – Everything is working.
         '304':
-          description: Not Modified â€“ The client can use cached data.
+          description: Not Modified – The client can use cached data.
         '400':
-          description: Bad Request â€“ The request was invalid or cannot be served.
+          description: Bad Request – The request was invalid or cannot be served.
         '401':
-          description: Unauthorized â€“ The request requires a user.
+          description: Unauthorized – The request requires a user.
         '403':
           description: >-
-            Forbidden â€“ The server understood the request, but is refusing it or
+            Forbidden – The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found â€“ There is no resource behind the URI.
+          description: Not found – There is no resource behind the URI.
         '500':
           description: Internal Server Error.
       description: Updates a specific question specified by the URI resource parameter/ID.
@@ -804,33 +691,32 @@ paths:
       requestBody:
         content:
           application/json:
-            example:
-              question:
-                displayText: Question title
-                questionDescription: additional description to display
-                questionType: choice|text|number|date|grid
-                definition: stringfied JSON
-                visibility: true
-                category: question category
-                subcategory: question sub category
-                pickListValues: '  { "1" : "Full address reported" } ,  { "2" : "Incomplete or estimated address reported" }'
             schema:
-              $ref: '#/components/schemas/questions_json_v2'
+              example:
+                  question:
+                    displayText: Question title
+                    questionDescription: additional description to display
+                    questionType: choice|text|number|date|grid
+                    definition: stringfied JSON
+                    visibility: true
+                    category: question category
+                    subcategory: question sub category
+                    pickListValues: '  { "1" : "Full address reported" } ,  { "2" : "Incomplete or estimated address reported" }'
         required: true
     delete:
       responses:
         '204':
-          description: OK â€“ The resource was successfully deleted.
+          description: OK – The resource was successfully deleted.
         '400':
-          description: Bad Request â€“ The request was invalid or cannot be served.
+          description: Bad Request – The request was invalid or cannot be served.
         '401':
-          description: Unauthorized â€“ The request requires user authentication.
+          description: Unauthorized – The request requires user authentication.
         '403':
           description: >-
-            Forbidden â€“ The server understood the request, but is refusing it or
+            Forbidden – The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found â€“ There is no resource behind the URI.
+          description: Not found – There is no resource behind the URI.
         '500':
           description: Internal Server Error.
       description: Deletes a specific question specified by the URI resource parameter/ID.
@@ -851,37 +737,36 @@ paths:
     get:
       responses:
         '200':
-          description: OK â€“ Everything is working.
+          description: OK – Everything is working.
           content:
             application/json:
-              example:
-                surveys:
-                  pagination:
-                    from: 0
-                    returned: 1
-                    total: 1
-                    maximum: 30
-                    sort: {}
-                  surveys:
-                    - surveyId: bff91ee3-4e88-4953-8f67-e6c549fc2d01
-                      surveyTitle: dsvnjkvjnds
-                      surveyOwner: asssa
-                      tagValue: vfvnjkj
-                      locked: true
-                      copySurveyId: false
-                      surveyDefinition: ' { " title " : " Survey Definition " } '
               schema:
-                $ref: '#/components/schemas/surveys_ids_json_v2'
+                example:
+                    surveys:
+                      pagination:
+                        from: 0
+                        returned: 1
+                        total: 1
+                        maximum: 30
+                        sort: {}
+                      surveys:
+                        - surveyId: bff91ee3-4e88-4953-8f67-e6c549fc2d01
+                          surveyTitle: dsvnjkvjnds
+                          surveyOwner: asssa
+                          tagValue: vfvnjkj
+                          locked: true
+                          copySurveyId: false
+                          surveyDefinition: ' { " title " : " Survey Definition " } '
         '400':
-          description: Bad Request â€“ The request was invalid or cannot be served.
+          description: Bad Request – The request was invalid or cannot be served.
         '403':
           description: >-
-            Forbidden â€“ The server understood the request, but is refusing it or
+            Forbidden – The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found â€“ There is no resource behind the URI.
+          description: Not found – There is no resource behind the URI.
         '500':
-          description: 500 â€“ Internal Server Error
+          description: 500 – Internal Server Error
       description: >-
         Searches for survey.  Returns a list of survey ids, based on the query
         parameters sent.  The query parameters are cumulative, so each
@@ -893,73 +778,70 @@ paths:
           description: OK - New resource has been created.
           content:
             application/json:
-              example:
-                survey:
-                  surveyId: fd628990-623a-42c6-8df2-f74a4c6d2c77
-                  locked: false
-                  copySurveyId: false
-                  surveyDefinition: ' { " title " : " Survey Definition " } '
               schema:
-                $ref: '#/components/schemas/id_surveys_json_v2'
+                example:
+                    survey:
+                      surveyId: fd628990-623a-42c6-8df2-f74a4c6d2c77
+                      locked: false
+                      copySurveyId: false
+                      surveyDefinition: ' { " title " : " Survey Definition " } '
         '400':
-          description: Bad Request â€“ The request was invalid or cannot be served.
+          description: Bad Request – The request was invalid or cannot be served.
         '401':
-          description: Unauthorized â€“ The request requires user authentication.
+          description: Unauthorized – The request requires user authentication.
         '403':
           description: >-
-            Forbidden â€“ The server understood the request, but is refusing it or
+            Forbidden – The server understood the request, but is refusing it or
             access is not allowed.
         '404':
-          description: Not found â€“ There is no resource behind the URI.
+          description: Not found – There is no resource behind the URI.
         '422':
           description: Unprocessable Entity - Request body is incorrect.
         '500':
-          description: 500 â€“ Internal Server Error.
+          description: 500 – Internal Server Error.
       description: |
         Add a survey
       operationId: POST_v2-surveys
       requestBody:
         content:
           application/json:
-            example:
-              survey:
-                surveyTitle: VI-SPDAT Survey
-                surveyOwner: eric@hmislynk.com
-                tagValue: SINGLE_ADULT
-                locked: true
-                copySurveyId: false
-                surveyDefinition: ' { " title " : " Survey Definition " } '
             schema:
-              $ref: '#/components/schemas/surveys_json_v2'
+              example:
+                  survey:
+                    surveyTitle: VI-SPDAT Survey
+                    surveyOwner: eric@hmislynk.com
+                    tagValue: SINGLE_ADULT
+                    locked: true
+                    copySurveyId: false
+                    surveyDefinition: ' { " title " : " Survey Definition " } '
         required: true
   '/v2/surveys/{surveyid}':
     get:
       responses:
         '200':
-          description: OK â€“ Everything is working.
+          description: OK – Everything is working.
           content:
             application/json:
-              example:
-                survey:
-                  surveyId: 4ff874ec-88ef-46bb-93d6-66be064d5dd2
-                  surveyTitle: dsvnjkvjnds
-                  surveyOwner: asssa
-                  tagValue: vfvnjkj
-                  locked: true
-                  copySurveyId: false
-                  surveyDefinition: ' { " title " : " Survey Definition " } '
               schema:
-                $ref: '#/components/schemas/surveys_id_json_v2'
+                example:
+                    survey:
+                      surveyId: 4ff874ec-88ef-46bb-93d6-66be064d5dd2
+                      surveyTitle: dsvnjkvjnds
+                      surveyOwner: asssa
+                      tagValue: vfvnjkj
+                      locked: true
+                      copySurveyId: false
+                      surveyDefinition: ' { " title " : " Survey Definition " } '
         '400':
-          description: Bad Request â€“ The request was invalid or cannot be served.
+          description: Bad Request – The request was invalid or cannot be served.
         '401':
-          description: Unauthorized â€“ The request requires an user authentication.
+          description: Unauthorized – The request requires an user authentication.
         '403':
           description: >-
-            Forbidden â€“ The server understood the request, but is refusing it or
+            Forbidden – The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found â€“ There is no resource behind the URI.
+          description: Not found – There is no resource behind the URI.
         '500':
           description: Internal Server Error
       description: Gets a survey using a URI resource parameter/ID.
@@ -967,19 +849,19 @@ paths:
     put:
       responses:
         '200':
-          description: OK â€“ Everything is working.
+          description: OK – Everything is working.
         '304':
-          description: Not Modified â€“ The client can use cached data.
+          description: Not Modified – The client can use cached data.
         '400':
-          description: Bad Request â€“ The request was invalid or cannot be served.
+          description: Bad Request – The request was invalid or cannot be served.
         '401':
-          description: Unauthorized â€“ The request requires a user.
+          description: Unauthorized – The request requires a user.
         '403':
           description: >-
-            Forbidden â€“ The server understood the request, but is refusing it or
+            Forbidden – The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found â€“ There is no resource behind the URI.
+          description: Not found – There is no resource behind the URI.
         '500':
           description: Internal Server Error.
       description: Updates a specific survey specified by the URI resource parameter/ID.
@@ -987,31 +869,30 @@ paths:
       requestBody:
         content:
           application/json:
-            example:
-              survey:
-                surveyTitle: VI-SPDAT Survey
-                surveyOwner: eric@hmislynk.com
-                tagValue: SINGLE_ADULT
-                locked: true
-                copySurveyId: false
-                surveyDefinition: ' { " title " : " Survey Definition " } '
             schema:
-              $ref: '#/components/schemas/surveys_json_v2'
+              example:
+                  survey:
+                    surveyTitle: VI-SPDAT Survey
+                    surveyOwner: eric@hmislynk.com
+                    tagValue: SINGLE_ADULT
+                    locked: true
+                    copySurveyId: false
+                    surveyDefinition: ' { " title " : " Survey Definition " } '
         required: true
     delete:
       responses:
         '204':
-          description: OK â€“ The resource was successfully deleted.
+          description: OK – The resource was successfully deleted.
         '400':
-          description: Bad Request â€“ The request was invalid or cannot be served.
+          description: Bad Request – The request was invalid or cannot be served.
         '401':
-          description: Unauthorized â€“ The request requires user authentication.
+          description: Unauthorized – The request requires user authentication.
         '403':
           description: >-
-            Forbidden â€“ The server understood the request, but is refusing it or
+            Forbidden – The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found â€“ There is no resource behind the URI.
+          description: Not found – There is no resource behind the URI.
         '500':
           description: Internal Server Error.
       description: Deletes a specific survey specified by the URI resource parameter/ID.
@@ -1027,110 +908,39 @@ paths:
     get:
       responses:
         '200':
-          description: OK â€“ Everything is working.
+          description: OK – Everything is working.
           content:
             application/json:
-              example:
-                surveySections:
-                  pagination:
-                    from: 0
-                    returned: 16
-                    total: 16
-                    maximum: 30
-                    sort: {}
-                  surveySections:
-                    - surveySectionId: 4f0927b8-b5cb-4714-8f64-d417c07862d1
-                      sectionText: scdcddds
-                      sectionDetail: hsabbsac
-                      sectionWeight: 12356
-                      order: 123456
-                    - surveySectionId: 30f04be7-08d1-4c82-8c5f-0dc31f3e2f7d
-                      sectionText: scdcddds
-                      sectionDetail: hsabbsac
-                      sectionWeight: 12356
-                      order: 123456
-                    - surveySectionId: dcdfc572-3707-46b4-9cca-a4b6b350c63f
-                      sectionText: scdcddds
-                      sectionDetail: hsabbsac
-                      sectionWeight: 12356
-                      order: 123456
-                    - surveySectionId: b2ece237-72ad-4e8e-8cc2-718c9a87624e
-                      sectionText: scdcddds
-                      sectionDetail: hsabbsac
-                      sectionWeight: 12356
-                      order: 123456
-                    - surveySectionId: 0c004c59-aa3d-47f3-9f81-a7117b35d0f3
-                      sectionText: scdcddds
-                      sectionDetail: hsabbsac
-                      sectionWeight: 12356
-                      order: 123456
-                    - surveySectionId: 2ad79bbe-60a1-4b6c-84f9-09bb0cd77e95
-                      sectionText: scdcddds
-                      sectionDetail: hsabbsac
-                      sectionWeight: 12356
-                      order: 123456
-                    - surveySectionId: 120fbc29-7041-48b2-9ab3-6eade09047a6
-                      sectionText: scdcddds
-                      sectionDetail: hsabbsac
-                      sectionWeight: 12356
-                      order: 123456
-                    - surveySectionId: 06873599-4f8a-4d5c-8b8b-5fafe5633900
-                      sectionText: scdcddds
-                      sectionDetail: hsabbsac
-                      sectionWeight: 12356
-                      order: 123456
-                    - surveySectionId: 2142388d-5c71-4c95-b282-742d9a5ceffb
-                      sectionText: scdcddds
-                      sectionDetail: hsabbsac
-                      sectionWeight: 12356
-                      order: 123456
-                    - surveySectionId: 7ba5f57c-a0c5-4d7e-ba31-51dd93553d83
-                      sectionText: scdcddds
-                      sectionDetail: hsabbsac
-                      sectionWeight: 12356
-                      order: 123456
-                    - surveySectionId: 12f0ab32-440d-409a-a45b-58f8a43b2fee
-                      sectionText: scdcddds
-                      sectionDetail: hsabbsac
-                      sectionWeight: 12356
-                      order: 123456
-                    - surveySectionId: 517571e9-1161-4229-8702-b86587726700
-                      sectionText: scdcddds
-                      sectionDetail: hsabbsac
-                      sectionWeight: 12356
-                      order: 123456
-                    - surveySectionId: d187c8bd-fe8e-4146-a9eb-65c08b93b8d5
-                      sectionText: scdcddds
-                      sectionDetail: hsabbsac
-                      sectionWeight: 12356
-                      order: 123456
-                    - surveySectionId: 9531e345-547c-482c-abfa-8831b9608ca5
-                      sectionText: scdcddds
-                      sectionDetail: hsabbsac
-                      sectionWeight: 12356
-                      order: 123456
-                    - surveySectionId: 688e9a94-a273-488c-8dde-5157df3103fc
-                      sectionText: scdcddds
-                      sectionDetail: hsabbsac
-                      sectionWeight: 12356
-                      order: 123456
-                    - surveySectionId: 8213b48a-1504-4adf-a58f-2b557a1e2b9e
-                      sectionText: scdcddds
-                      sectionDetail: hsabbsac
-                      sectionWeight: 12356
-                      order: 123456
               schema:
-                $ref: '#/components/schemas/surveySection_ids_json'
+                example:
+                    surveySections:
+                      pagination:
+                        from: 0
+                        returned: 2
+                        total: 16
+                        maximum: 30
+                        sort: {}
+                      surveySections:
+                        - surveySectionId: 4f0927b8-b5cb-4714-8f64-d417c07862d1
+                          sectionText: Section1
+                          sectionDetail: Section1
+                          sectionWeight: 20
+                          order: 1
+                        - surveySectionId: 30f04be7-08d1-4c82-8c5f-0dc31f3e2f7d
+                          sectionText: Section 2
+                          sectionDetail: Section 2
+                          sectionWeight: 30
+                          order: 2
         '400':
-          description: Bad Request â€“ The request was invalid or cannot be served.
+          description: Bad Request – The request was invalid or cannot be served.
         '403':
           description: >-
-            Forbidden â€“ The server understood the request, but is refusing it or
+            Forbidden – The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found â€“ There is no resource behind the URI.
+          description: Not found – There is no resource behind the URI.
         '500':
-          description: 500 â€“ Internal Server Error
+          description: 500 – Internal Server Error
       description: >-
         Searches for surveysection.  Returns a list of surveysection ids, based
         on the query parameters sent.  The query parameters are cumulative, so
@@ -1142,41 +952,39 @@ paths:
           description: OK - New resource has been created.
           content:
             application/json:
-              example:
-                surveySection:
-                  surveySectionId: 8213b48a-1504-4adf-a58f-2b557a1e2b9e
-                  sectionWeight: 0
-                  order: 0
               schema:
-                $ref: '#/components/schemas/id_surveySection_json'
+                example:
+                    surveySection:
+                      surveySectionId: 8213b48a-1504-4adf-a58f-2b557a1e2b9e
+                      sectionWeight: 0
+                      order: 1
         '400':
-          description: Bad Request â€“ The request was invalid or cannot be served.
+          description: Bad Request – The request was invalid or cannot be served.
         '401':
-          description: Unauthorized â€“ The request requires user authentication.
+          description: Unauthorized – The request requires user authentication.
         '403':
           description: >-
-            Forbidden â€“ The server understood the request, but is refusing it or
+            Forbidden – The server understood the request, but is refusing it or
             access is not allowed.
         '404':
-          description: Not found â€“ There is no resource behind the URI.
+          description: Not found – There is no resource behind the URI.
         '422':
           description: Unprocessable Entity - Request body is incorrect.
         '500':
-          description: 500 â€“ Internal Server Error.
+          description: 500 – Internal Server Error.
       description: |
         Add a surveysection
       operationId: POST_surveys-surveyid-surveysections
       requestBody:
         content:
           application/json:
-            example:
-              surveySection:
-                sectionText: scdcddds
-                sectionDetail: hsabbsac
-                sectionWeight: 12356
-                order: 123456
             schema:
-              $ref: '#/components/schemas/surveySections_json'
+              example:
+                  surveySection:
+                    sectionText: Section1
+                    sectionDetail: Section1
+                    sectionWeight: 20
+                    order: 1
         required: true
     parameters:
       - name: surveyid
@@ -1188,28 +996,27 @@ paths:
     get:
       responses:
         '200':
-          description: OK â€“ Everything is working.
+          description: OK – Everything is working.
           content:
             application/json:
-              example:
-                surveySection:
-                  surveySectionId: 6db77e4c-39d9-44e1-bcfc-139697ae69d1
-                  sectionText: scdcddds
-                  sectionDetail: hsabbsac
-                  sectionWeight: 12356
-                  order: 123456
               schema:
-                $ref: '#/components/schemas/surveySections_id_json'
+                example:
+                    surveySection:
+                      surveySectionId: 6db77e4c-39d9-44e1-bcfc-139697ae69d1
+                      sectionText: section1
+                      sectionDetail: section1
+                      sectionWeight: 20
+                      order: 1
         '400':
-          description: Bad Request â€“ The request was invalid or cannot be served.
+          description: Bad Request – The request was invalid or cannot be served.
         '401':
-          description: Unauthorized â€“ The request requires an user authentication.
+          description: Unauthorized – The request requires an user authentication.
         '403':
           description: >-
-            Forbidden â€“ The server understood the request, but is refusing it or
+            Forbidden – The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found â€“ There is no resource behind the URI.
+          description: Not found – There is no resource behind the URI.
         '500':
           description: Internal Server Error
       description: Gets a surveysection using a URI resource parameter/ID.
@@ -1217,19 +1024,19 @@ paths:
     put:
       responses:
         '200':
-          description: OK â€“ Everything is working.
+          description: OK – Everything is working.
         '304':
-          description: Not Modified â€“ The client can use cached data.
+          description: Not Modified – The client can use cached data.
         '400':
-          description: Bad Request â€“ The request was invalid or cannot be served.
+          description: Bad Request – The request was invalid or cannot be served.
         '401':
-          description: Unauthorized â€“ The request requires a user.
+          description: Unauthorized – The request requires a user.
         '403':
           description: >-
-            Forbidden â€“ The server understood the request, but is refusing it or
+            Forbidden – The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found â€“ There is no resource behind the URI.
+          description: Not found – There is no resource behind the URI.
         '500':
           description: Internal Server Error.
       description: >-
@@ -1239,29 +1046,28 @@ paths:
       requestBody:
         content:
           application/json:
-            example:
-              surveySection:
-                sectionText: scdcddds
-                sectionDetail: hsabbsac
-                sectionWeight: 12356
-                order: 123456
             schema:
-              $ref: '#/components/schemas/surveySections_json'
+              example:
+                  surveySection:
+                    sectionText: Section1
+                    sectionDetail: Section1
+                    sectionWeight: 20
+                    order: 1
         required: true
     delete:
       responses:
         '204':
-          description: OK â€“ The resource was successfully deleted.
+          description: OK – The resource was successfully deleted.
         '400':
-          description: Bad Request â€“ The request was invalid or cannot be served.
+          description: Bad Request – The request was invalid or cannot be served.
         '401':
-          description: Unauthorized â€“ The request requires user authentication.
+          description: Unauthorized – The request requires user authentication.
         '403':
           description: >-
-            Forbidden â€“ The server understood the request, but is refusing it or
+            Forbidden – The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found â€“ There is no resource behind the URI.
+          description: Not found – There is no resource behind the URI.
         '500':
           description: Internal Server Error.
       description: >-
@@ -1286,222 +1092,79 @@ paths:
         '200':
           description: Question added to survey
         '400':
-          description: Bad Request â€“ The request was invalid or cannot be served.
+          description: Bad Request – The request was invalid or cannot be served.
         '401':
-          description: Unauthorized â€“ The request requires user authentication.
+          description: Unauthorized – The request requires user authentication.
         '403':
           description: >-
-            Forbidden â€“ The server understood the request, but is refusing it or
+            Forbidden – The server understood the request, but is refusing it or
             access is not allowed.
         '404':
-          description: Not found â€“ There is no resource behind the URI.
+          description: Not found – There is no resource behind the URI.
         '422':
           description: Unprocessable Entity - Request body is incorrect.
         '500':
-          description: 500 â€“ Internal Server Error.
+          description: 500 – Internal Server Error.
       description: |
         Add question to a survey section.
       operationId: POST_surveys-surveyid-surveysections-sectionid-questions
       requestBody:
         content:
           application/json:
-            example:
-              sectionQuestionMappings:
-                sectionQuestionMappings:
-                  - question:
-                      questionId: df1b45ef-560a-4893-be34-9149c2236275
-                    required: true
             schema:
-              $ref: '#/components/schemas/section_question'
+              example:
+                  sectionQuestionMappings:
+                    sectionQuestionMappings:
+                      - question:
+                          questionId: df1b45ef-560a-4893-be34-9149c2236275
         required: true
     get:
       responses:
         '200':
-          description: OK â€“ Everything is working.
+          description: OK – Everything is working.
           content:
             application/json:
-              example:
-                questions:
-                  pagination:
-                    from: 0
-                    returned: 16
-                    total: 16
-                    maximum: 30
-                    sort: {}
-                  questions:
-                    - questionId: 4bd3d3e1-a70a-4e66-89d9-43fd23f5f3c8
-                      questionDescription: asvsvsav
-                      displayText: wefewf
-                      questionDataType: nhhhee
-                      questionType: sddvdv
-                      correctValueForAssessment: ergreg
-                      copyQuestionId: true
-                      hudQuestion: false
-                      locked: false
-                      questionWeight: 1345
-                      pickListGroupId: 66a0181b-26d7-4335-807e-04b73e196d86
-                    - questionId: aeaed6cd-dbe3-4b40-951a-85d7abf410d2
-                      questionDescription: asvsvsav
-                      displayText: wefewf
-                      questionDataType: nhhhee
-                      questionType: sddvdv
-                      correctValueForAssessment: ergreg
-                      copyQuestionId: true
-                      hudQuestion: false
-                      locked: false
-                      questionWeight: 1345
-                    - questionId: eb0266df-8a62-47da-af35-08fca477aa97
-                      questionDescription: asvsvsav
-                      displayText: wefewf
-                      questionDataType: nhhhee
-                      questionType: sddvdv
-                      correctValueForAssessment: ergreg
-                      copyQuestionId: true
-                      hudQuestion: false
-                      locked: false
-                      questionWeight: 1345
-                    - questionId: 97342127-06b5-4455-b757-63961a523121
-                      questionDescription: asvsvsav
-                      displayText: wefewf
-                      questionDataType: nhhhee
-                      questionType: sddvdv
-                      correctValueForAssessment: ergreg
-                      copyQuestionId: true
-                      hudQuestion: false
-                      locked: false
-                      questionWeight: 1345
-                    - questionId: ab7a4b52-8818-415a-b0ce-3ee29c58e226
-                      questionDescription: asvsvsav
-                      displayText: wefewf
-                      questionDataType: nhhhee
-                      questionType: sddvdv
-                      correctValueForAssessment: ergreg
-                      copyQuestionId: true
-                      hudQuestion: false
-                      locked: false
-                      questionWeight: 1345
-                    - questionId: 62988239-88ae-41ce-be55-65fc1732ef88
-                      questionDescription: asvsvsav
-                      displayText: wefewf
-                      questionDataType: nhhhee
-                      questionType: sddvdv
-                      correctValueForAssessment: ergreg
-                      copyQuestionId: true
-                      hudQuestion: false
-                      locked: false
-                      questionWeight: 1345
-                    - questionId: ffb54b34-a6dc-4fc3-9631-145b705daeaf
-                      questionDescription: asvsvsav
-                      displayText: wefewf
-                      questionDataType: nhhhee
-                      questionType: sddvdv
-                      correctValueForAssessment: ergreg
-                      copyQuestionId: true
-                      hudQuestion: false
-                      locked: false
-                      questionWeight: 1345
-                    - questionId: 2b3c1941-be73-4fc6-b99f-5dd4382804aa
-                      questionDescription: asvsvsav
-                      displayText: wefewf
-                      questionDataType: nhhhee
-                      questionType: sddvdv
-                      correctValueForAssessment: ergreg
-                      copyQuestionId: true
-                      hudQuestion: false
-                      locked: false
-                      questionWeight: 1345
-                    - questionId: e5d0ac93-6070-4bf0-ae0c-3e21e3c6cd54
-                      questionDescription: asvsvsav
-                      displayText: wefewf
-                      questionDataType: nhhhee
-                      questionType: sddvdv
-                      correctValueForAssessment: ergreg
-                      copyQuestionId: true
-                      hudQuestion: false
-                      locked: false
-                      questionWeight: 1345
-                    - questionId: 6432fb8b-ad4a-47b7-8927-b18eaa91f54c
-                      questionDescription: asvsvsav
-                      displayText: wefewf
-                      questionDataType: nhhhee
-                      questionType: sddvdv
-                      correctValueForAssessment: ergreg
-                      copyQuestionId: true
-                      hudQuestion: false
-                      locked: false
-                      questionWeight: 1345
-                    - questionId: f58d1b36-2208-4bee-a616-649291cf148e
-                      questionDescription: asvsvsav
-                      displayText: wefewf
-                      questionDataType: nhhhee
-                      questionType: sddvdv
-                      correctValueForAssessment: ergreg
-                      copyQuestionId: true
-                      hudQuestion: false
-                      locked: false
-                      questionWeight: 1345
-                    - questionId: cd65e411-194a-421b-a73e-f33b7f928085
-                      questionDescription: asvsvsav
-                      displayText: wefewf
-                      questionDataType: nhhhee
-                      questionType: sddvdv
-                      correctValueForAssessment: ergreg
-                      copyQuestionId: true
-                      hudQuestion: false
-                      locked: false
-                      questionWeight: 1345
-                    - questionId: 2b62b56e-f8ad-40b5-beb8-a554e706544e
-                      questionDescription: asvsvsav
-                      displayText: wefewf
-                      questionDataType: nhhhee
-                      questionType: sddvdv
-                      correctValueForAssessment: ergreg
-                      copyQuestionId: true
-                      hudQuestion: false
-                      locked: false
-                      questionWeight: 1345
-                    - questionId: 50169178-a7fb-4d28-b935-cea1399e2df2
-                      questionDescription: asvsvsav
-                      displayText: wefewf
-                      questionDataType: nhhhee
-                      questionType: sddvdv
-                      correctValueForAssessment: ergreg
-                      copyQuestionId: true
-                      hudQuestion: false
-                      locked: false
-                      questionWeight: 1345
-                    - questionId: 029bd4a9-4035-4d7c-b661-bed328e8010f
-                      questionDescription: asvsvsav
-                      displayText: wefewf
-                      questionDataType: nhhhee
-                      questionType: sddvdv
-                      correctValueForAssessment: ergreg
-                      copyQuestionId: true
-                      hudQuestion: false
-                      locked: false
-                      questionWeight: 1345
-                    - questionId: f3e7f22d-c136-4128-8d88-9de3f1be9540
-                      questionDescription: asvsvsav
-                      displayText: wefewf
-                      questionDataType: nhhhee
-                      questionType: sddvdv
-                      correctValueForAssessment: ergreg
-                      copyQuestionId: true
-                      hudQuestion: false
-                      locked: false
-                      questionWeight: 1345
               schema:
-                $ref: '#/components/schemas/questions_ids_json'
+                example:
+                    questions:
+                      pagination:
+                        from: 0
+                        returned: 16
+                        total: 16
+                        maximum: 30
+                        sort: {}
+                      questions:
+                        - questionId: 4bd3d3e1-a70a-4e66-89d9-43fd23f5f3c8
+                          questionDescription: About question 1
+                          displayText: Question 1
+                          questionDataType: BOOLEAN
+                          questionType: TEXT
+                          correctValueForAssessment: ergreg
+                          copyQuestionId: true
+                          hudQuestion: false
+                          locked: false
+                          questionWeight: 10
+                          pickListGroupId: 66a0181b-26d7-4335-807e-04b73e196d86
+                        - questionId: aeaed6cd-dbe3-4b40-951a-85d7abf410d2
+                          questionDescription: About question 2
+                          displayText: Question 2
+                          questionDataType: STRING
+                          questionType: CHECKBOX
+                          correctValueForAssessment: true
+                          copyQuestionId: true
+                          hudQuestion: false
+                          locked: false
+                          questionWeight: 5
         '400':
-          description: Bad Request â€“ The request was invalid or cannot be served.
+          description: Bad Request – The request was invalid or cannot be served.
         '403':
           description: >-
-            Forbidden â€“ The server understood the request, but is refusing it or
+            Forbidden – The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found â€“ There is no resource behind the URI.
+          description: Not found – There is no resource behind the URI.
         '500':
-          description: 500 â€“ Internal Server Error
+          description: 500 – Internal Server Error
       description: |
         Read all the question of selected survey section.
       operationId: GET_surveys-surveyid-surveysections-sectionid-questions
@@ -1521,17 +1184,17 @@ paths:
     delete:
       responses:
         '204':
-          description: OK â€“ The resource was successfully deleted.
+          description: OK – The resource was successfully deleted.
         '400':
-          description: Bad Request â€“ The request was invalid or cannot be served.
+          description: Bad Request – The request was invalid or cannot be served.
         '401':
-          description: Unauthorized â€“ The request requires user authentication.
+          description: Unauthorized – The request requires user authentication.
         '403':
           description: >-
-            Forbidden â€“ The server understood the request, but is refusing it or
+            Forbidden – The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found â€“ There is no resource behind the URI.
+          description: Not found – There is no resource behind the URI.
         '500':
           description: Internal Server Error.
       description: Deletes a specific question from specified by section.
@@ -1553,106 +1216,281 @@ paths:
         required: true
         schema:
           type: string
+  '/clients/{clientid}/surveys/{surveyid}/submissions/{submissionid}':
+    put:
+      responses:
+        '200':
+          description: ''
+        '404':
+          description: ''
+          content:
+            application/json:
+              schema:
+                example:
+                  errors:
+                    - code: SUBMISSION_DETAILS_NOT_FOUND
+                      message: >-
+                        Submission Details not found :
+                        e9a4a447-833f-4c29-a3b6-f966a0a753aa
+      description: |
+        To update responses data of submission
+      operationId: PUT_v3-clients-dedupclientid-surveys-surveyid-submissions-submissionid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              example:
+                responses:
+                  responses:
+                    - responseId: b64f6a1f-b72e-4c61-b3bb-7bcef5b877f5
+                      questionId: a4a8baf6-363a-4be8-8610-2cdb6593316f
+                      responseText: example response
+                      sectionId: b5b8cdg8-363a-4be8-8610-2cdb6593316f
+                      appId: app1
+                      effectiveDate: '10-02-2017 03:12:00.000'
+                    - responseId: 2741f430-bc37-42a9-abc4-f2bdf1339d6c
+                      questionId: b5b8cdg8-363a-4be8-8610-2cdb6593316f
+                      responseText: example response
+                      sectionId: a4a8baf6-363a-4be8-8610-2cdb6593316f
+                      appId: app2
+                      effectiveDate: '10-02-2017 03:12:00.000'
+        required: true
+    get:
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                example:
+                  responses:
+                    pagination:
+                      from: 0
+                      returned: 4
+                      total: 4
+                      maximum: 30
+                      sort: {}
+                    responses:
+                      - responseId: b64f6a1f-b72e-4c61-b3bb-7bcef5b877f5
+                        responseText: example response
+                        questionScore: 0
+                        appId: app1
+                        sectionId: 0200e208-3f0e-4504-8bcf-99f6981c6c1e
+                        questionId: f58103d8-f292-438d-af4b-b63c15041477
+                        clientId: df2f6b58-e29f-4845-bd20-58a5ec0b2529
+                        dedupClientId: 74520590-3eb3-11e7-85e4-06c37be0e663
+                        surveyId: d26e11fc-1bc3-4677-9c55-347b4d46b8ab
+                        refused: true
+                        submissionId: 5e40fe46-0c6b-4b45-90be-7179062e55c5
+                        client:
+                          id: df2f6b58-e29f-4845-bd20-58a5ec0b2529
+                          firstName: Ryan
+                          middleName: ''
+                          lastName: Peterson
+                          dob: 340009200000
+                      - responseId: 2741f430-bc37-42a9-abc4-f2bdf1339d6c
+                        responseText: '{ "test": "example response" }'
+                        questionScore: 0
+                        appId: app2
+                        sectionId: 0200e208-3f0e-4504-8bcf-99f6981c6c1e
+                        questionId: f58103d8-f292-438d-af4b-b63c15041477
+                        clientId: df2f6b58-e29f-4845-bd20-58a5ec0b2529
+                        dedupClientId: 74520590-3eb3-11e7-85e4-06c37be0e663
+                        surveyId: d26e11fc-1bc3-4677-9c55-347b4d46b8ab
+                        refused: true
+                        submissionId: 5e40fe46-0c6b-4b45-90be-7179062e55c5
+                        client:
+                          id: df2f6b58-e29f-4845-bd20-58a5ec0b2529
+                          firstName: Ryan
+                          middleName: ''
+                          lastName: Peterson
+                          dob: 340009200000
+                      - responseId: f7bb4b7e-2384-4a6a-bcf8-1739877f0d94
+                        responseText: example response
+                        questionScore: 0
+                        appId: app1
+                        sectionId: 0200e208-3f0e-4504-8bcf-99f6981c6c1e
+                        questionId: f58103d8-f292-438d-af4b-b63c15041477
+                        clientId: 08bd3d50-cb87-41ac-8b64-b3dc3853c411
+                        dedupClientId: 82bf30b0-9a18-11e7-9920-02fe61f7863e
+                        surveyId: d26e11fc-1bc3-4677-9c55-347b4d46b8ab
+                        refused: true
+                        submissionId: 8eb99dd0-cd59-48b8-b08d-1ecd71d7a1f3
+                        client:
+                          id: 08bd3d50-cb87-41ac-8b64-b3dc3853c411
+                          firstName: Przemyslaw
+                          middleName: Piotr
+                          lastName: Gorecki
+                          dob: 315532800000
+                          phoneNumber: undefined
+                          emailAddress: przemyslaw@toptal.com
+                      - responseId: f152d995-3a79-4816-9e00-241075f3544c
+                        responseText: '{ "test": "example response" }'
+                        questionScore: 0
+                        appId: app2
+                        sectionId: 0200e208-3f0e-4504-8bcf-99f6981c6c1e
+                        questionId: f58103d8-f292-438d-af4b-b63c15041477
+                        clientId: 08bd3d50-cb87-41ac-8b64-b3dc3853c411
+                        dedupClientId: 82bf30b0-9a18-11e7-9920-02fe61f7863e
+                        surveyId: d26e11fc-1bc3-4677-9c55-347b4d46b8ab
+                        refused: true
+                        submissionId: 8eb99dd0-cd59-48b8-b08d-1ecd71d7a1f3
+                        client:
+                          id: 08bd3d50-cb87-41ac-8b64-b3dc3853c411
+                          firstName: Przemyslaw
+                          middleName: Piotr
+                          lastName: Gorecki
+                          dob: 315532800000
+                          phoneNumber: undefined
+                          emailAddress: przemyslaw@toptal.com
+        '404':
+          description: ''
+          content:
+            application/json:
+              schema:
+                example:
+                  errors:
+                    - code: SUBMISSION_DETAILS_NOT_FOUND
+                      message: >-
+                        Submission Details not found :
+                        e9a4a447-833f-4c29-a3b6-f966a0a753aa
+      description: |
+        To get responses of a submission.
+      operationId: GET_v3-clients-dedupclientid-surveys-surveyid-submissions-submissionid
+    delete:
+      responses:
+        '200':
+          description: ''
+        '404':
+          description: ''
+          content:
+            application/json:
+              schema:
+                example:
+                  errors:
+                    - code: SUBMISSION_DETAILS_NOT_FOUND
+                      message: >-
+                        Submission Details not found :
+                        e9a4a447-833f-4c29-a3b6-f966a0a753aa
+      description: |
+        To delete responses of a submission.
+      operationId: >-
+        DELETE_v3-clients-dedupclientid-surveys-surveyid-submissions-submissionid
+    parameters:
+      - name: submissionid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: surveyid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: clientid
+        in: path
+        required: true
+        schema:
+          type: string
   '/v3/clients/{dedupclientid}/surveys/{surveyid}/responses':
     get:
       responses:
         '200':
-          description: OK â€“ Everything is working.
+          description: OK – Everything is working.
           content:
             application/json:
-              example:
-                responses:
-                  pagination:
-                    from: 0
-                    returned: 4
-                    total: 4
-                    maximum: 30
-                    sort: {}
-                  responses:
-                    - responseId: b64f6a1f-b72e-4c61-b3bb-7bcef5b877f5
-                      responseText: example response
-                      questionScore: 0
-                      appId: app1
-                      sectionId: 0200e208-3f0e-4504-8bcf-99f6981c6c1e
-                      questionId: f58103d8-f292-438d-af4b-b63c15041477
-                      clientId: df2f6b58-e29f-4845-bd20-58a5ec0b2529
-                      dedupClientId: 74520590-3eb3-11e7-85e4-06c37be0e663
-                      surveyId: d26e11fc-1bc3-4677-9c55-347b4d46b8ab
-                      refused: true
-                      submissionId: 5e40fe46-0c6b-4b45-90be-7179062e55c5
-                      client:
-                        id: df2f6b58-e29f-4845-bd20-58a5ec0b2529
-                        firstName: Ryan
-                        middleName: ''
-                        lastName: Peterson
-                        dob: 340009200000
-                    - responseId: 2741f430-bc37-42a9-abc4-f2bdf1339d6c
-                      responseText: '{ "test": "example response" }'
-                      questionScore: 0
-                      appId: app2
-                      sectionId: 0200e208-3f0e-4504-8bcf-99f6981c6c1e
-                      questionId: f58103d8-f292-438d-af4b-b63c15041477
-                      clientId: df2f6b58-e29f-4845-bd20-58a5ec0b2529
-                      dedupClientId: 74520590-3eb3-11e7-85e4-06c37be0e663
-                      surveyId: d26e11fc-1bc3-4677-9c55-347b4d46b8ab
-                      refused: true
-                      submissionId: 5e40fe46-0c6b-4b45-90be-7179062e55c5
-                      client:
-                        id: df2f6b58-e29f-4845-bd20-58a5ec0b2529
-                        firstName: Ryan
-                        middleName: ''
-                        lastName: Peterson
-                        dob: 340009200000
-                    - responseId: f7bb4b7e-2384-4a6a-bcf8-1739877f0d94
-                      responseText: example response
-                      questionScore: 0
-                      appId: app1
-                      sectionId: 0200e208-3f0e-4504-8bcf-99f6981c6c1e
-                      questionId: f58103d8-f292-438d-af4b-b63c15041477
-                      clientId: 08bd3d50-cb87-41ac-8b64-b3dc3853c411
-                      dedupClientId: 82bf30b0-9a18-11e7-9920-02fe61f7863e
-                      surveyId: d26e11fc-1bc3-4677-9c55-347b4d46b8ab
-                      refused: true
-                      submissionId: 8eb99dd0-cd59-48b8-b08d-1ecd71d7a1f3
-                      client:
-                        id: 08bd3d50-cb87-41ac-8b64-b3dc3853c411
-                        firstName: Przemyslaw
-                        middleName: Piotr
-                        lastName: Gorecki
-                        dob: 315532800000
-                        phoneNumber: undefined
-                        emailAddress: przemyslaw@toptal.com
-                    - responseId: f152d995-3a79-4816-9e00-241075f3544c
-                      responseText: '{ "test": "example response" }'
-                      questionScore: 0
-                      appId: app2
-                      sectionId: 0200e208-3f0e-4504-8bcf-99f6981c6c1e
-                      questionId: f58103d8-f292-438d-af4b-b63c15041477
-                      clientId: 08bd3d50-cb87-41ac-8b64-b3dc3853c411
-                      dedupClientId: 82bf30b0-9a18-11e7-9920-02fe61f7863e
-                      surveyId: d26e11fc-1bc3-4677-9c55-347b4d46b8ab
-                      refused: true
-                      submissionId: 8eb99dd0-cd59-48b8-b08d-1ecd71d7a1f3
-                      client:
-                        id: 08bd3d50-cb87-41ac-8b64-b3dc3853c411
-                        firstName: Przemyslaw
-                        middleName: Piotr
-                        lastName: Gorecki
-                        dob: 315532800000
-                        phoneNumber: undefined
-                        emailAddress: przemyslaw@toptal.com
               schema:
-                $ref: '#/components/schemas/response_ids_json'
+                example:
+                    responses:
+                      pagination:
+                        from: 0
+                        returned: 4
+                        total: 4
+                        maximum: 30
+                        sort: {}
+                      responses:
+                        - responseId: b64f6a1f-b72e-4c61-b3bb-7bcef5b877f5
+                          responseText: example response
+                          questionScore: 0
+                          appId: app1
+                          sectionId: 0200e208-3f0e-4504-8bcf-99f6981c6c1e
+                          questionId: f58103d8-f292-438d-af4b-b63c15041477
+                          clientId: df2f6b58-e29f-4845-bd20-58a5ec0b2529
+                          dedupClientId: 74520590-3eb3-11e7-85e4-06c37be0e663
+                          surveyId: d26e11fc-1bc3-4677-9c55-347b4d46b8ab
+                          refused: true
+                          submissionId: 5e40fe46-0c6b-4b45-90be-7179062e55c5
+                          client:
+                            id: df2f6b58-e29f-4845-bd20-58a5ec0b2529
+                            firstName: Ryan
+                            middleName: ''
+                            lastName: Peterson
+                            dob: 340009200000
+                        - responseId: 2741f430-bc37-42a9-abc4-f2bdf1339d6c
+                          responseText: '{ "test": "example response" }'
+                          questionScore: 0
+                          appId: app2
+                          sectionId: 0200e208-3f0e-4504-8bcf-99f6981c6c1e
+                          questionId: f58103d8-f292-438d-af4b-b63c15041477
+                          clientId: df2f6b58-e29f-4845-bd20-58a5ec0b2529
+                          dedupClientId: 74520590-3eb3-11e7-85e4-06c37be0e663
+                          surveyId: d26e11fc-1bc3-4677-9c55-347b4d46b8ab
+                          refused: true
+                          submissionId: 5e40fe46-0c6b-4b45-90be-7179062e55c5
+                          client:
+                            id: df2f6b58-e29f-4845-bd20-58a5ec0b2529
+                            firstName: Ryan
+                            middleName: ''
+                            lastName: Peterson
+                            dob: 340009200000
+                        - responseId: f7bb4b7e-2384-4a6a-bcf8-1739877f0d94
+                          responseText: example response
+                          questionScore: 0
+                          appId: app1
+                          sectionId: 0200e208-3f0e-4504-8bcf-99f6981c6c1e
+                          questionId: f58103d8-f292-438d-af4b-b63c15041477
+                          clientId: 08bd3d50-cb87-41ac-8b64-b3dc3853c411
+                          dedupClientId: 82bf30b0-9a18-11e7-9920-02fe61f7863e
+                          surveyId: d26e11fc-1bc3-4677-9c55-347b4d46b8ab
+                          refused: true
+                          submissionId: 8eb99dd0-cd59-48b8-b08d-1ecd71d7a1f3
+                          client:
+                            id: 08bd3d50-cb87-41ac-8b64-b3dc3853c411
+                            firstName: Przemyslaw
+                            middleName: Piotr
+                            lastName: Gorecki
+                            dob: 315532800000
+                            phoneNumber: undefined
+                            emailAddress: przemyslaw@toptal.com
+                        - responseId: f152d995-3a79-4816-9e00-241075f3544c
+                          responseText: '{ "test": "example response" }'
+                          questionScore: 0
+                          appId: app2
+                          sectionId: 0200e208-3f0e-4504-8bcf-99f6981c6c1e
+                          questionId: f58103d8-f292-438d-af4b-b63c15041477
+                          clientId: 08bd3d50-cb87-41ac-8b64-b3dc3853c411
+                          dedupClientId: 82bf30b0-9a18-11e7-9920-02fe61f7863e
+                          surveyId: d26e11fc-1bc3-4677-9c55-347b4d46b8ab
+                          refused: true
+                          submissionId: 8eb99dd0-cd59-48b8-b08d-1ecd71d7a1f3
+                          client:
+                            id: 08bd3d50-cb87-41ac-8b64-b3dc3853c411
+                            firstName: Przemyslaw
+                            middleName: Piotr
+                            lastName: Gorecki
+                            dob: 315532800000
+                            phoneNumber: undefined
+                            emailAddress: przemyslaw@toptal.com
         '400':
-          description: Bad Request â€“ The request was invalid or cannot be served.
+          description: Bad Request – The request was invalid or cannot be served.
         '403':
           description: >-
-            Forbidden â€“ The server understood the request, but is refusing it or
+            Forbidden – The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found â€“ There is no resource behind the URI.
+          description: Not found – There is no resource behind the URI.
         '500':
-          description: 500 â€“ Internal Server Error
+          description: 500 – Internal Server Error
       description: >-
         Searches for response.  Returns a list of response ids, based on the
         query parameters sent.  The query parameters are cumulative, so each
@@ -1660,68 +1498,67 @@ paths:
       operationId: GET_v3-clients-dedupclientid-surveys-surveyid-responses
     post:
       responses:
-        '201':
+        '200':
           description: OK - New resource has been created.
           content:
             application/json:
-              example:
-                response:
-                  responseId: f7bb4b7e-2384-4a6a-bcf8-1739877f0d94
-                  responseText: example response
-                  questionScore: 0
-                  appId: app1
-                  sectionId: 0200e208-3f0e-4504-8bcf-99f6981c6c1e
-                  questionId: f58103d8-f292-438d-af4b-b63c15041477
-                  clientId: 08bd3d50-cb87-41ac-8b64-b3dc3853c411
-                  dedupClientId: 82bf30b0-9a18-11e7-9920-02fe61f7863e
-                  surveyId: d26e11fc-1bc3-4677-9c55-347b4d46b8ab
-                  refused: true
-                  submissionId: 8eb99dd0-cd59-48b8-b08d-1ecd71d7a1f3
-                  client:
-                    id: 08bd3d50-cb87-41ac-8b64-b3dc3853c411
-                    firstName: Przemyslaw
-                    middleName: Piotr
-                    lastName: Gorecki
-                    dob: 315532800000
-                    phoneNumber: undefined
-                    emailAddress: przemyslaw@toptal.com
               schema:
-                $ref: '#/components/schemas/id_response_json'
+                example:
+                  response:
+                    responseId: f7bb4b7e-2384-4a6a-bcf8-1739877f0d94
+                    responseText: example response
+                    questionScore: 0
+                    appId: app1
+                    sectionId: 0200e208-3f0e-4504-8bcf-99f6981c6c1e
+                    questionId: f58103d8-f292-438d-af4b-b63c15041477
+                    clientId: 08bd3d50-cb87-41ac-8b64-b3dc3853c411
+                    dedupClientId: 82bf30b0-9a18-11e7-9920-02fe61f7863e
+                    surveyId: d26e11fc-1bc3-4677-9c55-347b4d46b8ab
+                    refused: true
+                    submissionId: 8eb99dd0-cd59-48b8-b08d-1ecd71d7a1f3
+                    client:
+                      id: 08bd3d50-cb87-41ac-8b64-b3dc3853c411
+                      firstName: Przemyslaw
+                      middleName: Piotr
+                      lastName: Gorecki
+                      dob: 315532800000
+                      phoneNumber: undefined
+                      emailAddress: przemyslaw@toptal.com
         '400':
-          description: Bad Request â€“ The request was invalid or cannot be served.
+          description: Bad Request – The request was invalid or cannot be served.
         '401':
-          description: Unauthorized â€“ The request requires user authentication.
+          description: Unauthorized – The request requires user authentication.
         '403':
           description: >-
-            Forbidden â€“ The server understood the request, but is refusing it or
+            Forbidden – The server understood the request, but is refusing it or
             access is not allowed.
         '404':
-          description: Not found â€“ There is no resource behind the URI.
+          description: Not found – There is no resource behind the URI.
         '422':
           description: Unprocessable Entity - Request body is incorrect.
         '500':
-          description: 500 â€“ Internal Server Error.
+          description: 500 – Internal Server Error.
       description: |
         Add a response
       operationId: POST_v3-clients-dedupclientid-surveys-surveyid-responses
       requestBody:
         content:
           application/json:
-            example:
-              responses:
-                responses:
-                  - questionId: a4a8baf6-363a-4be8-8610-2cdb6593316f
-                    responseText: example response
-                    sectionId: b5b8cdg8-363a-4be8-8610-2cdb6593316f
-                    appId: app1
-                    effectiveDate: '10-02-2017 03:12:00.000'
-                  - questionId: b5b8cdg8-363a-4be8-8610-2cdb6593316f
-                    responseText: example response
-                    sectionId: a4a8baf6-363a-4be8-8610-2cdb6593316f
-                    appId: app2
-                    effectiveDate: '10-02-2017 03:12:00.000'
             schema:
-              $ref: '#/components/schemas/response_json'
+              example:
+                responses:
+                  responses:
+                    - questionId: a4a8baf6-363a-4be8-8610-2cdb6593316f
+                      responseText: example response
+                      sectionId: b5b8cdg8-363a-4be8-8610-2cdb6593316f
+                      appId: app1
+                      effectiveDate: '10-02-2017 03:12:00.000'
+                    - questionId: b5b8cdg8-363a-4be8-8610-2cdb6593316f
+                      responseText: example response
+                      sectionId: a4a8baf6-363a-4be8-8610-2cdb6593316f
+                      appId: app2
+                      effectiveDate: '10-02-2017 03:12:00.000'
+
         required: true
     parameters:
       - name: surveyid
@@ -1738,28 +1575,27 @@ paths:
     get:
       responses:
         '200':
-          description: OK â€“ Everything is working.
+          description: OK – Everything is working.
           content:
             application/json:
-              example:
-                response:
-                  responseId: e9a4a447-833f-4c29-a3b6-f966a0a753aa
-                  responseText: csacsc
-                  questionScore: 123456
-                  effectiveDate: '10-02-2017 03:12:00.000'
-                  submissionId: e9a4a447-833f-4c29-a3b6-f966a0a753aa
               schema:
-                $ref: '#/components/schemas/response_id_json'
+                example:
+                    response:
+                      responseId: e9a4a447-833f-4c29-a3b6-f966a0a753aa
+                      responseText: csacsc
+                      questionScore: 123456
+                      effectiveDate: '10-02-2017 03:12:00.000'
+                      submissionId: e9a4a447-833f-4c29-a3b6-f966a0a753aa
         '400':
-          description: Bad Request â€“ The request was invalid or cannot be served.
+          description: Bad Request – The request was invalid or cannot be served.
         '401':
-          description: Unauthorized â€“ The request requires an user authentication.
+          description: Unauthorized – The request requires an user authentication.
         '403':
           description: >-
-            Forbidden â€“ The server understood the request, but is refusing it or
+            Forbidden – The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found â€“ There is no resource behind the URI.
+          description: Not found – There is no resource behind the URI.
         '500':
           description: Internal Server Error
       description: Gets a response using a URI resource parameter/ID.
@@ -1767,19 +1603,19 @@ paths:
     put:
       responses:
         '200':
-          description: OK â€“ Everything is working.
+          description: OK – Everything is working.
         '304':
-          description: Not Modified â€“ The client can use cached data.
+          description: Not Modified – The client can use cached data.
         '400':
-          description: Bad Request â€“ The request was invalid or cannot be served.
+          description: Bad Request – The request was invalid or cannot be served.
         '401':
-          description: Unauthorized â€“ The request requires a user.
+          description: Unauthorized – The request requires a user.
         '403':
           description: >-
-            Forbidden â€“ The server understood the request, but is refusing it or
+            Forbidden – The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found â€“ There is no resource behind the URI.
+          description: Not found – There is no resource behind the URI.
         '500':
           description: Internal Server Error.
       description: Updates a specific response specified by the URI resource parameter/ID.
@@ -1787,30 +1623,29 @@ paths:
       requestBody:
         content:
           application/json:
-            example:
-              response:
-                responseId: e9a4a447-833f-4c29-a3b6-f966a0a753aa
-                responseText: csacsc
-                questionScore: 123456
-                effectiveDate: '10-02-2017 03:12:00.000'
-                submissionId: e9a4a447-833f-4c29-a3b6-f966a0a753aa
             schema:
-              $ref: '#/components/schemas/response_id_json'
+              example:
+                  response:
+                    responseId: e9a4a447-833f-4c29-a3b6-f966a0a753aa
+                    responseText: csacsc
+                    questionScore: 123456
+                    effectiveDate: '10-02-2017 03:12:00.000'
+                    submissionId: e9a4a447-833f-4c29-a3b6-f966a0a753aa
         required: true
     delete:
       responses:
         '204':
-          description: OK â€“ The resource was successfully deleted.
+          description: OK – The resource was successfully deleted.
         '400':
-          description: Bad Request â€“ The request was invalid or cannot be served.
+          description: Bad Request – The request was invalid or cannot be served.
         '401':
-          description: Unauthorized â€“ The request requires user authentication.
+          description: Unauthorized – The request requires user authentication.
         '403':
           description: >-
-            Forbidden â€“ The server understood the request, but is refusing it or
+            Forbidden – The server understood the request, but is refusing it or
             the access is not allowed.
         '404':
-          description: Not found â€“ There is no resource behind the URI.
+          description: Not found – There is no resource behind the URI.
         '500':
           description: Internal Server Error.
       description: Deletes a specific response specified by the URI resource parameter/ID.
@@ -1839,16 +1674,15 @@ paths:
           description: ''
           content:
             application/json:
-              example:
-                sectionScore:
-                  sectionScoreId: d7f79550-fb2b-4af8-b011-24a6d5e99aa4
-                  sectionId: 5f45c297-1eac-44d2-8571-349f7ae28677
-                  surveyId: faa07de1-1421-4a63-b606-3bd4cba91699
-                  clientId: 08bd3d50-cb87-41ac-8b64-b3dc3853c411
-                  clientDedupId: 82bf30b0-9a18-11e7-9920-02fe61f7863e
-                  sectionScore: 10
               schema:
-                $ref: '#/components/schemas/section_score'
+                example:
+                    sectionScore:
+                      sectionScoreId: d7f79550-fb2b-4af8-b011-24a6d5e99aa4
+                      sectionId: 5f45c297-1eac-44d2-8571-349f7ae28677
+                      surveyId: faa07de1-1421-4a63-b606-3bd4cba91699
+                      clientId: 08bd3d50-cb87-41ac-8b64-b3dc3853c411
+                      clientDedupId: 82bf30b0-9a18-11e7-9920-02fe61f7863e
+                      sectionScore: 10
       description: To insert sctore for a section
       operationId: POST_v3-clients-dedupclientid-surveys-surveyid-sections-sectionid-scores
       requestBody:
@@ -1876,16 +1710,15 @@ paths:
           description: ''
           content:
             application/json:
-              example:
-                sectionScore:
-                  sectionScoreId: d7f79550-fb2b-4af8-b011-24a6d5e99aa4
-                  sectionId: 5f45c297-1eac-44d2-8571-349f7ae28677
-                  surveyId: faa07de1-1421-4a63-b606-3bd4cba91699
-                  clientId: 08bd3d50-cb87-41ac-8b64-b3dc3853c411
-                  clientDedupId: 82bf30b0-9a18-11e7-9920-02fe61f7863e
-                  sectionScore: 10
               schema:
-                $ref: '#/components/schemas/section_score'
+                example:
+                    sectionScore:
+                      sectionScoreId: d7f79550-fb2b-4af8-b011-24a6d5e99aa4
+                      sectionId: 5f45c297-1eac-44d2-8571-349f7ae28677
+                      surveyId: faa07de1-1421-4a63-b606-3bd4cba91699
+                      clientId: 08bd3d50-cb87-41ac-8b64-b3dc3853c411
+                      clientDedupId: 82bf30b0-9a18-11e7-9920-02fe61f7863e
+                      sectionScore: 10
       description: Read a section score.
       operationId: GET_v3-clients-dedupclientid-surveys-surveyid-sections-sectionid-scores
     put:
@@ -1924,23 +1757,22 @@ paths:
           description: ''
           content:
             application/json:
-              example:
-                sectionScores:
-                  pagination:
-                    from: 0
-                    returned: 1
-                    total: 1
-                    maximum: 30
-                    sort: {}
-                  sectionScores:
-                    - sectionScoreId: d7f79550-fb2b-4af8-b011-24a6d5e99aa4
-                      sectionId: 5f45c297-1eac-44d2-8571-349f7ae28677
-                      surveyId: faa07de1-1421-4a63-b606-3bd4cba91699
-                      clientId: 08bd3d50-cb87-41ac-8b64-b3dc3853c411
-                      clientDedupId: 82bf30b0-9a18-11e7-9920-02fe61f7863e
-                      sectionScore: 10
               schema:
-                $ref: '#/components/schemas/score_ids_json'
+                example:
+                    sectionScores:
+                      pagination:
+                        from: 0
+                        returned: 1
+                        total: 1
+                        maximum: 30
+                        sort: {}
+                      sectionScores:
+                        - sectionScoreId: d7f79550-fb2b-4af8-b011-24a6d5e99aa4
+                          sectionId: 5f45c297-1eac-44d2-8571-349f7ae28677
+                          surveyId: faa07de1-1421-4a63-b606-3bd4cba91699
+                          clientId: 08bd3d50-cb87-41ac-8b64-b3dc3853c411
+                          clientDedupId: 82bf30b0-9a18-11e7-9920-02fe61f7863e
+                          sectionScore: 10
       description: Read a section score.
       operationId: GET_v3-clients-dedupclientid-surveys-surveyid-scores
     put:
@@ -1988,21 +1820,22 @@ paths:
       requestBody:
         content:
           application/json:
-            example:
-              responses:
-                responses:
-                  - questionId: a4a8baf6-363a-4be8-8610-2cdb6593316f
-                    responseText: example response
-                    sectionId: b5b8cdg8-363a-4be8-8610-2cdb6593316f
-                    appId: app1
-                    effectiveDate: '10-02-2017 03:12:00.000'
-                  - questionId: b5b8cdg8-363a-4be8-8610-2cdb6593316f
-                    responseText: example response
-                    sectionId: a4a8baf6-363a-4be8-8610-2cdb6593316f
-                    appId: app2
-                    effectiveDate: '10-02-2017 03:12:00.000'
             schema:
-              type: string
+              example:
+                responses:
+                  responses:
+                    - questionId: a4a8baf6-363a-4be8-8610-2cdb6593316f
+                      responseId: b64f6a1f-b72e-4c61-b3bb-7bcef5b877f5
+                      responseText: example response
+                      sectionId: b5b8cdg8-363a-4be8-8610-2cdb6593316f
+                      appId: app1
+                      effectiveDate: '10-02-2017 03:12:00.000'
+                    - questionId: b5b8cdg8-363a-4be8-8610-2cdb6593316f
+                      responseId: 2741f430-bc37-42a9-abc4-f2bdf1339d6c
+                      responseText: example response
+                      sectionId: a4a8baf6-363a-4be8-8610-2cdb6593316f
+                      appId: app2
+                      effectiveDate: '10-02-2017 03:12:00.000'
         required: true
     get:
       responses:
@@ -2210,11 +2043,10 @@ paths:
       requestBody:
         content:
           application/json:
-            example:
-              clientsurveysubmission:
-                globalEnrollmentId: e166faae-1661-49ab-9987-4f66fd982cb2
             schema:
-              type: string
+              example:
+                  clientsurveysubmission:
+                    globalEnrollmentId: e166faae-1661-49ab-9987-4f66fd982cb2
         required: true
     parameters:
       - name: clientSubmissionId
