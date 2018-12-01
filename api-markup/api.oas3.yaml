@@ -3,7 +3,7 @@ info:
   title: Survey Service
   version: 3.1.2
 servers:
-  - url: 'https://www.hmislynk.com/survey-api/rest'
+  - url: 'https://www.hslynk.com/survey-api/rest'
 paths:
   /picklistgroups:
     get:
