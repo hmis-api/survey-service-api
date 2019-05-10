@@ -1362,7 +1362,7 @@ paths:
       operationId: GET_v3-clients-dedupclientid-surveys-surveyid-submissions-submissionid
     delete:
       responses:
-        '200':
+        '204':
           description: ''
         '404':
           description: ''
@@ -1819,7 +1819,7 @@ paths:
                         e9a4a447-833f-4c29-a3b6-f966a0a753aa
       description: |
         To update responses data of submission
-      operationId: PUT_v3-clients-dedupclientid-surveys-surveyid-submissions-submissionid
+      operationId: PUT_v3-clients-dedupclientid-surveys-surveyid-submission-submissionid
       requestBody:
         content:
           application/json:
@@ -1941,10 +1941,10 @@ paths:
                         e9a4a447-833f-4c29-a3b6-f966a0a753aa
       description: |
         To get responses of a submission.
-      operationId: GET_v3-clients-dedupclientid-surveys-surveyid-submissions-submissionid
+      operationId: GET_v3-clients-dedupclientid-surveys-surveyid-submission-submissionid
     delete:
       responses:
-        '200':
+        '204':
           description: ''
         '404':
           description: ''
@@ -1960,7 +1960,7 @@ paths:
       description: |
         To delete responses of a submission.
       operationId: >-
-        DELETE_v3-clients-dedupclientid-surveys-surveyid-submissions-submissionid
+        DELETE_v3-clients-dedupclientid-surveys-surveyid-submission-submissionid
     parameters:
       - name: submissionid
         in: path
