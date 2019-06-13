@@ -2026,7 +2026,7 @@ paths:
         required: true
         schema:
           type: string
-  '/clientsurveysubmissions/{submissionId}':
+  '/clientsurveysubmissions/{clientSurveySubmissionId}':
     put:
       responses:
         '200':
@@ -2042,7 +2042,7 @@ paths:
                       code: ERR_CODE_CLIENT_SUBMISSION_NOT_FOUND
                       message: Client survey submission Not found.
       description: Update global enrollment to a survey submission
-      operationId: PUT_clientsurveysubmissions-submissionId
+      operationId: PUT_clientsurveysubmissions-clientSurveySubmissionId
       requestBody:
         content:
           application/json:
@@ -2052,7 +2052,7 @@ paths:
                     globalEnrollmentId: e166faae-1661-49ab-9987-4f66fd982cb2
         required: true
     parameters:
-      - name: submissionId
+      - name: clientSurveySubmissionId
         in: path
         required: true
         schema:
