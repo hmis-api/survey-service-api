@@ -1986,38 +1986,61 @@ paths:
             application/json:
               schema:
                 example:
-                  clientSurveySubmissions:
-                    pagination:
-                      from: 0
-                      returned: 2
-                      total: 2
-                      maximum: 30
-                      sort: {}
                     clientSurveySubmissions:
-                      - id: 5c5b8760-a691-46a0-b762-f74fc2bf56cc
-                        clientId: 035c313e-a39d-4098-bf89-544b553d752f
-                        surveyId: b76927dc-715d-4104-a1dc-1fa4d933d8b1
-                        submissionId: 52377ce7-a246-4809-be94-874a3af9f035
-                        globalEnrollmentId: 7634b7ed-3f31-4822-81c0-d805b2f5ac3b
-                        client:
-                          id: 035c313e-a39d-4098-bf89-544b553d752f
-                          firstName: Ryan
-                          middleName: ''
-                          lastName: Peterson
-                          dob: 339989400000
-                          dedupClientId: 5dfe2ac2-43af-4d6d-9ee8-0e8fac5e3eg8
-                      - id: e67bb703-bce1-49b0-948d-75f286f4497b
-                        clientId: 035c313e-a39d-4098-bf89-544b553d752f
-                        surveyId: 57dbe6b2-83a9-4a8b-b4aa-65985241d341
-                        submissionId: d89ac01a-32a4-4530-92a6-d59b161b5ca8
-                        globalEnrollmentId: e166faae-1661-49ab-9987-4f66fd982cb2
-                        client:
-                          id: 035c313e-a39d-4098-bf89-544b553d752f
-                          firstName: Ryan
-                          middleName: ''
-                          lastName: Peterson
-                          dob: 339989400000
-                          dedupClientId: 5dfe2ac2-43af-4d6d-9ee8-0e8fac5e3eg8
+                      pagination:
+                        from: 0
+                        returned: 2
+                        total: 2
+                        maximum: 100
+                        sort:
+                          field: submissionDate
+                          order: asc
+                      clientSurveySubmissions:
+                        - id: 6a6a91fe-97a7-43f6-a8f5-8e0adbed014e
+                          clientId: 51d496ac-e22b-4505-ac4b-45fdd74b3d70
+                          surveyId: a0c01dfc-ce96-425f-897b-63b369d5a272
+                          survey:
+                            surveyId: a0c01dfc-ce96-425f-897b-63b369d5a272
+                            surveyTitle: Suryve 1
+                            surveyOwner: Survey
+                            tagValue: HUD
+                            projectGroupCode: PG0001
+                            locked: true
+                            copySurveyId: false
+                          submissionId: 85cd3b18-c68e-4c8c-98b0-7e3586d9a917
+                          client:
+                            id: 51d496ac-e22b-4505-ac4b-45fdd74b3d70
+                            firstName: Jeanette_1560499213831
+                            middleName: ''
+                            lastName: Gonzales
+                            dob: 259977600000
+                            phoneNumber: '9440060881'
+                            emailAddress: Jeanette_1560499213831@gmail.com
+                            dedupClientId: eac0fc00-f727-11e6-bdda-06c37be0e663
+                          clientLink: /hmis-clientapi/rest/v2014/clients/51d496ac-e22b-4505-ac4b-45fdd74b3d70
+                        - id: 9b2828c3-8702-433d-a21b-4526ac725634
+                          clientId: 51d496ac-e22b-4505-ac4b-45fdd74b3d70
+                          surveyId: 5830b4cc-1684-418a-9bcb-1401e17cb117
+                          survey:
+                            surveyId: 5830b4cc-1684-418a-9bcb-1401e17cb117
+                            surveyTitle: Survey 2
+                            surveyOwner: Survey
+                            tagValue: HUD
+                            projectGroupCode: PG0001
+                            locked: true
+                            copySurveyId: false
+                          submissionId: d17a2f61-a105-4b1c-932e-f42773051957
+                          client:
+                            id: 51d496ac-e22b-4505-ac4b-45fdd74b3d70
+                            firstName: Jeanette_1560499213831
+                            middleName: ''
+                            lastName: Gonzales
+                            dob: 259977600000
+                            phoneNumber: '9440060881'
+                            emailAddress: Jeanette_1560499213831@gmail.com
+                            dedupClientId: eac0fc00-f727-11e6-bdda-06c37be0e663
+                          clientLink: /hmis-clientapi/rest/v2014/clients/51d496ac-e22b-4505-ac4b-45fdd74b3d70
+
       description: Retrive all client survey submission details filter by clientId or dedupClientId.
            <ul> <li> effectiveDate for a submission is considered as submissionDate. If the effective date for a submission is NULL, then the score's submission date is considered as the submissionDate </li> </ul>
       operationId: GET_clientsurveysubmissions-clientId
@@ -2088,38 +2111,61 @@ paths:
             application/json:
               schema:
                 example:
-                  clientSurveySubmissions:
-                    pagination:
-                      from: 0
-                      returned: 2
-                      total: 2
-                      maximum: 30
-                      sort: {}
                     clientSurveySubmissions:
-                      - id: 5c5b8760-a691-46a0-b762-f74fc2bf56cc
-                        clientId: 035c313e-a39d-4098-bf89-544b553d752f
-                        surveyId: b76927dc-715d-4104-a1dc-1fa4d933d8b1
-                        submissionId: 52377ce7-a246-4809-be94-874a3af9f035
-                        globalEnrollmentId: 7634b7ed-3f31-4822-81c0-d805b2f5ac3b
-                        client:
-                          id: 035c313e-a39d-4098-bf89-544b553d752f
-                          firstName: Ryan
-                          middleName: ''
-                          lastName: Peterson
-                          dob: 339989400000
-                          dedupClientId: 5dfe2ac2-43af-4d6d-9ee8-0e8fac5e3eg8
-                      - id: e67bb703-bce1-49b0-948d-75f286f4497b
-                        clientId: 035c313e-a39d-4098-bf89-544b553d752f
-                        surveyId: 57dbe6b2-83a9-4a8b-b4aa-65985241d341
-                        submissionId: d89ac01a-32a4-4530-92a6-d59b161b5ca8
-                        globalEnrollmentId: e166faae-1661-49ab-9987-4f66fd982cb2
-                        client:
-                          id: 035c313e-a39d-4098-bf89-544b553d752f
-                          firstName: Ryan
-                          middleName: ''
-                          lastName: Peterson
-                          dob: 339989400000
-                          dedupClientId: 5dfe2ac2-43af-4d6d-9ee8-0e8fac5e3eg8
+                      pagination:
+                        from: 0
+                        returned: 2
+                        total: 2
+                        maximum: 100
+                        sort:
+                          field: submissionDate
+                          order: asc
+                      clientSurveySubmissions:
+                        - id: 6a6a91fe-97a7-43f6-a8f5-8e0adbed014e
+                          clientId: 51d496ac-e22b-4505-ac4b-45fdd74b3d70
+                          surveyId: a0c01dfc-ce96-425f-897b-63b369d5a272
+                          survey:
+                            surveyId: a0c01dfc-ce96-425f-897b-63b369d5a272
+                            surveyTitle: Suryve 1
+                            surveyOwner: Survey
+                            tagValue: HUD
+                            projectGroupCode: PG0001
+                            locked: true
+                            copySurveyId: false
+                          submissionId: 85cd3b18-c68e-4c8c-98b0-7e3586d9a917
+                          client:
+                            id: 51d496ac-e22b-4505-ac4b-45fdd74b3d70
+                            firstName: Jeanette_1560499213831
+                            middleName: ''
+                            lastName: Gonzales
+                            dob: 259977600000
+                            phoneNumber: '9440060881'
+                            emailAddress: Jeanette_1560499213831@gmail.com
+                            dedupClientId: eac0fc00-f727-11e6-bdda-06c37be0e663
+                          clientLink: /hmis-clientapi/rest/v2014/clients/51d496ac-e22b-4505-ac4b-45fdd74b3d70
+                        - id: 9b2828c3-8702-433d-a21b-4526ac725634
+                          clientId: 51d496ac-e22b-4505-ac4b-45fdd74b3d70
+                          surveyId: 5830b4cc-1684-418a-9bcb-1401e17cb117
+                          survey:
+                            surveyId: 5830b4cc-1684-418a-9bcb-1401e17cb117
+                            surveyTitle: Survey 2
+                            surveyOwner: Survey
+                            tagValue: HUD
+                            projectGroupCode: PG0001
+                            locked: true
+                            copySurveyId: false
+                          submissionId: d17a2f61-a105-4b1c-932e-f42773051957
+                          client:
+                            id: 51d496ac-e22b-4505-ac4b-45fdd74b3d70
+                            firstName: Jeanette_1560499213831
+                            middleName: ''
+                            lastName: Gonzales
+                            dob: 259977600000
+                            phoneNumber: '9440060881'
+                            emailAddress: Jeanette_1560499213831@gmail.com
+                            dedupClientId: eac0fc00-f727-11e6-bdda-06c37be0e663
+                          clientLink: /hmis-clientapi/rest/v2014/clients/51d496ac-e22b-4505-ac4b-45fdd74b3d70
+
       operationId: GET_clientsurveysubmissions
       parameters:
         - name: q
