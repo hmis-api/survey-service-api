@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: Survey Service
-  version: 3.1.2
+  version: 3.1.3
   description: |
        **Note :**
               Please note that the partial updates are supported via PUT APIs. However, Note that If "null" value is passed for any element, in the PUT request body, it will be ignored. An empty string value should be sent (instead of "null" value) for the elements that need to be updated with NULL values.
@@ -1977,7 +1977,7 @@ paths:
         required: true
         schema:
           type: string
-  '/clientsurveysubmissions/{clientId}':
+  '/clientsurveysubmissions/{id}':
     get:
       responses:
         '200':
@@ -2018,13 +2018,35 @@ paths:
                           lastName: Peterson
                           dob: 339989400000
                           dedupClientId: 5dfe2ac2-43af-4d6d-9ee8-0e8fac5e3eg8
-      description: Retrive all client survey submission details
+      description: Retrive all client survey submission details filter by clientId or dedupClientId.
+           <ul> <li> effectiveDate for a submission is considered as submissionDate. If the effective date for a submission is NULL, then the score's submission date is considered as the submissionDate </li> </ul>
       operationId: GET_clientsurveysubmissions-clientId
     parameters:
-      - name: clientId
+      - name: id
         in: path
         required: true
         schema:
+          type: string
+        description: This path variable supports clientId or dedupClientId
+      - name : q
+        in: query
+        required: false
+        schema:
+           type : string
+        description:  Query parameter that filters the results based on surveyId or surveyName.
+      - name : sort
+        in: query
+        required: false
+        schema:
+           type : string
+        description:  Query parameter that supports sort on surveyId or surveyName. Allowed values are 1) surveyTitle 2) surveyId. By default the results are sorted by submissionDate
+      - name: order
+        in: query
+        required: false
+        description: >-
+            Query parameter that determines the order for sorting. Allowed values are 1) desc 2) asc. By default the results will be in asc order.    
+        schema:
+          default: desc
           type: string
   '/clientsurveysubmissions/{clientSurveySubmissionId}':
     put:
@@ -2102,9 +2124,23 @@ paths:
       parameters:
         - name: q
           in: query
-          required: true
-          description: Search string.
+          required: false
+          description: This parameter is supported clientId or dedupClientId
           schema:
+            type: string
+        - name : sort
+          in: query
+          required: false
+          schema:
+             type : string
+          description:  Query parameter that supports sort on surveyId or surveyName or clientName. Allowed values are 1) surveyTitle 2) surveyId 3) clientName. By default the results are sorted by submissionDate
+        - name: order
+          in: query
+          required: false
+          description: >-
+              Query parameter that determines the order for sorting. Allowed values are 1) desc 2) asc. By default the results will be in asc order.    
+          schema:
+            default: desc
             type: string
   /questions:
     get:
