@@ -1250,13 +1250,13 @@ paths:
                       responseText: example response
                       sectionId: b5b8cdg8-363a-4be8-8610-2cdb6593316f
                       appId: app1
-                      effectiveDate: '10-02-2017 03:12:00.000'
+                      effectiveDate:  '2017-10-10 03:12'
                     - responseId: 2741f430-bc37-42a9-abc4-f2bdf1339d6c
                       questionId: b5b8cdg8-363a-4be8-8610-2cdb6593316f
                       responseText: example response
                       sectionId: a4a8baf6-363a-4be8-8610-2cdb6593316f
                       appId: app2
-                      effectiveDate: '10-02-2017 03:12:00.000'
+                      effectiveDate: '2017-10-10 03:12'
         required: true
     get:
       responses:
@@ -1555,12 +1555,12 @@ paths:
                       responseText: example response
                       sectionId: b5b8cdg8-363a-4be8-8610-2cdb6593316f
                       appId: app1
-                      effectiveDate: '10-02-2017 03:12:00.000'
+                      effectiveDate: '2017-10-10 03:12'
                     - questionId: b5b8cdg8-363a-4be8-8610-2cdb6593316f
                       responseText: example response
                       sectionId: a4a8baf6-363a-4be8-8610-2cdb6593316f
                       appId: app2
-                      effectiveDate: '10-02-2017 03:12:00.000'
+                      effectiveDate: '2017-10-10 03:12'
 
         required: true
     parameters:
@@ -1587,7 +1587,7 @@ paths:
                       responseId: e9a4a447-833f-4c29-a3b6-f966a0a753aa
                       responseText: csacsc
                       questionScore: 123456
-                      effectiveDate: '10-02-2017 03:12:00.000'
+                      effectiveDate: '2017-10-10 03:12'
                       submissionId: e9a4a447-833f-4c29-a3b6-f966a0a753aa
         '400':
           description: Bad Request – The request was invalid or cannot be served.
@@ -1632,7 +1632,7 @@ paths:
                     responseId: e9a4a447-833f-4c29-a3b6-f966a0a753aa
                     responseText: csacsc
                     questionScore: 123456
-                    effectiveDate: '10-02-2017 03:12:00.000'
+                    effectiveDate: '2017-10-10 03:12'
                     submissionId: e9a4a447-833f-4c29-a3b6-f966a0a753aa
         required: true
     delete:
@@ -1832,13 +1832,13 @@ paths:
                       responseText: example response
                       sectionId: b5b8cdg8-363a-4be8-8610-2cdb6593316f
                       appId: app1
-                      effectiveDate: '10-02-2017 03:12:00.000'
+                      effectiveDate: '2017-10-10 03:12'
                     - questionId: b5b8cdg8-363a-4be8-8610-2cdb6593316f
                       responseId: 2741f430-bc37-42a9-abc4-f2bdf1339d6c
                       responseText: example response
                       sectionId: a4a8baf6-363a-4be8-8610-2cdb6593316f
                       appId: app2
-                      effectiveDate: '10-02-2017 03:12:00.000'
+                      effectiveDate: '2017-10-10 03:12'
         required: true
     get:
       responses:
