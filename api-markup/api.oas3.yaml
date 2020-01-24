@@ -1,12 +1,12 @@
 openapi: 3.0.0
 info:
   title: Survey Service
-  version: 3.1.4
+  version: 3.1.5
   description: |
        **Note :**
               Please note that the partial updates are supported via PUT APIs. However, Note that If "null" value is passed for any element, in the PUT request body, it will be ignored. An empty string value should be sent (instead of "null" value) for the elements that need to be updated with NULL values.
 servers:
-  - url: 'https://www.hslynk.com/survey-api/rest'
+  - url: 'https://api.hslynk.com/survey-api/rest'
 paths:
   /picklistgroups:
     get:
@@ -603,7 +603,7 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:          
+            schema:
               example:
                 question:
                   questionId: 23588047-2596-469b-841c-94fd4260cf30
@@ -2067,7 +2067,7 @@ paths:
         in: query
         required: false
         description: >-
-            Query parameter that determines the order for sorting. Allowed values are 1) desc 2) asc. By default the results will be in asc order.    
+            Query parameter that determines the order for sorting. Allowed values are 1) desc 2) asc. By default the results will be in asc order.
         schema:
           default: desc
           type: string
@@ -2184,7 +2184,7 @@ paths:
           in: query
           required: false
           description: >-
-              Query parameter that determines the order for sorting. Allowed values are 1) desc 2) asc. By default the results will be in asc order.    
+              Query parameter that determines the order for sorting. Allowed values are 1) desc 2) asc. By default the results will be in asc order.
           schema:
             default: desc
             type: string
