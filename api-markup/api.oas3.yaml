@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: Survey Service
-  version: 3.1.5
+  version: 3.2.0
   description: |
        **Note :**
               Please note that the partial updates are supported via PUT APIs. However, Note that If "null" value is passed for any element, in the PUT request body, it will be ignored. An empty string value should be sent (instead of "null" value) for the elements that need to be updated with NULL values.
@@ -15,7 +15,70 @@ paths:
           description: OK – Everything is working.
           content:
             application/json:
-              schema:
+                schema:
+                  {
+                    "type": "object",
+                    "required": [
+                      "pickListGroups"
+                    ],
+                    "properties": {
+                      "pickListGroups": {
+                        "type": "object",
+                        "required": [
+                          "pagination",
+                          "pickListGroups"
+                        ],
+                        "properties": {
+                          "pagination": {
+                            "type": "object",
+                            "required": [
+                              "from",
+                              "returned",
+                              "total",
+                              "maximum",
+                              "sort"
+                            ],
+                            "properties": {
+                              "from": {
+                                "type": "integer"
+                              },
+                              "returned": {
+                                "type": "integer"
+                              },
+                              "total": {
+                                "type": "integer"
+                              },
+                              "maximum": {
+                                "type": "integer"
+                              },
+                              "sort": {
+                                "type": "object"
+                              }
+                            }
+                          },
+                          "pickListGroups": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "pickListGroupId",
+                                "pickListGroupName"
+                              ],
+                              "properties": {
+                                "pickListGroupId": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                },
+                                "pickListGroupName": {
+                                  "type": "string",
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
                 example:
                     pickListGroups:
                       pagination:
@@ -52,7 +115,26 @@ paths:
           description: OK - New resource has been created.
           content:
             application/json:
-              schema:
+                schema:
+                  {
+                    "type": "object",
+                    "required": [
+                      "pickListGroup"
+                    ],
+                    "properties": {
+                      "pickListGroup": {
+                        "type": "object",
+                        "required": [
+                          "pickListGroupId"
+                        ],
+                        "properties": {
+                          "pickListGroupId": {
+                            "type": "string",
+                          }
+                        }
+                      }
+                    }
+                  }
                 example:
                     pickListGroup:
                       pickListGroupId: 45852728-1543-4294-8d69-0e7e252a7932
@@ -76,7 +158,26 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
+              schema:
+                {
+                  "type": "object",
+                  "required": [
+                    "pickListGroup"
+                  ],
+                  "properties": {
+                    "pickListGroup": {
+                      "type": "object",
+                      "required": [
+                        "pickListGroupName"
+                      ],
+                      "properties": {
+                        "pickListGroupName": {
+                          "type": "string",
+                        }
+                      }
+                    }
+                  }
+                }
               example:
                   pickListGroup:
                     pickListGroupName: TestPickListGroup
@@ -88,7 +189,31 @@ paths:
           description: OK – Everything is working.
           content:
             application/json:
-              schema:
+                schema:
+                  {
+                    "type": "object",
+                    "required": [
+                      "pickListGroup"
+                    ],
+                    "properties": {
+                      "pickListGroup": {
+                        "type": "object",
+                        "required": [
+                          "pickListGroupId",
+                          "pickListGroupName"
+                        ],
+                        "properties": {
+                          "pickListGroupId": {
+                            "type": "string",
+                            "format": "uuid",
+                          },
+                          "pickListGroupName": {
+                            "type": "string",
+                          }
+                        }
+                      }
+                    }
+                  }
                 example:
                     pickListGroup:
                       pickListGroupId: 66a0181b-26d7-4335-807e-04b73e196d86
@@ -132,7 +257,26 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
+              schema:
+                {
+                  "type": "object",
+                  "required": [
+                    "pickListGroup"
+                  ],
+                  "properties": {
+                    "pickListGroup": {
+                      "type": "object",
+                      "required": [
+                        "pickListGroupName"
+                      ],
+                      "properties": {
+                        "pickListGroupName": {
+                          "type": "string",
+                        }
+                      }
+                    }
+                  }
+                }
               example:
                   pickListGroup:
                     pickListGroupName: TestNewPicklistGroup
@@ -171,7 +315,46 @@ paths:
           description: OK – Everything is working.
           content:
             application/json:
-              schema:
+                schema:
+                  {
+                    "type": "object",
+                    "required": [
+                      "pickList"
+                    ],
+                    "properties": {
+                      "pickList": {
+                        "type": "object",
+                        "required": [
+                          "pickList"
+                        ],
+                        "properties": {
+                          "pickList": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "pickListValueId",
+                                "pickListValueCode",
+                                "valueText"
+                              ],
+                              "properties": {
+                                "pickListValueId": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                },
+                                "pickListValueCode": {
+                                  "type": "string",
+                                },
+                                "valueText": {
+                                  "type": "string",
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
                 example:
                   pickList:
                     pickList:
@@ -205,7 +388,27 @@ paths:
           description: OK - New resource has been created.
           content:
             application/json:
-              schema:
+                schema:
+                  {
+                    "type": "object",
+                    "required": [
+                      "pickListValue"
+                    ],
+                    "properties": {
+                      "pickListValue": {
+                        "type": "object",
+                        "required": [
+                          "pickListValueId"
+                        ],
+                        "properties": {
+                          "pickListValueId": {
+                            "type": "string",
+                            "format": "uuid",
+                          }
+                        }
+                      }
+                    }
+                  }
                 example:
                     pickListValue:
                       pickListValueId: eff61efc-edcf-44d1-989b-452463d17db2
@@ -229,7 +432,41 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
+              schema:
+                {
+                  "type": "object",
+                  "required": [
+                    "pickListValues"
+                  ],
+                  "properties": {
+                    "pickListValues": {
+                      "type": "object",
+                      "required": [
+                        "pickListValues"
+                      ],
+                      "properties": {
+                        "pickListValues": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "required": [
+                              "pickListValueCode",
+                              "valueText"
+                            ],
+                            "properties": {
+                              "pickListValueCode": {
+                                "type": "string",
+                              },
+                              "valueText": {
+                                "type": "string",
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
               example:
                   pickListValues:
                     pickListValues:
@@ -253,7 +490,35 @@ paths:
           description: OK – Everything is working.
           content:
             application/json:
-              schema:
+                schema:
+                  {
+                    "type": "object",
+                    "required": [
+                      "pickListValue"
+                    ],
+                    "properties": {
+                      "pickListValue": {
+                        "type": "object",
+                        "required": [
+                          "pickListValueId",
+                          "pickListValueCode",
+                          "valueText"
+                        ],
+                        "properties": {
+                          "pickListValueId": {
+                            "type": "string",
+                            "format": "uuid",
+                          },
+                          "pickListValueCode": {
+                            "type": "string",
+                          },
+                          "valueText": {
+                            "type": "string",
+                          }
+                        }
+                      }
+                    }
+                  }
                 example:
                     pickListValue:
                       pickListValueId: 4223e5cf-7f3e-46eb-aa36-5b2174ee62e9
@@ -298,7 +563,41 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
+              schema:
+                {
+                  "type": "object",
+                  "required": [
+                    "pickListValues"
+                  ],
+                  "properties": {
+                    "pickListValues": {
+                      "type": "object",
+                      "required": [
+                        "pickListValues"
+                      ],
+                      "properties": {
+                        "pickListValues": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "required": [
+                              "pickListValueCode",
+                              "valueText"
+                            ],
+                            "properties": {
+                              "pickListValueCode": {
+                                "type": "string",
+                              },
+                              "valueText": {
+                                "type": "string",
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
               example:
                   pickListValues:
                     pickListValues:
@@ -348,7 +647,70 @@ paths:
           description: OK – Everything is working.
           content:
             application/json:
-              schema:
+                schema:
+                  {
+                    "type": "object",
+                    "required": [
+                      "questionGroups"
+                    ],
+                    "properties": {
+                      "questionGroups": {
+                        "type": "object",
+                        "required": [
+                          "pagination",
+                          "questionGroups"
+                        ],
+                        "properties": {
+                          "pagination": {
+                            "type": "object",
+                            "required": [
+                              "from",
+                              "returned",
+                              "total",
+                              "maximum",
+                              "sort"
+                            ],
+                            "properties": {
+                              "from": {
+                                "type": "integer"
+                              },
+                              "returned": {
+                                "type": "integer"
+                              },
+                              "total": {
+                                "type": "integer"
+                              },
+                              "maximum": {
+                                "type": "integer"
+                              },
+                              "sort": {
+                                "type": "object"
+                              }
+                            }
+                          },
+                          "questionGroups": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "questionGroupId",
+                                "questionGroupName"
+                              ],
+                              "properties": {
+                                "questionGroupId": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                },
+                                "questionGroupName": {
+                                  "type": "string",
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
                 example:
                     questionGroups:
                       pagination:
@@ -385,7 +747,27 @@ paths:
           description: OK - New resource has been created.
           content:
             application/json:
-              schema:
+                schema:
+                  {
+                    "type": "object",
+                    "required": [
+                      "questionGroup"
+                    ],
+                    "properties": {
+                      "questionGroup": {
+                        "type": "object",
+                        "required": [
+                          "questionIGroupId"
+                        ],
+                        "properties": {
+                          "questionIGroupId": {
+                            "type": "string",
+                            "format": "uuid",
+                          }
+                        }
+                      }
+                    }
+                  }
                 example:
                   questionGroup:
                     questionIGroupId: cc6418c3-5b8f-4d68-83c4-938bea625912
@@ -409,7 +791,26 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
+              schema:
+                {
+                  "type": "object",
+                  "required": [
+                    "questionGroup"
+                  ],
+                  "properties": {
+                    "questionGroup": {
+                      "type": "object",
+                      "required": [
+                        "questionGroupName"
+                      ],
+                      "properties": {
+                        "questionGroupName": {
+                          "type": "string",
+                        }
+                      }
+                    }
+                  }
+                }
               example:
                   questionGroup:
                     questionGroupName: questionGroupName1
@@ -421,7 +822,31 @@ paths:
           description: OK – Everything is working.
           content:
             application/json:
-              schema:
+                schema:
+                  {
+                    "type": "object",
+                    "required": [
+                      "questionGroup"
+                    ],
+                    "properties": {
+                      "questionGroup": {
+                        "type": "object",
+                        "required": [
+                          "questionGroupId",
+                          "questionGroupName"
+                        ],
+                        "properties": {
+                          "questionGroupId": {
+                            "type": "string",
+                            "format": "uuid",
+                          },
+                          "questionGroupName": {
+                            "type": "string",
+                          }
+                        }
+                      }
+                    }
+                  }
                 example:
                     questionGroup:
                       questionGroupId: de6de9cb-ee05-4eea-84b3-d368370b9180
@@ -465,7 +890,26 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
+              schema:
+                {
+                  "type": "object",
+                  "required": [
+                    "questionGroup"
+                  ],
+                  "properties": {
+                    "questionGroup": {
+                      "type": "object",
+                      "required": [
+                        "questionGroupName"
+                      ],
+                      "properties": {
+                        "questionGroupName": {
+                          "type": "string",
+                        }
+                      }
+                    }
+                  }
+                }
               example:
                   questionGroup:
                     questionGroupName: questionGroupName1
@@ -504,7 +948,127 @@ paths:
           description: OK – Everything is working.
           content:
             application/json:
-              schema:
+                schema:
+                  {
+                    "type": "object",
+                    "required": [
+                      "questions"
+                    ],
+                    "properties": {
+                      "questions": {
+                        "type": "object",
+                        "required": [
+                          "pagination",
+                          "questions"
+                        ],
+                        "properties": {
+                          "pagination": {
+                            "type": "object",
+                            "required": [
+                              "from",
+                              "returned",
+                              "total",
+                              "maximum",
+                              "sort"
+                            ],
+                            "properties": {
+                              "from": {
+                                "type": "integer"
+                              },
+                              "returned": {
+                                "type": "integer"
+                              },
+                              "total": {
+                                "type": "integer"
+                              },
+                              "maximum": {
+                                "type": "integer"
+                              },
+                              "sort": {
+                                "type": "object"
+                              }
+                            }
+                          },
+                          "questions": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "questionId",
+                                "questionDescription",
+                                "displayText",
+                                "questionDataType",
+                                "questionType",
+                                "copyQuestionId",
+                                "hudQuestion",
+                                "locked",
+                                "questionWeight",
+                                "questionGroupId",
+                                "definition",
+                                "visibility",
+                                "category",
+                                "subcategory",
+                                "updateUriTemplate",
+                                "uriObjectField"
+                              ],
+                              "properties": {
+                                "questionId": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                },
+                                "questionDescription": {
+                                  "type": "string",
+                                },
+                                "displayText": {
+                                  "type": "string",
+                                },
+                                "questionDataType": {
+                                  "type": "string",
+                                },
+                                "questionType": {
+                                  "type": "string",
+                                },
+                                "copyQuestionId": {
+                                  "type": "boolean"
+                                },
+                                "hudQuestion": {
+                                  "type": "boolean"
+                                },
+                                "locked": {
+                                  "type": "boolean"
+                                },
+                                "questionWeight": {
+                                  "type": "integer"
+                                },
+                                "questionGroupId": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                },
+                                "definition": {
+                                  "type": "string",
+                                },
+                                "visibility": {
+                                  "type": "boolean"
+                                },
+                                "category": {
+                                  "type": "string",
+                                },
+                                "subcategory": {
+                                  "type": "string",
+                                },
+                                "updateUriTemplate": {
+                                  "type": "string",
+                                },
+                                "uriObjectField": {
+                                  "type": "string",
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
                 example:
                   questions:
                     pagination:
@@ -553,26 +1117,30 @@ paths:
           description: OK - New resource has been created.
           content:
             application/json:
-             schema:
+                schema:
+                  {
+                    "type": "object",
+                    "required": [
+                      "question"
+                    ],
+                    "properties": {
+                      "question": {
+                        "type": "object",
+                        "required": [
+                            "questionId"
+                        ],
+                        "properties": {
+                          "questionId": {
+                            "type": "string",
+                            "format": "uuid"
+                          }
+                        }
+                      }
+                    }
+                  }
                 example:
                   question:
                     questionId: 23588047-2596-469b-841c-94fd4260cf30
-                    questionDescription: Times Homeless Past Three Years
-                    displayText: Times Homeless Past Three Years
-                    questionDataType: STRING
-                    questionType: DROPDOWN
-                    copyQuestionId: false
-                    hudQuestion: true
-                    locked: false
-                    questionWeight: 0
-                    questionGroupId: 10c0415d-85c0-4dbc-a0ec-562fb57245e3
-                    definition: '"{"questionType": "DROPDOWN","title": "Living Situation","options":
-                      {}}"'
-                    visibility: true
-                    category: question category
-                    subcategory: question sub category
-                    updateUriTemplate: "/v2017/clients/{clientid}/enrollments/{enrollmentid}"
-                    uriObjectField: enrollment.timesHomelessPastThreeYears
         '400':
           description: Bad Request – The request was invalid or cannot be served.
         '401':
@@ -603,10 +1171,85 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
+              schema:
+                {
+                  "type": "object",
+                  "required": [
+                    "question"
+                  ],
+                  "properties": {
+                    "question": {
+                      "type": "object",
+                      "required": [
+                        "questionDescription",
+                        "displayText",
+                        "questionDataType",
+                        "questionType",
+                        "copyQuestionId",
+                        "hudQuestion",
+                        "locked",
+                        "questionWeight",
+                        "questionGroupId",
+                        "definition",
+                        "visibility",
+                        "category",
+                        "subcategory",
+                        "updateUriTemplate",
+                        "uriObjectField"
+                      ],
+                      "properties": {
+                        "questionDescription": {
+                          "type": "string",
+                        },
+                        "displayText": {
+                          "type": "string",
+                        },
+                        "questionDataType": {
+                          "type": "string",
+                        },
+                        "questionType": {
+                          "type": "string",
+                        },
+                        "copyQuestionId": {
+                          "type": "boolean"
+                        },
+                        "hudQuestion": {
+                          "type": "boolean"
+                        },
+                        "locked": {
+                          "type": "boolean"
+                        },
+                        "questionWeight": {
+                          "type": "integer"
+                        },
+                        "questionGroupId": {
+                          "type": "string",
+                          "format": "uuid",
+                        },
+                        "definition": {
+                          "type": "string",
+                        },
+                        "visibility": {
+                          "type": "boolean"
+                        },
+                        "category": {
+                          "type": "string",
+                        },
+                        "subcategory": {
+                          "type": "string",
+                        },
+                        "updateUriTemplate": {
+                          "type": "string",
+                        },
+                        "uriObjectField": {
+                          "type": "string",
+                        }
+                      }
+                    }
+                  }
+                }
               example:
                 question:
-                  questionId: 23588047-2596-469b-841c-94fd4260cf30
                   questionDescription: Times Homeless Past Three Years
                   displayText: Times Homeless Past Three Years
                   questionDataType: STRING
@@ -637,7 +1280,88 @@ paths:
           description: OK – Everything is working.
           content:
               application/json:
-                schema:
+                  schema:
+                    {
+                      "type": "object",
+                      "required": [
+                        "question"
+                      ],
+                      "properties": {
+                        "question": {
+                          "type": "object",
+                          "required": [
+                            "questionId",
+                            "questionDescription",
+                            "displayText",
+                            "questionDataType",
+                            "questionType",
+                            "copyQuestionId",
+                            "hudQuestion",
+                            "locked",
+                            "questionWeight",
+                            "questionGroupId",
+                            "definition",
+                            "visibility",
+                            "category",
+                            "subcategory",
+                            "updateUriTemplate",
+                            "uriObjectField"
+                          ],
+                          "properties": {
+                            "questionId": {
+                              "type": "string",
+                              "format": "uuid",
+                            },
+                            "questionDescription": {
+                              "type": "string",
+                            },
+                            "displayText": {
+                              "type": "string",
+                            },
+                            "questionDataType": {
+                              "type": "string",
+                            },
+                            "questionType": {
+                              "type": "string",
+                            },
+                            "copyQuestionId": {
+                              "type": "boolean"
+                            },
+                            "hudQuestion": {
+                              "type": "boolean"
+                            },
+                            "locked": {
+                              "type": "boolean"
+                            },
+                            "questionWeight": {
+                              "type": "integer"
+                            },
+                            "questionGroupId": {
+                              "type": "string",
+                              "format": "uuid",
+                            },
+                            "definition": {
+                              "type": "string",
+                            },
+                            "visibility": {
+                              "type": "boolean"
+                            },
+                            "category": {
+                              "type": "string",
+                            },
+                            "subcategory": {
+                              "type": "string",
+                            },
+                            "updateUriTemplate": {
+                              "type": "string",
+                            },
+                            "uriObjectField": {
+                              "type": "string",
+                            }
+                          }
+                        }
+                      }
+                    }
                   example:
                     question:
                       questionId: 23588047-2596-469b-841c-94fd4260cf30
@@ -694,7 +1418,54 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
+              schema:
+                {
+                  "type": "object",
+                  "required": [
+                    "question"
+                  ],
+                  "properties": {
+                    "question": {
+                      "type": "object",
+                      "required": [
+                        "displayText",
+                        "questionDescription",
+                        "questionType",
+                        "definition",
+                        "visibility",
+                        "category",
+                        "subcategory",
+                        "pickListValues"
+                      ],
+                      "properties": {
+                        "displayText": {
+                          "type": "string",
+                        },
+                        "questionDescription": {
+                          "type": "string",
+                        },
+                        "questionType": {
+                          "type": "string",
+                        },
+                        "definition": {
+                          "type": "string",
+                        },
+                        "visibility": {
+                          "type": "boolean"
+                        },
+                        "category": {
+                          "type": "string",
+                        },
+                        "subcategory": {
+                          "type": "string",
+                        },
+                        "pickListValues": {
+                          "type": "string",
+                        }
+                      }
+                    }
+                  }
+                }
               example:
                   question:
                     displayText: Question title
@@ -743,7 +1514,90 @@ paths:
           description: OK – Everything is working.
           content:
             application/json:
-              schema:
+                schema:
+                  {
+                    "type": "object",
+                    "required": [
+                      "surveys"
+                    ],
+                    "properties": {
+                      "surveys": {
+                        "type": "object",
+                        "required": [
+                          "pagination",
+                          "surveys"
+                        ],
+                        "properties": {
+                          "pagination": {
+                            "type": "object",
+                            "required": [
+                              "from",
+                              "returned",
+                              "total",
+                              "maximum",
+                              "sort"
+                            ],
+                            "properties": {
+                              "from": {
+                                "type": "integer"
+                              },
+                              "returned": {
+                                "type": "integer"
+                              },
+                              "total": {
+                                "type": "integer"
+                              },
+                              "maximum": {
+                                "type": "integer"
+                              },
+                              "sort": {
+                                "type": "object"
+                              }
+                            }
+                          },
+                          "surveys": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "surveyId",
+                                "surveyTitle",
+                                "surveyOwner",
+                                "tagValue",
+                                "locked",
+                                "copySurveyId",
+                                "surveyDefinition"
+                              ],
+                              "properties": {
+                                "surveyId": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                },
+                                "surveyTitle": {
+                                  "type": "string",
+                                },
+                                "surveyOwner": {
+                                  "type": "string",
+                                },
+                                "tagValue": {
+                                  "type": "string",
+                                },
+                                "locked": {
+                                  "type": "boolean"
+                                },
+                                "copySurveyId": {
+                                  "type": "boolean"
+                                },
+                                "surveyDefinition": {
+                                  "type": "string",
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
                 example:
                     surveys:
                       pagination:
@@ -781,7 +1635,39 @@ paths:
           description: OK - New resource has been created.
           content:
             application/json:
-              schema:
+                schema:
+                  {
+                    "type": "object",
+                    "required": [
+                      "survey"
+                    ],
+                    "properties": {
+                      "survey": {
+                        "type": "object",
+                        "required": [
+                          "surveyId",
+                          "locked",
+                          "copySurveyId",
+                          "surveyDefinition"
+                        ],
+                        "properties": {
+                          "surveyId": {
+                            "type": "string",
+                            "format": "uuid",
+                          },
+                          "locked": {
+                            "type": "boolean"
+                          },
+                          "copySurveyId": {
+                            "type": "boolean"
+                          },
+                          "surveyDefinition": {
+                            "type": "string",
+                          }
+                        }
+                      }
+                    }
+                  }
                 example:
                     survey:
                       surveyId: fd628990-623a-42c6-8df2-f74a4c6d2c77
@@ -808,7 +1694,46 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
+              schema:
+                {
+                  "type": "object",
+                  "required": [
+                    "survey"
+                  ],
+                  "properties": {
+                    "survey": {
+                      "type": "object",
+                      "required": [
+                        "surveyTitle",
+                        "surveyOwner",
+                        "tagValue",
+                        "locked",
+                        "copySurveyId",
+                        "surveyDefinition"
+                      ],
+                      "properties": {
+                        "surveyTitle": {
+                          "type": "string",
+                        },
+                        "surveyOwner": {
+                          "type": "string",
+                        },
+                        "tagValue": {
+                          "type": "string",
+                        },
+                        "locked": {
+                          "type": "boolean"
+                        },
+                        "copySurveyId": {
+                          "type": "boolean"
+                        },
+                        "surveyDefinition": {
+                          "type": "string",
+                        }
+                      }
+                    }
+                  }
+                }
               example:
                   survey:
                     surveyTitle: VI-SPDAT Survey
@@ -825,7 +1750,51 @@ paths:
           description: OK – Everything is working.
           content:
             application/json:
-              schema:
+                schema:
+                  {
+                    "type": "object",
+                    "required": [
+                      "survey"
+                    ],
+                    "properties": {
+                      "survey": {
+                        "type": "object",
+                        "required": [
+                          "surveyId",
+                          "surveyTitle",
+                          "surveyOwner",
+                          "tagValue",
+                          "locked",
+                          "copySurveyId",
+                          "surveyDefinition"
+                        ],
+                        "properties": {
+                          "surveyId": {
+                            "type": "string",
+                            "format": "uuid",
+                          },
+                          "surveyTitle": {
+                            "type": "string",
+                          },
+                          "surveyOwner": {
+                            "type": "string",
+                          },
+                          "tagValue": {
+                            "type": "string",
+                          },
+                          "locked": {
+                            "type": "boolean"
+                          },
+                          "copySurveyId": {
+                            "type": "boolean"
+                          },
+                          "surveyDefinition": {
+                            "type": "string",
+                          }
+                        }
+                      }
+                    }
+                  }
                 example:
                     survey:
                       surveyId: 4ff874ec-88ef-46bb-93d6-66be064d5dd2
@@ -872,7 +1841,46 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
+              schema:
+                {
+                  "type": "object",
+                  "required": [
+                    "survey"
+                  ],
+                  "properties": {
+                    "survey": {
+                      "type": "object",
+                      "required": [
+                        "surveyTitle",
+                        "surveyOwner",
+                        "tagValue",
+                        "locked",
+                        "copySurveyId",
+                        "surveyDefinition"
+                      ],
+                      "properties": {
+                        "surveyTitle": {
+                          "type": "string",
+                        },
+                        "surveyOwner": {
+                          "type": "string",
+                        },
+                        "tagValue": {
+                          "type": "string",
+                        },
+                        "locked": {
+                          "type": "boolean"
+                        },
+                        "copySurveyId": {
+                          "type": "boolean"
+                        },
+                        "surveyDefinition": {
+                          "type": "string",
+                        }
+                      }
+                    }
+                  }
+                }
               example:
                   survey:
                     surveyTitle: VI-SPDAT Survey
@@ -914,7 +1922,82 @@ paths:
           description: OK – Everything is working.
           content:
             application/json:
-              schema:
+                schema:
+                  {
+                    "type": "object",
+                    "required": [
+                      "surveySections"
+                    ],
+                    "properties": {
+                      "surveySections": {
+                        "type": "object",
+                        "required": [
+                          "pagination",
+                          "surveySections"
+                        ],
+                        "properties": {
+                          "pagination": {
+                            "type": "object",
+                            "required": [
+                              "from",
+                              "returned",
+                              "total",
+                              "maximum",
+                              "sort"
+                            ],
+                            "properties": {
+                              "from": {
+                                "type": "integer"
+                              },
+                              "returned": {
+                                "type": "integer"
+                              },
+                              "total": {
+                                "type": "integer"
+                              },
+                              "maximum": {
+                                "type": "integer"
+                              },
+                              "sort": {
+                                "type": "object"
+                              }
+                            }
+                          },
+                          "surveySections": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "surveySectionId",
+                                "sectionText",
+                                "sectionDetail",
+                                "sectionWeight",
+                                "order"
+                              ],
+                              "properties": {
+                                "surveySectionId": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                },
+                                "sectionText": {
+                                  "type": "string",
+                                },
+                                "sectionDetail": {
+                                  "type": "string",
+                                },
+                                "sectionWeight": {
+                                  "type": "integer"
+                                },
+                                "order": {
+                                  "type": "integer"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
                 example:
                     surveySections:
                       pagination:
@@ -955,7 +2038,35 @@ paths:
           description: OK - New resource has been created.
           content:
             application/json:
-              schema:
+                schema:
+                  {
+                    "type": "object",
+                    "required": [
+                      "surveySection"
+                    ],
+                    "properties": {
+                      "surveySection": {
+                        "type": "object",
+                        "required": [
+                          "surveySectionId",
+                          "sectionWeight",
+                          "order"
+                        ],
+                        "properties": {
+                          "surveySectionId": {
+                            "type": "string",
+                            "format": "uuid",
+                          },
+                          "sectionWeight": {
+                            "type": "integer"
+                          },
+                          "order": {
+                            "type": "integer"
+                          }
+                        }
+                      }
+                    }
+                  }
                 example:
                     surveySection:
                       surveySectionId: 8213b48a-1504-4adf-a58f-2b557a1e2b9e
@@ -981,7 +2092,38 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
+              schema:
+                {
+                  "type": "object",
+                  "required": [
+                    "surveySection"
+                  ],
+                  "properties": {
+                    "surveySection": {
+                      "type": "object",
+                      "required": [
+                        "sectionText",
+                        "sectionDetail",
+                        "sectionWeight",
+                        "order"
+                      ],
+                      "properties": {
+                        "sectionText": {
+                          "type": "string",
+                        },
+                        "sectionDetail": {
+                          "type": "string",
+                        },
+                        "sectionWeight": {
+                          "type": "integer"
+                        },
+                        "order": {
+                          "type": "integer"
+                        }
+                      }
+                    }
+                  }
+                }
               example:
                   surveySection:
                     sectionText: Section1
@@ -1002,7 +2144,43 @@ paths:
           description: OK – Everything is working.
           content:
             application/json:
-              schema:
+                schema:
+                  {
+                    "type": "object",
+                    "required": [
+                      "surveySection"
+                    ],
+                    "properties": {
+                      "surveySection": {
+                        "type": "object",
+                        "required": [
+                          "surveySectionId",
+                          "sectionText",
+                          "sectionDetail",
+                          "sectionWeight",
+                          "order"
+                        ],
+                        "properties": {
+                          "surveySectionId": {
+                            "type": "string",
+                            "format": "uuid",
+                          },
+                          "sectionText": {
+                            "type": "string",
+                          },
+                          "sectionDetail": {
+                            "type": "string",
+                          },
+                          "sectionWeight": {
+                            "type": "integer"
+                          },
+                          "order": {
+                            "type": "integer"
+                          }
+                        }
+                      }
+                    }
+                  }
                 example:
                     surveySection:
                       surveySectionId: 6db77e4c-39d9-44e1-bcfc-139697ae69d1
@@ -1049,7 +2227,38 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
+              schema:
+                {
+                  "type": "object",
+                  "required": [
+                    "surveySection"
+                  ],
+                  "properties": {
+                    "surveySection": {
+                      "type": "object",
+                      "required": [
+                        "sectionText",
+                        "sectionDetail",
+                        "sectionWeight",
+                        "order"
+                      ],
+                      "properties": {
+                        "sectionText": {
+                          "type": "string",
+                        },
+                        "sectionDetail": {
+                          "type": "string",
+                        },
+                        "sectionWeight": {
+                          "type": "integer"
+                        },
+                        "order": {
+                          "type": "integer"
+                        }
+                      }
+                    }
+                  }
+                }
               example:
                   surveySection:
                     sectionText: Section1
@@ -1114,7 +2323,46 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
+              schema:
+                {
+                  "type": "object",
+                  "required": [
+                    "sectionQuestionMappings"
+                  ],
+                  "properties": {
+                    "sectionQuestionMappings": {
+                      "type": "object",
+                      "required": [
+                        "sectionQuestionMappings"
+                      ],
+                      "properties": {
+                        "sectionQuestionMappings": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "required": [
+                              "question"
+                            ],
+                            "properties": {
+                              "question": {
+                                "type": "object",
+                                "required": [
+                                  "questionId"
+                                ],
+                                "properties": {
+                                  "questionId": {
+                                    "type": "string",
+                                    "format": "uuid",
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
               example:
                   sectionQuestionMappings:
                     sectionQuestionMappings:
@@ -1127,7 +2375,107 @@ paths:
           description: OK – Everything is working.
           content:
             application/json:
-              schema:
+                schema:
+                  {
+                    "type": "object",
+                    "required": [
+                      "questions"
+                    ],
+                    "properties": {
+                      "questions": {
+                        "type": "object",
+                        "required": [
+                          "pagination",
+                          "questions"
+                        ],
+                        "properties": {
+                          "pagination": {
+                            "type": "object",
+                            "required": [
+                              "from",
+                              "returned",
+                              "total",
+                              "maximum",
+                              "sort"
+                            ],
+                            "properties": {
+                              "from": {
+                                "type": "integer"
+                              },
+                              "returned": {
+                                "type": "integer"
+                              },
+                              "total": {
+                                "type": "integer"
+                              },
+                              "maximum": {
+                                "type": "integer"
+                              },
+                              "sort": {
+                                "type": "object"
+                              }
+                            }
+                          },
+                          "questions": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "questionId",
+                                "questionDescription",
+                                "displayText",
+                                "questionDataType",
+                                "questionType",
+                                "correctValueForAssessment",
+                                "copyQuestionId",
+                                "hudQuestion",
+                                "locked",
+                                "questionWeight",
+                                "pickListGroupId"
+                              ],
+                              "properties": {
+                                "questionId": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                },
+                                "questionDescription": {
+                                  "type": "string",
+                                },
+                                "displayText": {
+                                  "type": "string",
+                                },
+                                "questionDataType": {
+                                  "type": "string",
+                                },
+                                "questionType": {
+                                  "type": "string",
+                                },
+                                "correctValueForAssessment": {
+                                  "type": "string",
+                                },
+                                "copyQuestionId": {
+                                  "type": "boolean"
+                                },
+                                "hudQuestion": {
+                                  "type": "boolean"
+                                },
+                                "locked": {
+                                  "type": "boolean"
+                                },
+                                "questionWeight": {
+                                  "type": "integer"
+                                },
+                                "pickListGroupId": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
                 example:
                     questions:
                       pagination:
@@ -1228,7 +2576,34 @@ paths:
           description: ''
           content:
             application/json:
-              schema:
+                schema:
+                  {
+                    "type": "object",
+                    "required": [
+                      "errors"
+                    ],
+                    "properties": {
+                      "errors": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "code",
+                            "message"
+                          ],
+                          "properties": {
+                            "code": {
+                              "type": "string",
+                            },
+                            "message": {
+                              "type": "string",
+                              "format": "uuid",
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
                 example:
                   errors:
                     - code: SUBMISSION_DETAILS_NOT_FOUND
@@ -1241,7 +2616,60 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
+              schema:
+                {
+                  "type": "object",
+                  "required": [
+                    "responses"
+                  ],
+                  "properties": {
+                    "responses": {
+                      "type": "object",
+                      "required": [
+                        "responses"
+                      ],
+                      "properties": {
+                        "responses": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "required": [
+                              "responseId",
+                              "questionId",
+                              "responseText",
+                              "sectionId",
+                              "appId",
+                              "effectiveDate"
+                            ],
+                            "properties": {
+                              "responseId": {
+                                "type": "string",
+                                "format": "uuid",
+                              },
+                              "questionId": {
+                                "type": "string",
+                                "format": "uuid",
+                              },
+                              "responseText": {
+                                "type": "string",
+                              },
+                              "sectionId": {
+                                "type": "string",
+                                "format": "uuid",
+                              },
+                              "appId": {
+                                "type": "string",
+                              },
+                              "effectiveDate": {
+                                "type": "string",
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
               example:
                 responses:
                   responses:
@@ -1264,7 +2692,141 @@ paths:
           description: ''
           content:
             application/json:
-              schema:
+                schema:
+                  {
+                    "type": "object",
+                    "required": [
+                      "responses"
+                    ],
+                    "properties": {
+                      "responses": {
+                        "type": "object",
+                        "required": [
+                          "pagination",
+                          "responses"
+                        ],
+                        "properties": {
+                          "pagination": {
+                            "type": "object",
+                            "required": [
+                              "from",
+                              "returned",
+                              "total",
+                              "maximum",
+                              "sort"
+                            ],
+                            "properties": {
+                              "from": {
+                                "type": "integer"
+                              },
+                              "returned": {
+                                "type": "integer"
+                              },
+                              "total": {
+                                "type": "integer"
+                              },
+                              "maximum": {
+                                "type": "integer"
+                              },
+                              "sort": {
+                                "type": "object"
+                              }
+                            }
+                          },
+                          "responses": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "responseId",
+                                "responseText",
+                                "questionScore",
+                                "appId",
+                                "sectionId",
+                                "questionId",
+                                "clientId",
+                                "dedupClientId",
+                                "surveyId",
+                                "refused",
+                                "submissionId",
+                                "client"
+                              ],
+                              "properties": {
+                                "responseId": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                },
+                                "responseText": {
+                                  "type": "string",
+                                },
+                                "questionScore": {
+                                  "type": "integer"
+                                },
+                                "appId": {
+                                  "type": "string",
+                                },
+                                "sectionId": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                },
+                                "questionId": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                },
+                                "clientId": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                },
+                                "dedupClientId": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                },
+                                "surveyId": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                },
+                                "refused": {
+                                  "type": "boolean"
+                                },
+                                "submissionId": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                },
+                                "client": {
+                                  "type": "object",
+                                  "required": [
+                                    "id",
+                                    "firstName",
+                                    "middleName",
+                                    "lastName",
+                                    "dob"
+                                  ],
+                                  "properties": {
+                                    "id": {
+                                      "type": "string",
+                                      "format": "uuid",
+                                    },
+                                    "firstName": {
+                                      "type": "string",
+                                    },
+                                    "middleName": {
+                                      "type": "string",
+                                    },
+                                    "lastName": {
+                                      "type": "string",
+                                    },
+                                    "dob": {
+                                      "type": "integer"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
                 example:
                   responses:
                     pagination:
@@ -1350,7 +2912,34 @@ paths:
           description: ''
           content:
             application/json:
-              schema:
+                schema:
+                  {
+                    "type": "object",
+                    "required": [
+                      "errors"
+                    ],
+                    "properties": {
+                      "errors": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "code",
+                            "message"
+                          ],
+                          "properties": {
+                            "code": {
+                              "type": "string",
+                            },
+                            "message": {
+                              "type": "string",
+                              "format": "uuid",
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
                 example:
                   errors:
                     - code: SUBMISSION_DETAILS_NOT_FOUND
@@ -1369,7 +2958,34 @@ paths:
           content:
             application/json:
               schema:
-                example:
+                {
+                  "type": "object",
+                  "required": [
+                    "errors"
+                  ],
+                  "properties": {
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "code",
+                          "message"
+                        ],
+                        "properties": {
+                          "code": {
+                            "type": "string",
+                          },
+                          "message": {
+                            "type": "string",
+                            "format": "uuid",
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              example:
                   errors:
                     - code: SUBMISSION_DETAILS_NOT_FOUND
                       message: >-
@@ -1402,7 +3018,141 @@ paths:
           description: OK – Everything is working.
           content:
             application/json:
-              schema:
+                schema:
+                  {
+                    "type": "object",
+                    "required": [
+                      "responses"
+                    ],
+                    "properties": {
+                      "responses": {
+                        "type": "object",
+                        "required": [
+                          "pagination",
+                          "responses"
+                        ],
+                        "properties": {
+                          "pagination": {
+                            "type": "object",
+                            "required": [
+                              "from",
+                              "returned",
+                              "total",
+                              "maximum",
+                              "sort"
+                            ],
+                            "properties": {
+                              "from": {
+                                "type": "integer"
+                              },
+                              "returned": {
+                                "type": "integer"
+                              },
+                              "total": {
+                                "type": "integer"
+                              },
+                              "maximum": {
+                                "type": "integer"
+                              },
+                              "sort": {
+                                "type": "object"
+                              }
+                            }
+                          },
+                          "responses": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "responseId",
+                                "responseText",
+                                "questionScore",
+                                "appId",
+                                "sectionId",
+                                "questionId",
+                                "clientId",
+                                "dedupClientId",
+                                "surveyId",
+                                "refused",
+                                "submissionId",
+                                "client"
+                              ],
+                              "properties": {
+                                "responseId": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                },
+                                "responseText": {
+                                  "type": "string",
+                                },
+                                "questionScore": {
+                                  "type": "integer"
+                                },
+                                "appId": {
+                                  "type": "string",
+                                },
+                                "sectionId": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                },
+                                "questionId": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                },
+                                "clientId": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                },
+                                "dedupClientId": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                },
+                                "surveyId": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                },
+                                "refused": {
+                                  "type": "boolean"
+                                },
+                                "submissionId": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                },
+                                "client": {
+                                  "type": "object",
+                                  "required": [
+                                    "id",
+                                    "firstName",
+                                    "middleName",
+                                    "lastName",
+                                    "dob"
+                                  ],
+                                  "properties": {
+                                    "id": {
+                                      "type": "string",
+                                      "format": "uuid",
+                                    },
+                                    "firstName": {
+                                      "type": "string",
+                                    },
+                                    "middleName": {
+                                      "type": "string",
+                                    },
+                                    "lastName": {
+                                      "type": "string",
+                                    },
+                                    "dob": {
+                                      "type": "integer"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
                 example:
                     responses:
                       pagination:
@@ -1505,7 +3255,55 @@ paths:
           description: OK - New resource has been created.
           content:
             application/json:
-              schema:
+                schema:
+                  {
+                    "type": "object",
+                    "required": [
+                      "responses"
+                    ],
+                    "properties": {
+                      "responses": {
+                        "type": "object",
+                        "required": [
+                          "responses"
+                        ],
+                        "properties": {
+                          "responses": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "questionId",
+                                "responseText",
+                                "sectionId",
+                                "appId",
+                                "effectiveDate"
+                              ],
+                              "properties": {
+                                "questionId": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                },
+                                "responseText": {
+                                  "type": "string",
+                                },
+                                "sectionId": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                },
+                                "appId": {
+                                  "type": "string",
+                                },
+                                "effectiveDate": {
+                                  "type": "string",
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
                 example:
                   response:
                     responseId: f7bb4b7e-2384-4a6a-bcf8-1739877f0d94
@@ -1547,7 +3345,53 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
+              schema:
+                {
+                  "type": "object",
+                  "required": [
+                    "responses"
+                  ],
+                  "properties": {
+                    "responses": {
+                      "type": "object",
+                      "required": [
+                        "responses"
+                      ],
+                      "properties": {
+                        "responses": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "required": [
+                              "questionId",
+                              "responseText",
+                              "sectionId",
+                              "appId",
+                              "effectiveDate"
+                            ],
+                            "properties": {
+                              "questionId": {
+                                "type": "string",
+                              },
+                              "responseText": {
+                                "type": "string",
+                              },
+                              "sectionId": {
+                                "type": "string",
+                              },
+                              "appId": {
+                                "type": "string",
+                              },
+                              "effectiveDate": {
+                                "type": "string",
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
               example:
                 responses:
                   responses:
@@ -1581,7 +3425,44 @@ paths:
           description: OK – Everything is working.
           content:
             application/json:
-              schema:
+                schema:
+                  {
+                    "type": "object",
+                    "required": [
+                      "response"
+                    ],
+                    "properties": {
+                      "response": {
+                        "type": "object",
+                        "required": [
+                          "responseId",
+                          "responseText",
+                          "questionScore",
+                          "effectiveDate",
+                          "submissionId"
+                        ],
+                        "properties": {
+                          "responseId": {
+                            "type": "string",
+                            "format": "uuid",
+                          },
+                          "responseText": {
+                            "type": "string",
+                          },
+                          "questionScore": {
+                            "type": "integer"
+                          },
+                          "effectiveDate": {
+                            "type": "string",
+                          },
+                          "submissionId": {
+                            "type": "string",
+                            "format": "uuid",
+                          }
+                        }
+                      }
+                    }
+                  }
                 example:
                     response:
                       responseId: e9a4a447-833f-4c29-a3b6-f966a0a753aa
@@ -1626,7 +3507,44 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
+              schema:
+                {
+                  "type": "object",
+                  "required": [
+                    "response"
+                  ],
+                  "properties": {
+                    "response": {
+                      "type": "object",
+                      "required": [
+                        "responseId",
+                        "responseText",
+                        "questionScore",
+                        "effectiveDate",
+                        "submissionId"
+                      ],
+                      "properties": {
+                        "responseId": {
+                          "type": "string",
+                          "format": "uuid",
+                        },
+                        "responseText": {
+                          "type": "string",
+                        },
+                        "questionScore": {
+                          "type": "integer"
+                        },
+                        "effectiveDate": {
+                          "type": "string",
+                        },
+                        "submissionId": {
+                          "type": "string",
+                          "format": "uuid",
+                        }
+                      }
+                    }
+                  }
+                }
               example:
                   response:
                     responseId: e9a4a447-833f-4c29-a3b6-f966a0a753aa
@@ -1677,7 +3595,51 @@ paths:
           description: ''
           content:
             application/json:
-              schema:
+                schema:
+                  {
+                    "type": "object",
+                    "required": [
+                      "sectionScore"
+                    ],
+                    "properties": {
+                      "sectionScore": {
+                        "type": "object",
+                        "required": [
+                          "sectionScoreId",
+                          "sectionId",
+                          "surveyId",
+                          "clientId",
+                          "clientDedupId",
+                          "sectionScore"
+                        ],
+                        "properties": {
+                          "sectionScoreId": {
+                            "type": "string",
+                            "format": "uuid",
+                          },
+                          "sectionId": {
+                            "type": "string",
+                            "format": "uuid",
+                          },
+                          "surveyId": {
+                            "type": "string",
+                            "format": "uuid",
+                          },
+                          "clientId": {
+                            "type": "string",
+                            "format": "uuid",
+                          },
+                          "clientDedupId": {
+                            "type": "string",
+                            "format": "uuid",
+                          },
+                          "sectionScore": {
+                            "type": "integer"
+                          }
+                        }
+                      }
+                    }
+                  }
                 example:
                     sectionScore:
                       sectionScoreId: d7f79550-fb2b-4af8-b011-24a6d5e99aa4
@@ -1695,17 +3657,22 @@ paths:
               sectionScore:
                 sectionScore: 30
             schema:
-              required:
-                - sectionScore
-              type: object
-              properties:
-                sectionScore:
-                  required:
-                    - sectionScore
-                  type: object
-                  properties:
-                    sectionScore:
-                      type: integer
+              {
+                "type": "object",
+                    "properties": {
+                      "sectionScore": {
+                        "type": "object",
+                        "required": [
+                          "sectionScore"
+                        ],
+                        "properties": {
+                          "sectionScore": {
+                            "type": "integer"
+                          }
+                        }
+                  }
+                }
+              }
         required: true
     get:
       responses:
@@ -1713,7 +3680,51 @@ paths:
           description: ''
           content:
             application/json:
-              schema:
+                schema:
+                  {
+                    "type": "object",
+                    "required": [
+                      "sectionScore"
+                    ],
+                    "properties": {
+                      "sectionScore": {
+                        "type": "object",
+                        "required": [
+                          "sectionScoreId",
+                          "sectionId",
+                          "surveyId",
+                          "clientId",
+                          "clientDedupId",
+                          "sectionScore"
+                        ],
+                        "properties": {
+                          "sectionScoreId": {
+                            "type": "string",
+                            "format": "uuid",
+                          },
+                          "sectionId": {
+                            "type": "string",
+                            "format": "uuid",
+                          },
+                          "surveyId": {
+                            "type": "string",
+                            "format": "uuid",
+                          },
+                          "clientId": {
+                            "type": "string",
+                            "format": "uuid",
+                          },
+                          "clientDedupId": {
+                            "type": "string",
+                            "format": "uuid",
+                          },
+                          "sectionScore": {
+                            "type": "integer"
+                          }
+                        }
+                      }
+                    }
+                  }
                 example:
                     sectionScore:
                       sectionScoreId: d7f79550-fb2b-4af8-b011-24a6d5e99aa4
@@ -1760,7 +3771,90 @@ paths:
           description: ''
           content:
             application/json:
-              schema:
+                schema:
+                  {
+                    "type": "object",
+                    "required": [
+                      "sectionScores"
+                    ],
+                    "properties": {
+                      "sectionScores": {
+                        "type": "object",
+                        "required": [
+                          "pagination",
+                          "sectionScores"
+                        ],
+                        "properties": {
+                          "pagination": {
+                            "type": "object",
+                            "required": [
+                              "from",
+                              "returned",
+                              "total",
+                              "maximum",
+                              "sort"
+                            ],
+                            "properties": {
+                              "from": {
+                                "type": "integer"
+                              },
+                              "returned": {
+                                "type": "integer"
+                              },
+                              "total": {
+                                "type": "integer"
+                              },
+                              "maximum": {
+                                "type": "integer"
+                              },
+                              "sort": {
+                                "type": "object"
+                              }
+                            }
+                          },
+                          "sectionScores": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "sectionScoreId",
+                                "sectionId",
+                                "surveyId",
+                                "clientId",
+                                "clientDedupId",
+                                "sectionScore"
+                              ],
+                              "properties": {
+                                "sectionScoreId": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                },
+                                "sectionId": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                },
+                                "surveyId": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                },
+                                "clientId": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                },
+                                "clientDedupId": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                },
+                                "sectionScore": {
+                                  "type": "integer"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
                 example:
                     sectionScores:
                       pagination:
@@ -1810,7 +3904,34 @@ paths:
           description: ''
           content:
             application/json:
-              schema:
+                schema:
+                  {
+                    "type": "object",
+                    "required": [
+                      "errors"
+                    ],
+                    "properties": {
+                      "errors": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "code",
+                            "message"
+                          ],
+                          "properties": {
+                            "code": {
+                              "type": "string",
+                            },
+                            "message": {
+                              "type": "string",
+                              "format": "uuid",
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
                 example:
                   errors:
                     - code: SUBMISSION_DETAILS_NOT_FOUND
@@ -1823,7 +3944,60 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
+              schema:
+                {
+                  "type": "object",
+                  "required": [
+                    "responses"
+                  ],
+                  "properties": {
+                    "responses": {
+                      "type": "object",
+                      "required": [
+                        "responses"
+                      ],
+                      "properties": {
+                        "responses": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "required": [
+                              "questionId",
+                              "responseId",
+                              "responseText",
+                              "sectionId",
+                              "appId",
+                              "effectiveDate"
+                            ],
+                            "properties": {
+                              "questionId": {
+                                "type": "string",
+                                "format": "uuid",
+                              },
+                              "responseId": {
+                                "type": "string",
+                                "format": "uuid",
+                              },
+                              "responseText": {
+                                "type": "string",
+                              },
+                              "sectionId": {
+                                "type": "string",
+                                "format": "uuid",
+                              },
+                              "appId": {
+                                "type": "string",
+                              },
+                              "effectiveDate": {
+                                "type": "string",
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
               example:
                 responses:
                   responses:
@@ -1846,7 +4020,141 @@ paths:
           description: ''
           content:
             application/json:
-              schema:
+                schema:
+                  {
+                    "type": "object",
+                    "required": [
+                      "responses"
+                    ],
+                    "properties": {
+                      "responses": {
+                        "type": "object",
+                        "required": [
+                          "pagination",
+                          "responses"
+                        ],
+                        "properties": {
+                          "pagination": {
+                            "type": "object",
+                            "required": [
+                              "from",
+                              "returned",
+                              "total",
+                              "maximum",
+                              "sort"
+                            ],
+                            "properties": {
+                              "from": {
+                                "type": "integer"
+                              },
+                              "returned": {
+                                "type": "integer"
+                              },
+                              "total": {
+                                "type": "integer"
+                              },
+                              "maximum": {
+                                "type": "integer"
+                              },
+                              "sort": {
+                                "type": "object"
+                              }
+                            }
+                          },
+                          "responses": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "responseId",
+                                "responseText",
+                                "questionScore",
+                                "appId",
+                                "sectionId",
+                                "questionId",
+                                "clientId",
+                                "dedupClientId",
+                                "surveyId",
+                                "refused",
+                                "submissionId",
+                                "client"
+                              ],
+                              "properties": {
+                                "responseId": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                },
+                                "responseText": {
+                                  "type": "string",
+                                },
+                                "questionScore": {
+                                  "type": "integer"
+                                },
+                                "appId": {
+                                  "type": "string",
+                                },
+                                "sectionId": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                },
+                                "questionId": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                },
+                                "clientId": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                },
+                                "dedupClientId": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                },
+                                "surveyId": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                },
+                                "refused": {
+                                  "type": "boolean"
+                                },
+                                "submissionId": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                },
+                                "client": {
+                                  "type": "object",
+                                  "required": [
+                                    "id",
+                                    "firstName",
+                                    "middleName",
+                                    "lastName",
+                                    "dob"
+                                  ],
+                                  "properties": {
+                                    "id": {
+                                      "type": "string",
+                                      "format": "uuid",
+                                    },
+                                    "firstName": {
+                                      "type": "string",
+                                    },
+                                    "middleName": {
+                                      "type": "string",
+                                    },
+                                    "lastName": {
+                                      "type": "string",
+                                    },
+                                    "dob": {
+                                      "type": "integer"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
                 example:
                   responses:
                     pagination:
@@ -1932,7 +4240,34 @@ paths:
           description: ''
           content:
             application/json:
-              schema:
+                schema:
+                  {
+                    "type": "object",
+                    "required": [
+                      "errors"
+                    ],
+                    "properties": {
+                      "errors": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "code",
+                            "message"
+                          ],
+                          "properties": {
+                            "code": {
+                              "type": "string",
+                            },
+                            "message": {
+                              "type": "string",
+                              "format": "uuid",
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
                 example:
                   errors:
                     - code: SUBMISSION_DETAILS_NOT_FOUND
@@ -1950,7 +4285,34 @@ paths:
           description: ''
           content:
             application/json:
-              schema:
+                schema:
+                  {
+                    "type": "object",
+                    "required": [
+                      "errors"
+                    ],
+                    "properties": {
+                      "errors": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "code",
+                            "message"
+                          ],
+                          "properties": {
+                            "code": {
+                              "type": "string",
+                            },
+                            "message": {
+                              "type": "string",
+                              "format": "uuid",
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
                 example:
                   errors:
                     - code: SUBMISSION_DETAILS_NOT_FOUND
@@ -1984,7 +4346,177 @@ paths:
           description: ''
           content:
             application/json:
-              schema:
+                schema:
+                  {
+                    "type": "object",
+                    "required": [
+                      "clientSurveySubmissions"
+                    ],
+                    "properties": {
+                      "clientSurveySubmissions": {
+                        "type": "object",
+                        "required": [
+                          "pagination",
+                          "clientSurveySubmissions"
+                        ],
+                        "properties": {
+                          "pagination": {
+                            "type": "object",
+                            "required": [
+                              "from",
+                              "returned",
+                              "total",
+                              "maximum",
+                              "sort"
+                            ],
+                            "properties": {
+                              "from": {
+                                "type": "integer"
+                              },
+                              "returned": {
+                                "type": "integer"
+                              },
+                              "total": {
+                                "type": "integer"
+                              },
+                              "maximum": {
+                                "type": "integer"
+                              },
+                              "sort": {
+                                "type": "object",
+                                "required": [
+                                  "field",
+                                  "order"
+                                ],
+                                "properties": {
+                                  "field": {
+                                    "type": "string",
+                                  },
+                                  "order": {
+                                    "type": "string",
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "clientSurveySubmissions": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "id",
+                                "clientId",
+                                "surveyId",
+                                "survey",
+                                "submissionId",
+                                "client",
+                                "clientLink"
+                              ],
+                              "properties": {
+                                "id": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                },
+                                "clientId": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                },
+                                "surveyId": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                },
+                                "survey": {
+                                  "type": "object",
+                                  "required": [
+                                    "surveyId",
+                                    "surveyTitle",
+                                    "surveyOwner",
+                                    "tagValue",
+                                    "projectGroupCode",
+                                    "locked",
+                                    "copySurveyId"
+                                  ],
+                                  "properties": {
+                                    "surveyId": {
+                                      "type": "string",
+                                      "format": "uuid",
+                                    },
+                                    "surveyTitle": {
+                                      "type": "string",
+                                    },
+                                    "surveyOwner": {
+                                      "type": "string",
+                                    },
+                                    "tagValue": {
+                                      "type": "string",
+                                    },
+                                    "projectGroupCode": {
+                                      "type": "string",
+                                    },
+                                    "locked": {
+                                      "type": "boolean"
+                                    },
+                                    "copySurveyId": {
+                                      "type": "boolean"
+                                    }
+                                  }
+                                },
+                                "submissionId": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                },
+                                "client": {
+                                  "type": "object",
+                                  "required": [
+                                    "id",
+                                    "firstName",
+                                    "middleName",
+                                    "lastName",
+                                    "dob",
+                                    "phoneNumber",
+                                    "emailAddress",
+                                    "dedupClientId"
+                                  ],
+                                  "properties": {
+                                    "id": {
+                                      "type": "string",
+                                      "format": "uuid",
+                                    },
+                                    "firstName": {
+                                      "type": "string",
+                                    },
+                                    "middleName": {
+                                      "type": "string",
+                                    },
+                                    "lastName": {
+                                      "type": "string",
+                                    },
+                                    "dob": {
+                                      "type": "integer"
+                                    },
+                                    "phoneNumber": {
+                                      "type": "string",
+                                    },
+                                    "emailAddress": {
+                                      "type": "string",
+                                    },
+                                    "dedupClientId": {
+                                      "type": "string",
+                                      "format": "uuid",
+                                    }
+                                  }
+                                },
+                                "clientLink": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
                 example:
                     clientSurveySubmissions:
                       pagination:
@@ -2080,7 +4612,38 @@ paths:
           description: ''
           content:
             application/json:
-              schema:
+                schema:
+                  {
+                    "type": "object",
+                    "required": [
+                      "errors"
+                    ],
+                    "properties": {
+                      "errors": {
+                        "type": "object",
+                        "required": [
+                          "error"
+                        ],
+                        "properties": {
+                          "error": {
+                            "type": "object",
+                            "required": [
+                              "code",
+                              "message"
+                            ],
+                            "properties": {
+                              "code": {
+                                "type": "string",
+                              },
+                              "message": {
+                                "type": "string",
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
                 example:
                   errors:
                     error:
@@ -2091,7 +4654,27 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
+              schema:
+                {
+                  "type": "object",
+                  "required": [
+                    "clientsurveysubmission"
+                  ],
+                  "properties": {
+                    "clientsurveysubmission": {
+                      "type": "object",
+                      "required": [
+                        "globalEnrollmentId"
+                      ],
+                      "properties": {
+                        "globalEnrollmentId": {
+                          "type": "string",
+                          "format": "uuid",
+                        }
+                      }
+                    }
+                  }
+                }
               example:
                   clientsurveysubmission:
                     globalEnrollmentId: e166faae-1661-49ab-9987-4f66fd982cb2
@@ -2109,7 +4692,177 @@ paths:
           description: ''
           content:
             application/json:
-              schema:
+                schema:
+                  {
+                    "type": "object",
+                    "required": [
+                      "clientSurveySubmissions"
+                    ],
+                    "properties": {
+                      "clientSurveySubmissions": {
+                        "type": "object",
+                        "required": [
+                          "pagination",
+                          "clientSurveySubmissions"
+                        ],
+                        "properties": {
+                          "pagination": {
+                            "type": "object",
+                            "required": [
+                              "from",
+                              "returned",
+                              "total",
+                              "maximum",
+                              "sort"
+                            ],
+                            "properties": {
+                              "from": {
+                                "type": "integer"
+                              },
+                              "returned": {
+                                "type": "integer"
+                              },
+                              "total": {
+                                "type": "integer"
+                              },
+                              "maximum": {
+                                "type": "integer"
+                              },
+                              "sort": {
+                                "type": "object",
+                                "required": [
+                                  "field",
+                                  "order"
+                                ],
+                                "properties": {
+                                  "field": {
+                                    "type": "string",
+                                  },
+                                  "order": {
+                                    "type": "string",
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "clientSurveySubmissions": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "id",
+                                "clientId",
+                                "surveyId",
+                                "survey",
+                                "submissionId",
+                                "client",
+                                "clientLink"
+                              ],
+                              "properties": {
+                                "id": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                },
+                                "clientId": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                },
+                                "surveyId": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                },
+                                "survey": {
+                                  "type": "object",
+                                  "required": [
+                                    "surveyId",
+                                    "surveyTitle",
+                                    "surveyOwner",
+                                    "tagValue",
+                                    "projectGroupCode",
+                                    "locked",
+                                    "copySurveyId"
+                                  ],
+                                  "properties": {
+                                    "surveyId": {
+                                      "type": "string",
+                                      "format": "uuid",
+                                    },
+                                    "surveyTitle": {
+                                      "type": "string",
+                                    },
+                                    "surveyOwner": {
+                                      "type": "string",
+                                    },
+                                    "tagValue": {
+                                      "type": "string",
+                                    },
+                                    "projectGroupCode": {
+                                      "type": "string",
+                                    },
+                                    "locked": {
+                                      "type": "boolean"
+                                    },
+                                    "copySurveyId": {
+                                      "type": "boolean"
+                                    }
+                                  }
+                                },
+                                "submissionId": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                },
+                                "client": {
+                                  "type": "object",
+                                  "required": [
+                                    "id",
+                                    "firstName",
+                                    "middleName",
+                                    "lastName",
+                                    "dob",
+                                    "phoneNumber",
+                                    "emailAddress",
+                                    "dedupClientId"
+                                  ],
+                                  "properties": {
+                                    "id": {
+                                      "type": "string",
+                                      "format": "uuid",
+                                    },
+                                    "firstName": {
+                                      "type": "string",
+                                    },
+                                    "middleName": {
+                                      "type": "string",
+                                    },
+                                    "lastName": {
+                                      "type": "string",
+                                    },
+                                    "dob": {
+                                      "type": "integer"
+                                    },
+                                    "phoneNumber": {
+                                      "type": "string",
+                                    },
+                                    "emailAddress": {
+                                      "type": "string",
+                                    },
+                                    "dedupClientId": {
+                                      "type": "string",
+                                      "format": "uuid",
+                                    }
+                                  }
+                                },
+                                "clientLink": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
                 example:
                     clientSurveySubmissions:
                       pagination:
@@ -2167,7 +4920,7 @@ paths:
                           clientLink: /hmis-clientapi/rest/v2014/clients/51d496ac-e22b-4505-ac4b-45fdd74b3d70
 
       operationId: GET_clientsurveysubmissions
-      parameters:
+    parameters:
         - name: q
           in: query
           required: false
@@ -2195,7 +4948,118 @@ paths:
           description: ''
           content:
             application/json:
-              schema:
+                schema:
+                  {
+                    "type": "object",
+                    "required": [
+                      "questions"
+                    ],
+                    "properties": {
+                      "questions": {
+                        "type": "object",
+                        "required": [
+                          "pagination",
+                          "questions"
+                        ],
+                        "properties": {
+                          "pagination": {
+                            "type": "object",
+                            "required": [
+                              "from",
+                              "returned",
+                              "total",
+                              "maximum",
+                              "sort"
+                            ],
+                            "properties": {
+                              "from": {
+                                "type": "integer"
+                              },
+                              "returned": {
+                                "type": "integer"
+                              },
+                              "total": {
+                                "type": "integer"
+                              },
+                              "maximum": {
+                                "type": "integer"
+                              },
+                              "sort": {
+                                "type": "object"
+                              }
+                            }
+                          },
+                          "questions": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "questionId",
+                                "questionDescription",
+                                "displayText",
+                                "questionDataType",
+                                "questionType",
+                                "correctValueForAssessment",
+                                "copyQuestionId",
+                                "hudQuestion",
+                                "locked",
+                                "questionWeight",
+                                "definition",
+                                "visibility",
+                                "category",
+                                "subcategory"
+                              ],
+                              "properties": {
+                                "questionId": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                },
+                                "questionDescription": {
+                                  "type": "string",
+                                },
+                                "displayText": {
+                                  "type": "string",
+                                },
+                                "questionDataType": {
+                                  "type": "string",
+                                },
+                                "questionType": {
+                                  "type": "string",
+                                },
+                                "correctValueForAssessment": {
+                                  "type": "string",
+                                },
+                                "copyQuestionId": {
+                                  "type": "boolean"
+                                },
+                                "hudQuestion": {
+                                  "type": "boolean"
+                                },
+                                "locked": {
+                                  "type": "boolean"
+                                },
+                                "questionWeight": {
+                                  "type": "integer"
+                                },
+                                "definition": {
+                                  "type": "string",
+                                },
+                                "visibility": {
+                                  "type": "boolean"
+                                },
+                                "category": {
+                                  "type": "string",
+                                },
+                                "subcategory": {
+                                  "type": "string",
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
                 example:
                   questions:
                     pagination:
@@ -2222,7 +5086,7 @@ paths:
                         category: question category
                         subcategory: question sub category
       operationId: GET_questions
-      parameters:
+    parameters:
         - name: text
           in: query
           required: true
