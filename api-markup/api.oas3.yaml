@@ -1109,7 +1109,7 @@ paths:
         '500':
           description: 500 – Internal Server Error
       description: >-
-        Returns questions for a selected question
+        Returns questions for a selected question group
       operationId: GET_v2-questiongroups-questiongroupid-questions
     post:
       responses:
