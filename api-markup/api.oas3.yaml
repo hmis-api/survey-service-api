@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: Survey Service
-  version: 3.2.0
+  version: 3.2.1
   description: |
        **Note :**
               Please note that the partial updates are supported via PUT APIs. However, Note that If "null" value is passed for any element, in the PUT request body, it will be ignored. An empty string value should be sent (instead of "null" value) for the elements that need to be updated with NULL values.
@@ -1049,6 +1049,8 @@ paths:
                                 },
                                 "visibility": {
                                   "type": "boolean"
+                                },                              "pickListValues": {
+                                  "type": "string",
                                 },
                                 "category": {
                                   "type": "string",
@@ -1091,6 +1093,7 @@ paths:
                       definition: '"{"questionType": "DROPDOWN","title": "Living Situation","options":
                         {}}"'
                       visibility: true
+                      pickListValues: '"  { "1" : "Full address reported" } ,  { "2" : "Incomplete or estimated address reported" }"'
                       category: question category
                       subcategory: question sub category
                       updateUriTemplate: "/v2017/clients/{clientid}/enrollments/{enrollmentid}"
@@ -1106,10 +1109,7 @@ paths:
         '500':
           description: 500 – Internal Server Error
       description: >-
-        Searches for <<resourcePathName|!singularize>>.  Returns a list of
-        <<resourcePathName|!singularize>> ids, based on the query parameters
-        sent.  The query parameters are cumulative, so each additional query
-        parameter narrows the search down further.
+        Returns questions for a selected question group
       operationId: GET_v2-questiongroups-questiongroupid-questions
     post:
       responses:
@@ -1231,7 +1231,9 @@ paths:
                         },
                         "visibility": {
                           "type": "boolean"
-                        },
+                        },"pickListValues": {
+                                  "type": "string",
+                                },
                         "category": {
                           "type": "string",
                         },
@@ -1262,6 +1264,7 @@ paths:
                   definition: '"{"questionType": "DROPDOWN","title": "Living Situation","options":
                     {}}"'
                   visibility: true
+                  pickListValues: '"  { "1" : "Full address reported" } ,  { "2" : "Incomplete or estimated address reported" }"'
                   category: question category
                   subcategory: question sub category
                   updateUriTemplate: "/v2017/clients/{clientid}/enrollments/{enrollmentid}"
@@ -1345,7 +1348,9 @@ paths:
                             },
                             "visibility": {
                               "type": "boolean"
-                            },
+                            },"pickListValues": {
+                                  "type": "string",
+                                },
                             "category": {
                               "type": "string",
                             },
@@ -1377,6 +1382,7 @@ paths:
                       definition: '"{"questionType": "DROPDOWN","title": "Living Situation","options":
                         {}}"'
                       visibility: true
+                      pickListValues: '"  { "1" : "Full address reported" } ,  { "2" : "Incomplete or estimated address reported" }"'
                       category: question category
                       subcategory: question sub category
                       updateUriTemplate: "/v2017/clients/{clientid}/enrollments/{enrollmentid}"
@@ -2613,6 +2619,7 @@ paths:
       description: |
         To update responses data of submission
       operationId: PUT_v3-clients-dedupclientid-surveys-surveyid-submissions-submissionid
+      deprecated: true
       requestBody:
         content:
           application/json:
@@ -2949,6 +2956,7 @@ paths:
       description: |
         To get responses of a submission.
       operationId: GET_v3-clients-dedupclientid-surveys-surveyid-submissions-submissionid
+      deprecated: true
     delete:
       responses:
         '204':
@@ -2995,6 +3003,7 @@ paths:
         To delete responses of a submission.
       operationId: >-
         DELETE_v3-clients-dedupclientid-surveys-surveyid-submissions-submissionid
+      deprecated: true
     parameters:
       - name: submissionid
         in: path
