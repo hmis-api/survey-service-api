@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: Survey Service
-  version: 3.2.1
+  version: 3.2.2
   description: |
        **Note :**
               Please note that the partial updates are supported via PUT APIs. However, Note that If "null" value is passed for any element, in the PUT request body, it will be ignored. An empty string value should be sent (instead of "null" value) for the elements that need to be updated with NULL values.
@@ -3105,13 +3105,13 @@ paths:
                                   "type": "string",
                                   "format": "uuid",
                                 },
-                                "effectiveDate": {
-                                    "type": "string",
-                                    "format": "date",
-                                },
                                 "questionId": {
                                   "type": "string",
                                   "format": "uuid",
+                                },
+                                "effectiveDate": {
+                                   "type": "string",
+                                   "format": "date",
                                 },
                                 "clientId": {
                                   "type": "string",
@@ -3180,7 +3180,7 @@ paths:
                           responseText: example response
                           questionScore: 0
                           appId: app1
-                          effectiveDate: 2020-02-01
+                          effectiveDate: '2017-10-10 03:12'
                           sectionId: 0200e208-3f0e-4504-8bcf-99f6981c6c1e
                           questionId: f58103d8-f292-438d-af4b-b63c15041477
                           clientId: df2f6b58-e29f-4845-bd20-58a5ec0b2529
@@ -3203,7 +3203,7 @@ paths:
                           clientId: df2f6b58-e29f-4845-bd20-58a5ec0b2529
                           dedupClientId: 74520590-3eb3-11e7-85e4-06c37be0e663
                           surveyId: d26e11fc-1bc3-4677-9c55-347b4d46b8ab
-                          effectiveDate: 2020-02-01
+                          effectiveDate: '2017-10-10 03:12'
                           refused: true
                           submissionId: 5e40fe46-0c6b-4b45-90be-7179062e55c5
                           client:
@@ -3222,7 +3222,7 @@ paths:
                           dedupClientId: 82bf30b0-9a18-11e7-9920-02fe61f7863e
                           surveyId: d26e11fc-1bc3-4677-9c55-347b4d46b8ab
                           refused: true
-                          effectiveDate: 2020-02-01
+                          effectiveDate: '2017-10-10 03:12'
                           submissionId: 8eb99dd0-cd59-48b8-b08d-1ecd71d7a1f3
                           client:
                             id: 08bd3d50-cb87-41ac-8b64-b3dc3853c411
@@ -3242,7 +3242,7 @@ paths:
                           dedupClientId: 82bf30b0-9a18-11e7-9920-02fe61f7863e
                           surveyId: d26e11fc-1bc3-4677-9c55-347b4d46b8ab
                           refused: true
-                          effectiveDate: 2020-02-01
+                          effectiveDate: '2017-10-10 03:12'
                           submissionId: 8eb99dd0-cd59-48b8-b08d-1ecd71d7a1f3
                           client:
                             id: 08bd3d50-cb87-41ac-8b64-b3dc3853c411
