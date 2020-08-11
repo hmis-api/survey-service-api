@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: Survey Service
-  version: 3.2.2
+  version: 3.2.3
   description: |
        **Note :**
               Please note that the partial updates are supported via PUT APIs. However, Note that If "null" value is passed for any element, in the PUT request body, it will be ignored. An empty string value should be sent (instead of "null" value) for the elements that need to be updated with NULL values.
@@ -2299,6 +2299,363 @@ paths:
         schema:
           type: string
         description: SurveySections Identifier
+      - name: surveyid
+        in: path
+        required: true
+        schema:
+          type: string
+  '/surveys/{surveyid}/surveyprojects':
+    get:
+      responses:
+        '200':
+          description: OK – Everything is working.
+          content:
+            application/json:
+                schema:
+                  {
+                    "type": "object",
+                    "required": [
+                      "surveyProjects"
+                    ],
+                    "properties": {
+                      "surveyProjects": {
+                        "type": "object",
+                        "required": [
+                          "pagination",
+                          "surveyProjects"
+                        ],
+                        "properties": {
+                          "pagination": {
+                            "type": "object",
+                            "required": [
+                              "from",
+                              "returned",
+                              "total",
+                              "maximum",
+                              "sort"
+                            ],
+                            "properties": {
+                              "from": {
+                                "type": "integer"
+                              },
+                              "returned": {
+                                "type": "integer"
+                              },
+                              "total": {
+                                "type": "integer"
+                              },
+                              "maximum": {
+                                "type": "integer"
+                              },
+                              "sort": {
+                                "type": "object"
+                              }
+                            }
+                          },
+                          "surveyProjects": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": [
+                                "surveyProjectId",
+                                "schemaVersion",
+                                "globalProjectId"
+                              ],
+                              "properties": {
+                                "surveyProjectId": {
+                                  "type": "string",
+                                  "format": "uuid",
+                                },
+                                "schemaVersion": {
+                                  "type": "string",
+                                },
+                                "globalProjectId": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                example:
+                    surveyProjects:
+                      pagination:
+                        from: 0
+                        returned: 2
+                        total: 16
+                        maximum: 30
+                        sort: {}
+                      surveyProjects:
+                        - surveyProjectId: 4f0927b8-b5cb-4714-8f64-d417c07862d1
+                          schemaVersion: 2020
+                          globalProjectId: 4f0927b8-b5cb-4714-8f64-d417c07862d1
+                        - surveyProjectId: 30f04be7-08d1-4c82-8c5f-0dc31f3e2f7d
+                          schemaVersion: 2020
+                          globalProjectId: 350927b8-b5cb-4714-8f64-d417c07862d1
+        '400':
+          description: Bad Request – The request was invalid or cannot be served.
+        '403':
+          description: >-
+            Forbidden – The server understood the request, but is refusing it or
+            the access is not allowed.
+        '404':
+          description: Not found – There is no resource behind the URI.
+        '500':
+          description: 500 – Internal Server Error
+      description: >-
+        Searches for surveyproject.  Returns a list of surveyproject ids, based
+        on the query parameters sent.  The query parameters are cumulative, so
+        each additional query parameter narrows the search down further.
+      operationId: GET_surveys-surveyid-surveyprojects
+    post:
+      responses:
+        '201':
+          description: OK - New resource has been created.
+          content:
+            application/json:
+                schema:
+                  {
+                    "type": "object",
+                    "required": [
+                      "surveyProject"
+                    ],
+                    "properties": {
+                      "surveyProject": {
+                        "type": "object",
+                        "required": [
+                          "surveyProjectId",
+                          "globalProjectId",
+                          "schemaVersion"
+                        ],
+                        "properties": {
+                          "surveyProjectId": {
+                            "type": "string",
+                            "format": "uuid",
+                          },
+                          "globalProjectId": {
+                            "type": "string",
+                            "format": "uuid"
+                          },
+                          "schemaVersion": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                example:
+                    surveyProject:
+                      surveyProjectId: 8213b48a-1504-4adf-a58f-2b557a1e2b9e
+                      schemaVersion: 2020
+                      globalProject:
+                        globalProjectId :8213b48a-1504-4adf-a58f-2b557a1e2b9e
+        '400':
+          description: Bad Request – The request was invalid or cannot be served.
+        '401':
+          description: Unauthorized – The request requires user authentication.
+        '403':
+          description: >-
+            Forbidden – The server understood the request, but is refusing it or
+            access is not allowed.
+        '404':
+          description: Not found – There is no resource behind the URI.
+        '422':
+          description: Unprocessable Entity - Request body is incorrect.
+        '500':
+          description: 500 – Internal Server Error.
+      description: |
+        Add a surveyproject
+      operationId: POST_surveys-surveyid-surveyprojects
+      requestBody:
+        content:
+          application/json:
+              schema:
+                {
+                  "type": "object",
+                  "required": [
+                    "surveyProject"
+                  ],
+                  "properties": {
+                    "surveyProject": {
+                      "type": "object",
+                      "required": [
+                        "schemaVersion",
+                        "globalProjectId"
+                      ],
+                      "properties": {
+                        "schemaVersion": {
+                          "type": "string",
+                        },
+                        "globalProjectId": {
+                          "type": "string",
+                        }
+                      }
+                    }
+                  }
+                }
+              example:
+                  surveyProject:
+                      surveyProjectId: 8213b48a-1504-4adf-a58f-2b557a1e2b9e
+                      schemaVersion: 2020
+                      globalProject:
+                       - globalProjectId : 8213b48a-1504-4adf-a58f-2b557a1e2b9e
+        required: true
+    parameters:
+      - name: surveyid
+        in: path
+        required: true
+        schema:
+          type: string
+  '/surveys/{surveyid}/surveyprojects/{sectionid}':
+    get:
+      responses:
+        '200':
+          description: OK – Everything is working.
+          content:
+            application/json:
+                schema:
+                  {
+                    "type": "object",
+                    "required": [
+                      "surveyProject"
+                    ],
+                    "properties": {
+                      "surveyProject": {
+                        "type": "object",
+                        "required": [
+                          "surveyProjectId",
+                          "schemaVersion",
+                          "globalProjectId"
+                        ],
+                        "properties": {
+                          "surveyProjectId": {
+                            "type": "string",
+                            "format": "uuid",
+                          },
+                          "schemaVersion": {
+                            "type": "string",
+                          },
+                          "globalProjectId": {
+                            "type": "string",
+                            "format": "uuid",
+                          }
+                        }
+                      }
+                    }
+                  }
+                example:
+                    surveyProjects:
+                      pagination:
+                        from: 0
+                        returned: 2
+                        total: 16
+                        maximum: 30
+                        sort: {}
+                      surveyProjects:
+                        - surveyProjectId: 4f0927b8-b5cb-4714-8f64-d417c07862d1
+                          schemaVersion: 2020
+                          globalProjectId: 4f0927b8-b5cb-4714-8f64-d417c07862d1
+                        - surveyProjectId: 30f04be7-08d1-4c82-8c5f-0dc31f3e2f7d
+                          schemaVersion: 2020
+                          globalProjectId: 350927b8-b5cb-4714-8f64-d417c07862d1
+        '400':
+          description: Bad Request – The request was invalid or cannot be served.
+        '401':
+          description: Unauthorized – The request requires an user authentication.
+        '403':
+          description: >-
+            Forbidden – The server understood the request, but is refusing it or
+            the access is not allowed.
+        '404':
+          description: Not found – There is no resource behind the URI.
+        '500':
+          description: Internal Server Error
+      description: Gets a surveyproject using a URI resource parameter/ID.
+      operationId: GET_surveys-surveyid-surveyprojects-sectionid
+    put:
+      responses:
+        '200':
+          description: OK – Everything is working.
+        '304':
+          description: Not Modified – The client can use cached data.
+        '400':
+          description: Bad Request – The request was invalid or cannot be served.
+        '401':
+          description: Unauthorized – The request requires a user.
+        '403':
+          description: >-
+            Forbidden – The server understood the request, but is refusing it or
+            the access is not allowed.
+        '404':
+          description: Not found – There is no resource behind the URI.
+        '500':
+          description: Internal Server Error.
+      description: >-
+        Updates a specific surveyproject specified by the URI resource
+        parameter/ID.
+      operationId: PUT_surveys-surveyid-surveyprojects-sectionid
+      requestBody:
+        content:
+          application/json:
+              schema:
+                {
+                  "type": "object",
+                  "required": [
+                    "surveyProject"
+                  ],
+                  "properties": {
+                    "surveyProject": {
+                      "type": "object",
+                      "required": [
+                        "schemaVersion",
+                        "globalProjectId"
+                      ],
+                      "properties": {
+                        "schemaVersion": {
+                          "type": "string",
+                        },
+                        "globalProjectId": {
+                          "type": "string",
+                        }
+                      }
+                    }
+                  }
+                }
+              example:
+                  surveyProjects:
+                        - surveyProjectId: 4f0927b8-b5cb-4714-8f64-d417c07862d1
+                          schemaVersion: 2020
+                          globalProjectId: 4f0927b8-b5cb-4714-8f64-d417c07862d1
+        required: true
+    delete:
+      responses:
+        '204':
+          description: OK – The resource was successfully deleted.
+        '400':
+          description: Bad Request – The request was invalid or cannot be served.
+        '401':
+          description: Unauthorized – The request requires user authentication.
+        '403':
+          description: >-
+            Forbidden – The server understood the request, but is refusing it or
+            the access is not allowed.
+        '404':
+          description: Not found – There is no resource behind the URI.
+        '500':
+          description: Internal Server Error.
+      description: >-
+        Deletes a specific surveyproject specified by the URI resource
+        parameter/ID.
+      operationId: DELETE_surveys-surveyid-surveyprojects-sectionid
+    parameters:
+      - name: sectionid
+        in: path
+        required: true
+        schema:
+          type: string
+        description: SurveyProjects Identifier
       - name: surveyid
         in: path
         required: true
