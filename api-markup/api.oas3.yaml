@@ -2508,7 +2508,7 @@ paths:
         required: true
         schema:
           type: string
-  '/surveys/{surveyid}/surveyprojects/{sectionid}':
+  '/surveys/{surveyid}/surveyprojects/{projectid}':
     get:
       responses:
         '200':
