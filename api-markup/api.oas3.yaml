@@ -5361,7 +5361,7 @@ paths:
                     error:
                       code: ERR_CODE_CLIENT_SUBMISSION_NOT_FOUND
                       message: Client survey submission Not found.
-      description: Update global enrollment to a survey submission
+      description: Update global enrollment to a survey submission, providing hmisPostingStatus=CREATE posts surveys to HMIS and also creates Assessments for coordinated entry questions.
       operationId: PUT_clientsurveysubmissions-clientSurveySubmissionId
       requestBody:
         content:
@@ -5382,6 +5382,34 @@ paths:
                         "globalEnrollmentId": {
                           "type": "string",
                           "format": "uuid",
+                        },
+                        "surveyCategory": {
+                          "type": "string",
+                          "format": "string",
+                        },
+                        "hmisLink": {
+                          "type": "string",
+                          "format": "string",
+                        },
+                        "hmisPostingStatus": {
+                          "type": "string",
+                          "format": "string",
+                        },
+                        "globalProjectId": {
+                            "type": "string",
+                            "format": "string",
+                        },
+                        "entryDate": {
+                            "type": "string",
+                            "format": "string",
+                        },
+                        "exitDate": {
+                            "type": "string",
+                            "format": "string",
+                        },
+                        "informationDate": {
+                            "type": "string",
+                            "format": "string",
                         }
                       }
                     }
@@ -5390,6 +5418,13 @@ paths:
               example:
                   clientsurveysubmission:
                     globalEnrollmentId: e166faae-1661-49ab-9987-4f66fd982cb2
+                    globalProjectId: a22dfaae-1661-49ab-9987-4f66fd982ddf
+                    surveyCategory: 1
+                    hmisPostingStatus: CREATE
+                    entryDate: '2020-05-01'
+                    informationDate: '2020-05-01'
+                    hmisLink: '/link/to/hmis/api'
+
         required: true
     parameters:
       - name: clientsurveysubmissionid
@@ -5719,7 +5754,8 @@ paths:
                                 "definition",
                                 "visibility",
                                 "category",
-                                "subcategory"
+                                "subcategory",
+                                "questionClassification"
                               ],
                               "properties": {
                                 "questionId": {
@@ -5764,6 +5800,9 @@ paths:
                                 },
                                 "subcategory": {
                                   "type": "string",
+                                },
+                                "questionClassification": {
+                                    "type": "string",
                                 }
                               }
                             }
@@ -5797,6 +5836,7 @@ paths:
                         visibility: true
                         category: question category
                         subcategory: question sub category
+                        questionClassification: CES
       operationId: GET_questions
     parameters:
         - name: text
@@ -6038,6 +6078,7 @@ components:
             - hudQuestion
             - locked
             - questionWeight
+            - questionClassification
           type: object
           properties:
             questionId:
@@ -6061,6 +6102,8 @@ components:
             questionWeight:
               type: integer
             pickListGroupId:
+              type: string
+            questionClassification:
               type: string
     questions_ids_json:
       required:
@@ -6106,6 +6149,7 @@ components:
                   - hudQuestion
                   - locked
                   - questionWeight
+                  - questionClassification
                 type: object
                 properties:
                   questionId:
@@ -6130,6 +6174,8 @@ components:
                     type: integer
                   pickListGroupId:
                     type: string
+                  questionClassification:
+                    type: string
     questions_json:
       required:
         - question
@@ -6146,6 +6192,7 @@ components:
             - hudQuestion
             - locked
             - questionWeight
+            - questionClassification
           type: object
           properties:
             questionDescription:
@@ -6167,6 +6214,8 @@ components:
             questionWeight:
               type: integer
             pickListGroupId:
+              type: string
+            questionClassification:
               type: string
     surveySections_json:
       required:
