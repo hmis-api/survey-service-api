@@ -5362,6 +5362,10 @@ paths:
                       code: ERR_CODE_CLIENT_SUBMISSION_NOT_FOUND
                       message: Client survey submission Not found.
       description: Update global enrollment to a survey submission, providing hmisPostingStatus=CREATE posts surveys to HMIS and also creates Assessments for coordinated entry questions.
+                   hmisPostingStatus can have the following values so a submission can be tracked.
+                    1) CREATE = Starts the Double posting.
+                    2) DONE = Double posting is completed by the Pub/Sub process.
+                    3) ERROR = There is an error in the Double Posting Pub/Sub Process.
       operationId: PUT_clientsurveysubmissions-clientSurveySubmissionId
       requestBody:
         content:
